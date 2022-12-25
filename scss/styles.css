@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+}
+
+body {
+  display: flex;
+  background-color: rgba(32, 25, 136, 0.822);
+}
+
+header {
+  background-color: rgba(32, 25, 136, 0.527);
+  height: 100vh;
+  width: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+header .aside {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+header .aside h1 {
+  color: white;
+  font-size: 36px;
+  margin-left: 50px;
+}
+header .aside ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 300px;
+}
+header .aside ul li {
+  color: white;
+  margin-left: 70px;
+  font-size: 20px;
+  list-style: none;
+}
+header .aside ul li span {
+  background-color: white;
+  color: rgba(32, 25, 136, 0.527);
+  padding: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border-radius: 6px;
+}
+
+main {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  position: relative;
+}
+main .login-form {
+  display: flex;
+  flex-direction: column;
+}
+main .login-registro {
+  height: 500px;
+  width: 800px;
+  background-color: white;
+  border: 4px solid rgb(59, 52, 153);
+  position: absolute;
+  margin-left: 20%;
+  margin-top: 50px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+main .login-registro img {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  margin-top: 50px;
+}
+main .login-registro h2 {
+  margin-top: 10px;
+  font-size: 35px;
+}
+main .login-registro h3 {
+  font-size: 20px;
+  margin-left: 60px;
+  color: rgba(0, 0, 0, 0.589);
+}
+main .login-registro .login-form {
+  margin-top: 20px;
+}
+main .login-registro .login-form input {
+  width: 200px;
+  height: 24px;
+  border-radius: 5px;
+  border: 2px solid rgb(107, 105, 105);
+  padding: 12px;
+  margin-bottom: 10px;
+}
+main .login-registro .login-form .button input {
+  padding: 0;
+  height: 30px;
+  width: 100px;
+  border: 2px solid rgba(79, 52, 153, 0.897);
+  background-color: white;
+}
+main h2 {
+  margin-left: 50px;
+  color: rgba(32, 25, 136, 0.822);
+}
+main .container-producto {
+  background-color: wheat;
+  width: 280px;
+  height: 320px;
+}
+main .container-producto .imagen-producto {
+  width: 280px;
+  height: 280px;
+}
+main .container-producto .imagen-producto img {
+  width: 280px;
+  height: 280px;
+}/*# sourceMappingURL=styles.css.map */
