@@ -11,7 +11,7 @@ body {
 }
 
 header {
-  background-color: rgba(32, 25, 136, 0.527);
+  background-color: rgba(73, 66, 145, 0.863);
   height: 100vh;
   width: 40vh;
   display: flex;
@@ -52,10 +52,14 @@ header .aside ul li span {
 
 main {
   background-color: white;
-  height: 100%;
+  height: auto;
   width: 100%;
   border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
   position: relative;
+  padding-left: 50px;
 }
 main .login-form {
   display: flex;
@@ -71,7 +75,7 @@ main .login-registro {
   margin-top: 50px;
   border-radius: 10px;
   text-align: center;
-  display: flex;
+  display: none;
   flex-direction: column;
 }
 main .login-registro img {
@@ -107,20 +111,59 @@ main .login-registro .login-form .button input {
   border: 2px solid rgba(79, 52, 153, 0.897);
   background-color: white;
 }
-main h2 {
-  margin-left: 50px;
+main .titulos-usuario {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+}
+main .titulos-usuario h2 {
+  margin-left: 12px;
+  margin-top: 20px;
+  margin-bottom: 40px;
   color: rgba(32, 25, 136, 0.822);
+  font-size: 38px;
+}
+main .titulos-usuario p {
+  font-size: 22px;
+  color: black;
+  font-weight: 600;
+  margin-right: 50px;
 }
 main .container-producto {
-  background-color: wheat;
+  background-color: rgba(32, 25, 136, 0.774);
   width: 280px;
-  height: 320px;
+  height: 370px;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-left: 10px;
 }
-main .container-producto .imagen-producto {
-  width: 280px;
+main .container-producto img {
+  width: 276px;
   height: 280px;
+  border-radius: 10px;
 }
-main .container-producto .imagen-producto img {
-  width: 280px;
-  height: 280px;
+main .container-producto h3 {
+  color: white;
+  margin-left: 5px;
+}
+main .container-producto h4 {
+  color: white;
+  margin-left: 5px;
+  font-weight: 300;
+}
+main .container-producto .cont-button {
+  display: flex;
+  justify-content: center;
+}
+main .container-producto .cont-button button {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  width: 200px;
+  color: rgba(32, 25, 136, 0.774);
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  margin-top: 4px;
+  font-weight: 600;
 }/*# sourceMappingURL=styles.css.map */
