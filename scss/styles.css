@@ -30,6 +30,7 @@ header .aside h1 {
   margin-left: 50px;
 }
 header .aside ul {
+  margin-left: -30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -40,6 +41,13 @@ header .aside ul li {
   margin-left: 70px;
   font-size: 20px;
   list-style: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+header .aside ul li img {
+  width: 26px;
+  margin-right: 10px;
 }
 header .aside ul li span {
   background-color: white;
@@ -48,6 +56,15 @@ header .aside ul li span {
   padding-top: 2px;
   padding-bottom: 2px;
   border-radius: 6px;
+  margin-left: 10px;
+}
+header .aside ul .elegido {
+  padding: 10px;
+  border-bottom-left-radius: 12px;
+  border-top-left-radius: 12px;
+  background-color: white;
+  color: rgba(32, 25, 136, 0.822);
+  font-weight: 600;
 }
 
 main {
@@ -75,7 +92,7 @@ main .login-registro {
   margin-top: 50px;
   border-radius: 10px;
   text-align: center;
-  display: none;
+  display: flex;
   flex-direction: column;
 }
 main .login-registro img {
@@ -111,26 +128,88 @@ main .login-registro .login-form .button input {
   border: 2px solid rgba(79, 52, 153, 0.897);
   background-color: white;
 }
-main .titulos-usuario {
+main .login-registrado {
+  height: 500px;
+  width: 800px;
+  background-color: white;
+  border: 4px solid rgb(59, 52, 153);
+  position: absolute;
+  margin-left: 20%;
+  margin-top: 50px;
+  border-radius: 10px;
+  text-align: center;
+  display: none;
+  flex-direction: column;
+}
+main .login-registrado img {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  margin-top: 50px;
+}
+main .login-registrado h2 {
+  margin-top: 10px;
+  font-size: 35px;
+}
+main .login-registrado h3 {
+  font-size: 20px;
+  margin-left: 60px;
+  color: rgba(0, 0, 0, 0.589);
+}
+main .login-registrado .login-form {
+  margin-top: 20px;
+}
+main .login-registrado .login-form input {
+  width: 200px;
+  height: 24px;
+  border-radius: 5px;
+  border: 2px solid rgb(107, 105, 105);
+  padding: 12px;
+  margin-bottom: 10px;
+}
+main .login-registrado .login-form .button input {
+  padding: 0;
+  height: 30px;
+  width: 100px;
+  border: 2px solid rgba(79, 52, 153, 0.897);
+  background-color: white;
+}
+main .body-ecomercce {
+  display: none;
+}
+main .body-ecomercce .titulos-usuario {
   display: flex;
   align-items: center;
   text-align: center;
   justify-content: space-between;
 }
-main .titulos-usuario h2 {
+main .body-ecomercce .titulos-usuario h2 {
   margin-left: 12px;
   margin-top: 20px;
   margin-bottom: 40px;
   color: rgba(32, 25, 136, 0.822);
   font-size: 38px;
 }
-main .titulos-usuario p {
-  font-size: 22px;
-  color: black;
-  font-weight: 600;
+main .body-ecomercce .titulos-usuario .user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-right: 50px;
 }
-main .container-producto {
+main .body-ecomercce .titulos-usuario .user p {
+  font-size: 20px;
+  color: black;
+  font-weight: 400;
+  margin-top: 8px;
+}
+main .body-ecomercce .titulos-usuario .user p span {
+  font-weight: 600;
+  margin-left: 5px;
+}
+main .body-ecomercce .titulos-usuario .user img {
+  width: 38px;
+}
+main .body-ecomercce .container-producto {
   background-color: rgba(32, 25, 136, 0.774);
   width: 280px;
   height: 370px;
@@ -138,25 +217,25 @@ main .container-producto {
   border-radius: 10px;
   margin-left: 10px;
 }
-main .container-producto img {
+main .body-ecomercce .container-producto img {
   width: 276px;
   height: 280px;
   border-radius: 10px;
 }
-main .container-producto h3 {
+main .body-ecomercce .container-producto h3 {
   color: white;
   margin-left: 5px;
 }
-main .container-producto h4 {
+main .body-ecomercce .container-producto h4 {
   color: white;
   margin-left: 5px;
   font-weight: 300;
 }
-main .container-producto .cont-button {
+main .body-ecomercce .container-producto .cont-button {
   display: flex;
   justify-content: center;
 }
-main .container-producto .cont-button button {
+main .body-ecomercce .container-producto .cont-button button {
   padding-top: 4px;
   padding-bottom: 4px;
   width: 200px;
