@@ -209,6 +209,11 @@ main{
 
     .body-ecomercce{
         display: none;
+        .productos{
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
         .titulos-usuario{
             display: flex;
             align-items: center;
@@ -250,6 +255,7 @@ main{
             border: 2px solid black;
             border-radius: 10px;
             margin-left: 10px;
+            margin-bottom: 40px;
                 img{
                     width: 276px;
                     height:280px;

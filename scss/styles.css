@@ -200,6 +200,11 @@ main .login-registrado .button input {
 .body-ecomercce {
   display: none;
 }
+.body-ecomercce .productos {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
 .body-ecomercce .titulos-usuario {
   display: flex;
   align-items: center;
@@ -239,6 +244,7 @@ main .login-registrado .button input {
   border: 2px solid black;
   border-radius: 10px;
   margin-left: 10px;
+  margin-bottom: 40px;
 }
 .body-ecomercce .container-producto img {
   width: 276px;

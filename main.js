@@ -11,6 +11,7 @@ const iniciarRegistrado= document.querySelector("#iniciar-registrado")
 const aIniciar= document.querySelector("#aIniciar");
 const cierraSesion= document.querySelector("#cierra-sesion")
 const userIncorrecto= document.querySelector("#incorrecto")
+const containerProductos= document.querySelector(".productos")
 
 
 // datos de usuarios guardados en "base de datos en js"
@@ -66,7 +67,7 @@ iniciaSesion.onsubmit=(evento)=>{
         nombreUser.innerText=userRegistrado.value;
 
     }else if(comprobarLocalStorage(userRegistrado.value)!= passRegistrado.value ){
-        userIncorrecto.style.display= "block"
+        userIncorrecto.style.display= "flex"
         userRegistrado.style.border= "2px solid red";
         passRegistrado.style.border= "2px solid red";
 
@@ -78,9 +79,34 @@ iniciaSesion.onsubmit=(evento)=>{
  cierraSesion.onclick= (evento)=>{
     evento.preventDefault();
     bodyEcomercce.style.display="none";
-    registrarLogin.style.display="block";
+    registrarLogin.style.display="flex";
     userRegistrado.value="";
     passRegistrado.value="";
     inputUsuario.value="";
     inputPass.value="";
 }
+
+
+
+
+function productosHtml(array ){
+
+
+    array.forEach(producto => {
+        const divContainer= document.createElement("div")
+        divContainer.className="container-producto"
+        divContainer.innerHTML= `
+        <img src=${producto.imagen} alt=${producto.id}>
+        <div>
+        <h3>${producto.nombre}</h2>
+        <h4>${producto.precio}</h3>
+        </div>
+        <div class="cont-button">
+        <button>AGREGAR</button>
+        </div>
+        `
+        containerProductos.appendChild(divContainer)
+    });
+}
+
+productosHtml(listaProductos)
