@@ -43,13 +43,14 @@ header .aside ul li {
   list-style: none;
   display: flex;
   align-items: center;
+  margin-top: 10px;
   cursor: pointer;
 }
-header .aside ul li img {
+header .aside ul img {
   width: 26px;
   margin-right: 10px;
 }
-header .aside ul li span {
+header .aside ul span {
   background-color: white;
   color: rgba(32, 25, 136, 0.527);
   padding: 4px;
@@ -58,13 +59,29 @@ header .aside ul li span {
   border-radius: 6px;
   margin-left: 10px;
 }
-header .aside ul .elegido {
+header .aside ul .carrito {
+  margin-top: 50px;
+}
+header .aside ul .contacto {
+  margin-top: 50px;
+}
+header .aside .cierra {
+  font-size: 16px;
+}
+header .aside .cierra:hover {
+  text-decoration: underline;
+}
+header .aside .elegido {
   padding: 10px;
   border-bottom-left-radius: 12px;
   border-top-left-radius: 12px;
   background-color: white;
   color: rgba(32, 25, 136, 0.822);
   font-weight: 600;
+}
+header .aside .derechos {
+  color: gray;
+  margin-left: 10px;
 }
 
 main {
@@ -167,49 +184,55 @@ main .login-registrado .login-form input {
   padding: 12px;
   margin-bottom: 10px;
 }
-main .login-registrado .login-form .button input {
+main .login-registrado .login-form .incorrecto {
+  color: red;
+  margin-bottom: 8px;
+  display: none;
+}
+main .login-registrado .button input {
   padding: 0;
   height: 30px;
   width: 100px;
   border: 2px solid rgba(79, 52, 153, 0.897);
   background-color: white;
 }
-main .body-ecomercce {
+
+.body-ecomercce {
   display: none;
 }
-main .body-ecomercce .titulos-usuario {
+.body-ecomercce .titulos-usuario {
   display: flex;
   align-items: center;
   text-align: center;
   justify-content: space-between;
 }
-main .body-ecomercce .titulos-usuario h2 {
+.body-ecomercce .titulos-usuario h2 {
   margin-left: 12px;
   margin-top: 20px;
   margin-bottom: 40px;
   color: rgba(32, 25, 136, 0.822);
   font-size: 38px;
 }
-main .body-ecomercce .titulos-usuario .user {
+.body-ecomercce .titulos-usuario .user {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-right: 50px;
 }
-main .body-ecomercce .titulos-usuario .user p {
+.body-ecomercce .titulos-usuario .user p {
   font-size: 20px;
   color: black;
   font-weight: 400;
   margin-top: 8px;
 }
-main .body-ecomercce .titulos-usuario .user p span {
+.body-ecomercce .titulos-usuario .user p span {
   font-weight: 600;
   margin-left: 5px;
 }
-main .body-ecomercce .titulos-usuario .user img {
+.body-ecomercce .titulos-usuario .user img {
   width: 38px;
 }
-main .body-ecomercce .container-producto {
+.body-ecomercce .container-producto {
   background-color: rgba(32, 25, 136, 0.774);
   width: 280px;
   height: 370px;
@@ -217,25 +240,25 @@ main .body-ecomercce .container-producto {
   border-radius: 10px;
   margin-left: 10px;
 }
-main .body-ecomercce .container-producto img {
+.body-ecomercce .container-producto img {
   width: 276px;
   height: 280px;
   border-radius: 10px;
 }
-main .body-ecomercce .container-producto h3 {
+.body-ecomercce .container-producto h3 {
   color: white;
   margin-left: 5px;
 }
-main .body-ecomercce .container-producto h4 {
+.body-ecomercce .container-producto h4 {
   color: white;
   margin-left: 5px;
   font-weight: 300;
 }
-main .body-ecomercce .container-producto .cont-button {
+.body-ecomercce .container-producto .cont-button {
   display: flex;
   justify-content: center;
 }
-main .body-ecomercce .container-producto .cont-button button {
+.body-ecomercce .container-producto .cont-button button {
   padding-top: 4px;
   padding-bottom: 4px;
   width: 200px;

@@ -38,7 +38,9 @@ header{
                 list-style: none;
                 display: flex;
                 align-items: center;
+                margin-top: 10px;
                 cursor: pointer;
+                }
                 img{
                     width: 26px;
                     margin-right: 10px;
@@ -52,7 +54,20 @@ header{
                     border-radius: 6px;
                     margin-left: 10px;
                 }
+            .carrito{
+                margin-top: 50px;
+            }
+            .contacto{
+                margin-top: 50px;
+            }
 
+            }
+            .cierra{
+                font-size: 16px;
+
+            }
+            .cierra:hover{
+                text-decoration: underline;
             }
             .elegido{
                 padding: 10px;
@@ -62,10 +77,14 @@ header{
                 color: rgba(32, 25, 136, 0.822);
                 font-weight: 600;
             }
+            .derechos{
+                color: gray;
+                margin-left: 10px;
+            }
         }
 
     }
-}
+
 main{
     background-color: white;
     height: auto;
@@ -167,6 +186,13 @@ main{
                 padding: 12px;
                 margin-bottom: 10px;
             }
+            .incorrecto{
+                color: red;
+                margin-bottom: 8px;
+                display: none;
+                
+                }
+            }
             .button{
                 input{
                     padding: 0;
@@ -254,10 +280,10 @@ main{
                     }
                 }
     
-            }
         }
-
-    }
+}
+    
+    
     
     
 

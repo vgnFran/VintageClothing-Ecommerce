@@ -15,16 +15,16 @@
             <h1>E-Commerce</h1>
             <div>
                 <ul>
-                    <li id="todos"> Todos los Productos</li>
-                    <li>Buzos</li>
-                    <li>Remeras</li>
-                    <li>Pantalones</li>
-                    <li><img src="images/carrito.png" alt="">Carrito <span>0</span></li>
-                    <li>Contacto</li>
-                    <li id="cierra-sesion">Cerrar sesion</li>
+                    <li id="todos"> <img src="images/market.png" alt=""> Todos los Productos</li>
+                    <li> <img src="images/buzo-icon.png" alt=""> Buzos</li>
+                    <li> <img src="images/remera-icon.png" alt=""> Remeras</li>
+                    <li> <img src="images/pantalon-icon.png" alt=""> Pantalones</li>
+                    <li class="carrito"><img src="images/carrito.png" alt="">Carrito <span>0</span></li>
+                    <li class="contacto">Contacto</li>
+                    <li class="cierra" id="cierra-sesion">Cerrar sesion</li>
                 </ul>
             </div>
-            <p>®.E-comercce Todos los Derechos Reservados.</p>
+            <p class="derechos">®.E-comercce Todos los Derechos Reservados.</p>
         </section>
     </header>
 
@@ -67,6 +67,7 @@
                 <label>
                     <input type="password" id="pass-registrado" placeholder="Contraseña">
                 </label>
+                <p class="incorrecto" id="incorrecto">Nombre o contraseña incorrectos.</p>
                 <label class="button">
                     <input type="submit" value="Iniciar Sesion">
                 </label>
