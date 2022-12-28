@@ -12,6 +12,7 @@ const aIniciar= document.querySelector("#aIniciar");
 const cierraSesion= document.querySelector("#cierra-sesion")
 const userIncorrecto= document.querySelector("#incorrecto")
 const containerProductos= document.querySelector(".productos")
+const todosProductos= document.querySelector("#todos")
 
 
 // datos de usuarios guardados en "base de datos en js"
@@ -38,6 +39,9 @@ formLogin.onsubmit= (evento)=>{
         registrarLogin.style.display="none";
         bodyEcomercce.style.display="block";
         nombreUser.innerText=inputUsuario.value;
+        registrarLocalStorage("inicio",true);
+        registrarLocalStorage("nombre",inputUsuario.value)
+        todosProductos.classList.add("elegido")
     }else if(inputUsuario.value==""){
         inputUsuario.style.border= "2px solid red"
     }
@@ -65,7 +69,9 @@ iniciaSesion.onsubmit=(evento)=>{
         iniciarRegistrado.style.display="none";
         bodyEcomercce.style.display="block";
         nombreUser.innerText=userRegistrado.value;
-
+        registrarLocalStorage("inicio",true);
+        registrarLocalStorage("nombre",userRegistrado.value)
+        todosProductos.classList.add("elegido")
     }else if(comprobarLocalStorage(userRegistrado.value)!= passRegistrado.value ){
         userIncorrecto.style.display= "flex"
         userRegistrado.style.border= "2px solid red";
@@ -73,6 +79,7 @@ iniciaSesion.onsubmit=(evento)=>{
 
     }
  }
+
 
 
 // funcion para cerrar sesion 
@@ -84,9 +91,25 @@ iniciaSesion.onsubmit=(evento)=>{
     passRegistrado.value="";
     inputUsuario.value="";
     inputPass.value="";
+    localStorage.removeItem("inicio");
+    localStorage.removeItem("nombre");
+    todosProductos.classList.remove("elegido");
 }
 
+//funcion para validar si hay una sesion iniciada 
 
+function validacion(clave){
+    if(clave== true){
+        registrarLogin.style.display="none";
+        iniciarRegistrado.style.display="none";
+        bodyEcomercce.style.display="block";
+        nombreUser.innerText= comprobarLocalStorage("nombre")
+    } else{
+        registrarLogin.style.display="block"
+    }
+}
+
+validacion(comprobarLocalStorage("inicio"))
 
 
 function productosHtml(array ){
@@ -110,3 +133,4 @@ function productosHtml(array ){
 }
 
 productosHtml(listaProductos)
+
