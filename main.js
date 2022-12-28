@@ -9,10 +9,15 @@ const userRegistrado= document.querySelector("#nombre-registrado");
 const passRegistrado= document.querySelector("#pass-registrado");
 const iniciarRegistrado= document.querySelector("#iniciar-registrado")
 const aIniciar= document.querySelector("#aIniciar");
-const cierraSesion= document.querySelector("#cierra-sesion")
-const userIncorrecto= document.querySelector("#incorrecto")
-const containerProductos= document.querySelector(".productos")
-const todosProductos= document.querySelector("#todos")
+const cierraSesion= document.querySelector("#cierra-sesion");
+const userIncorrecto= document.querySelector("#incorrecto");
+const containerProductos= document.querySelector(".productos");
+const todosProductos= document.querySelector("#todos");
+const buzos= document.querySelector("#buzos");
+const remeras= document.querySelector("#remeras");
+const pantalones= document.querySelector("#pantalones");
+const carrito= document.querySelector("#carrito");
+const contacto= document.querySelector("#contacto");
 
 
 // datos de usuarios guardados en "base de datos en js"
@@ -112,6 +117,8 @@ function validacion(clave){
 validacion(comprobarLocalStorage("inicio"))
 
 
+//trayendo elementos al dom desde un array de objetos en js
+
 function productosHtml(array ){
 
 
@@ -134,3 +141,59 @@ function productosHtml(array ){
 
 productosHtml(listaProductos)
 
+todosProductos.onclick=()=>{
+    todosProductos.classList.add("elegido");
+    buzos.classList.remove("elegido")
+    remeras.classList.remove("elegido")
+    pantalones.classList.remove("elegido")
+    carrito.classList.remove("elegido")
+    contacto.classList.remove("elegido")
+}
+
+buzos.onclick= ()=>{
+    todosProductos.classList.remove("elegido")
+    buzos.classList.toggle("elegido")
+    remeras.classList.remove("elegido")
+    pantalones.classList.remove("elegido")
+    carrito.classList.remove("elegido")
+    contacto.classList.remove("elegido")
+
+    
+}
+
+remeras.onclick= ()=>{
+    todosProductos.classList.remove("elegido")
+    buzos.classList.remove("elegido")
+    remeras.classList.add("elegido")
+    pantalones.classList.remove("elegido")
+    carrito.classList.remove("elegido")
+    contacto.classList.remove("elegido")
+
+}
+
+pantalones.onclick= ()=>{
+    todosProductos.classList.remove("elegido")
+    buzos.classList.remove("elegido")
+    remeras.classList.remove("elegido")
+    pantalones.classList.add("elegido")
+    carrito.classList.remove("elegido")
+    contacto.classList.remove("elegido")
+}
+
+carrito.onclick= ()=>{
+    todosProductos.classList.remove("elegido")
+    buzos.classList.remove("elegido")
+    remeras.classList.remove("elegido")
+    pantalones.classList.remove("elegido")
+    carrito.classList.add("elegido")
+    contacto.classList.remove("elegido")
+}
+
+contacto.onclick= ()=>{
+    todosProductos.classList.remove("elegido")
+    buzos.classList.remove("elegido")
+    remeras.classList.remove("elegido")
+    pantalones.classList.remove("elegido")
+    carrito.classList.remove("elegido")
+    contacto.classList.add("elegido")
+}
