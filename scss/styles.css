@@ -43,7 +43,7 @@ header .aside ul li {
   list-style: none;
   display: flex;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 20px;
   cursor: pointer;
 }
 header .aside ul img {
@@ -250,6 +250,7 @@ main .login-registrado .button input {
   width: 276px;
   height: 280px;
   border-radius: 10px;
+  -o-object-fit: cover;
 }
 .body-ecomercce .container-producto h3 {
   color: white;
