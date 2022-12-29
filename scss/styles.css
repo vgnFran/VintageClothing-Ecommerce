@@ -20,6 +20,34 @@
 .modo-oscuro .container-producto {
   background-color: rgb(37, 35, 35) !important;
 }
+.modo-oscuro .login-registro {
+  border: 3px solid rgb(37, 35, 35);
+  background-color: lightgray;
+}
+.modo-oscuro .login-registro h3 {
+  color: rgb(37, 35, 35) !important;
+  background-color: lightgray;
+}
+.modo-oscuro .login-registro form input {
+  border: 2px solid gray !important;
+}
+.modo-oscuro .login-registro form p {
+  color: rgb(37, 35, 35) !important;
+}
+.modo-oscuro #iniciar-registrado {
+  border: 3px solid rgb(37, 35, 35) !important;
+  background-color: lightgray;
+}
+.modo-oscuro #iniciar-registrado h3 {
+  color: rgb(37, 35, 35) !important;
+  background-color: lightgray;
+}
+.modo-oscuro #iniciar-registrado form input {
+  border: 2px solid gray !important;
+}
+.modo-oscuro #iniciar-registrado form p {
+  color: rgb(37, 35, 35) !important;
+}
 
 .modo-oscuro-main {
   background-color: lightgrey;
@@ -79,6 +107,9 @@ header .aside ul span {
   border-radius: 6px;
   margin-left: 10px;
 }
+header .aside ul .li-oscuro {
+  font-size: 18px;
+}
 header .aside ul .carrito {
   margin-top: 50px;
 }
@@ -90,6 +121,8 @@ header .aside ul .interruptor {
   display: inline-block;
   width: 36px;
   height: 18px;
+  margin-top: 8px;
+  margin-left: 10px;
   background-color: white;
   border-radius: 40px;
   cursor: pointer;

@@ -23,6 +23,7 @@ const main=document.querySelector(".main")
 const productosTitulo=document.querySelector("#todos-productos")
 const aside=document.querySelector(".aside");
 const body=document.querySelector("body");
+const modo=document.querySelector("#modo");
 
 
 
@@ -93,7 +94,6 @@ iniciaSesion.onsubmit=(evento)=>{
  }
 
 
-
 // funcion para cerrar sesion 
  cierraSesion.onclick= (evento)=>{
     evento.preventDefault();
@@ -119,6 +119,7 @@ function validacion(clave){
         iniciarRegistrado.style.display="none";
         bodyEcomercce.style.display="block";
         nombreUser.innerText= comprobarLocalStorage("nombre")
+        todosProductos.classList.add("elegido")
     } else{
         registrarLogin.style.display="block"
         localStorage.removeItem("modo")
@@ -151,6 +152,9 @@ function productosHtml(array ){
 }
 
 productosHtml(listaProductos)
+
+
+//agregando y sacando estilos segun que categoria este seleccionada
 
 todosProductos.onclick=()=>{
     todosProductos.classList.add("elegido");
@@ -230,6 +234,7 @@ function validarModoOscuro(clave){
         aside.classList.add("modo-oscuro")
         main.classList.add("modo-oscuro-main")
         body.classList.add("modo-oscuro")
+
     }else {
         productosTitulo.classList.remove("modo-oscuro")
         aside.classList.remove("modo-oscuro")

@@ -18,6 +18,41 @@
     .container-producto{
         background-color:rgb(37, 35, 35)!important;
     }
+    .login-registro{
+        border: 3px solid rgb(37, 35, 35);
+        background-color: lightgray;
+ 
+        h3{
+            color:rgb(37, 35, 35)!important;
+            background-color: lightgray;
+        }
+        form{
+            input{
+                border: 2px solid gray!important;
+            }
+            p{
+                color: rgb(37, 35, 35)!important;
+            }
+        }
+        
+    }
+    #iniciar-registrado{
+        border: 3px solid rgb(37, 35, 35)!important;
+        background-color: lightgray;
+ 
+        h3{
+            color:rgb(37, 35, 35)!important;
+            background-color: lightgray;
+        }
+        form{
+            input{
+                border: 2px solid gray!important;
+            }
+            p{
+                color: rgb(37, 35, 35)!important;
+            }
+        }
+    } 
 }
 .modo-oscuro-main{
     background-color: lightgrey;
@@ -74,6 +109,9 @@ header{
                     border-radius: 6px;
                     margin-left: 10px;
                 }
+                .li-oscuro{
+                    font-size: 18px;
+                }
 
             .carrito{
                 margin-top: 50px;
@@ -86,6 +124,8 @@ header{
                 display: inline-block;
                 width: 36px;
                 height: 18px;
+                margin-top: 8px;
+                margin-left: 10px;
                 background-color: white;
                 border-radius: 40px;
                 cursor: pointer;
