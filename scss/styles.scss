@@ -4,6 +4,25 @@
     box-sizing: border-box;
     font-family: 'Noto Sans', sans-serif;
 }
+.modo-oscuro{
+    color: white!important;
+    background-color:rgb(37, 35, 35);
+    h2{
+        color: rgb(37, 35, 35) !important;
+        background-color: lightgrey;
+    }
+    h3{
+        color: lightgrey !important;
+        background-color:rgb(37, 35, 35);
+    }
+    .container-producto{
+        background-color:rgb(37, 35, 35)!important;
+    }
+}
+.modo-oscuro-main{
+    background-color: lightgrey;
+}
+
 body{
     display: flex;
     background-color: rgba(32, 25, 136, 0.822);
@@ -40,6 +59,7 @@ header{
                 align-items: center;
                 margin-top: 20px;
                 cursor: pointer;
+
                 }
                 img{
                     width: 26px;
@@ -54,14 +74,47 @@ header{
                     border-radius: 6px;
                     margin-left: 10px;
                 }
+
             .carrito{
                 margin-top: 50px;
             }
             .contacto{
                 margin-top: 50px;
             }
+            .interruptor{
+                position: relative;
+                display: inline-block;
+                width: 36px;
+                height: 18px;
+                background-color: white;
+                border-radius: 40px;
+                cursor: pointer;
+            }
+            .interruptor::after{
+                content: "";
+                position: absolute;
+                width: 16px;
+                height: 16px;
+                border-radius: 30px;
+                background-color:  rgba(73, 66, 145, 0.863);
+                left: 1px;
+                top: 1px;
+                transition: all 0.4s;
+            }
+            input[type='checkbox']:checked + .interruptor:after {
+                transform: translateX(18px);
+                background-color:  rgb(37, 35, 35);
+              }
+              
+              input[type='checkbox']:checked + .interruptor {
+                background-color: white
+              }
+              .esconder{
+                display: none;
+              }
 
             }
+
             .cierra{
                 font-size: 16px;
 
@@ -81,9 +134,12 @@ header{
                 color: gray;
                 margin-left: 10px;
             }
+
         }
 
     }
+
+    
 
 main{
     background-color: white;
@@ -178,6 +234,9 @@ main{
         }
         .login-form{
             margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             input{
                 width: 200px;
                 height: 24px;
@@ -207,6 +266,8 @@ main{
     }
 
 
+
+
     .body-ecomercce{
         display: none;
         .productos{
@@ -214,11 +275,13 @@ main{
             flex-wrap: wrap;
             width: 100%;
         }
+
         .titulos-usuario{
             display: flex;
             align-items: center;
             text-align: center;
             justify-content: space-between;
+
             h2{
                 margin-left: 12px;
                 margin-top: 20px;
@@ -226,11 +289,15 @@ main{
                 color:rgba(32, 25, 136, 0.822);
                 font-size: 38px;
             }
+
             .user{
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 margin-right: 50px;
+                .modo-oscuro{
+                    color: white;
+                }
                 p{
                     font-size: 20px;
                     color:black;
@@ -245,9 +312,10 @@ main{
                     width: 38px;
                 }
             }
-    
         }
-    
+        
+
+
         .container-producto{
             background-color: rgba(32, 25, 136, 0.774);
             width: 280px;
@@ -286,8 +354,16 @@ main{
                         font-weight: 600;
                     }
                 }
+
     
         }
+
+
+
+       
+
+
+    
 }
     
     

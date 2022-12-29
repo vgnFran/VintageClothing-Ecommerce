@@ -15,12 +15,18 @@
             <h1>E-Commerce</h1>
             <div>
                 <ul>
-                    <li id="todos"> <img src="images/market.png" alt=""> Todos los Productos</li>
-                    <li id="buzos"> <img src="images/buzo-icon.png" alt=""> Buzos</li>
-                    <li id="remeras"> <img src="images/remera-icon.png" alt=""> Remeras</li>
-                    <li id="pantalones"> <img src="images/pantalon-icon.png" alt=""> Pantalones</li>
-                    <li class="carrito" id="carrito"><img src="images/carrito.png" alt="">Carrito <span>0</span></li>
-                    <li class="contacto" id="contacto"> <img src="images/contacto-icon.png" alt=""> Contacto</li>
+                    <li class="li" id="todos"> <img src="images/market.png" alt=""> Todos los Productos</li>
+                    <li class="li" id="buzos"> <img src="images/buzo-icon.png" alt=""> Buzos</li>
+                    <li class="li" id="remeras"> <img src="images/remera-icon.png" alt=""> Remeras</li>
+                    <li class="li" id="pantalones"> <img src="images/pantalon-icon.png" alt=""> Pantalones</li>
+                    <li class="li carrito" id="carrito"><img src="images/carrito.png" alt="">Carrito <span>0</span></li>
+                    <li class="li contacto" id="contacto"> <img src="images/contacto-icon.png" alt=""> Contacto</li>
+                    <li>
+                        <div>
+                            <input type="checkbox" id="toggle" class="esconder">
+                            <label for="toggle" class="interruptor"></label>
+                        </div>
+                    </li>
                     <li class="cierra" id="cierra-sesion">Cerrar sesion</li>
                 </ul>
             </div>
@@ -28,7 +34,7 @@
         </section>
     </header>
 
-    <main>
+    <main class="main">
 
         <div class="login-registro" id="registro-login">
             <div>
@@ -77,26 +83,17 @@
 
         <div class="body-ecomercce" id="ecomercce-body">
             <div class="titulos-usuario">
-                <h2>Todos los Productos.</h2>
+                <h2 id="todos-productos">Todos los Productos.</h2>
                 <div class="user">
-                    <p>Bienvenido,<span id="nombre-user">Usuario</span></p>
+                    <p id="bienvenido">Bienvenido,<span id="nombre-user">Usuario</span></p>
                     <img src="images/login-icon.png" alt="">
                 </div>
             </div>
 
             <div class="productos">
-                <!-- <div class="container-producto">
-                    <img src="images/buzo.png" alt="">
-                    <div>
-                        <h3>Buzo 01</h2>
-                        <h4>$1000</h3>
-                    </div>
-                    <div class="cont-button">
-                        <button>AGREGAR</button>
-                    </div>
-                    
-        
-                </div> -->
+
+                <!-- aca se insertan los productos desde js -->
+
             </div>
 
         </div>

@@ -18,6 +18,13 @@ const remeras= document.querySelector("#remeras");
 const pantalones= document.querySelector("#pantalones");
 const carrito= document.querySelector("#carrito");
 const contacto= document.querySelector("#contacto");
+const interruptor= document.querySelector(".interruptor")
+const main=document.querySelector(".main")
+const productosTitulo=document.querySelector("#todos-productos")
+const aside=document.querySelector(".aside");
+const body=document.querySelector("body");
+
+
 
 
 // datos de usuarios guardados en "base de datos en js"
@@ -99,6 +106,9 @@ iniciaSesion.onsubmit=(evento)=>{
     localStorage.removeItem("inicio");
     localStorage.removeItem("nombre");
     todosProductos.classList.remove("elegido");
+    localStorage.removeItem("modo")
+    validarModoOscuro(comprobarLocalStorage("modo"))
+    
 }
 
 //funcion para validar si hay una sesion iniciada 
@@ -111,6 +121,7 @@ function validacion(clave){
         nombreUser.innerText= comprobarLocalStorage("nombre")
     } else{
         registrarLogin.style.display="block"
+        localStorage.removeItem("modo")
     }
 }
 
@@ -127,7 +138,7 @@ function productosHtml(array ){
         divContainer.className="container-producto"
         divContainer.innerHTML= `
         <img src=${producto.imagen} alt=${producto.id}>
-        <div>
+        <div id="body-producto">
         <h3>${producto.nombre}</h2>
         <h4>${producto.precio}</h3>
         </div>
@@ -197,3 +208,36 @@ contacto.onclick= ()=>{
     carrito.classList.remove("elegido")
     contacto.classList.add("elegido")
 }
+
+//modo oscuro
+
+
+interruptor.onclick= ()=>{
+    productosTitulo.classList.toggle("modo-oscuro")
+    aside.classList.toggle("modo-oscuro")
+    main.classList.toggle("modo-oscuro-main")
+    body.classList.toggle("modo-oscuro")
+    registrarLocalStorage("modo","oscuro")
+
+}
+
+
+// validacion modo oscuro (si modo oscuro fue activado, cuando recargamos la pagina seguira estando)
+
+function validarModoOscuro(clave){
+    if  (clave=="oscuro"){
+        productosTitulo.classList.add("modo-oscuro")
+        aside.classList.add("modo-oscuro")
+        main.classList.add("modo-oscuro-main")
+        body.classList.add("modo-oscuro")
+    }else {
+        productosTitulo.classList.remove("modo-oscuro")
+        aside.classList.remove("modo-oscuro")
+        main.classList.remove("modo-oscuro-main")
+        body.classList.remove("modo-oscuro")
+    }
+
+
+}
+
+validarModoOscuro(comprobarLocalStorage("modo"))
