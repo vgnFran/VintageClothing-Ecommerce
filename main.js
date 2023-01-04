@@ -24,7 +24,7 @@ const productosTitulo=document.querySelector("#todos-productos")
 const aside=document.querySelector(".aside");
 const body=document.querySelector("body");
 const modo=document.querySelector("#modo");
-
+const modoCheckbox= document.querySelector("#toggle")
 
 
 
@@ -133,7 +133,6 @@ validacion(comprobarLocalStorage("inicio"))
 
 function productosHtml(array ){
 
-
     array.forEach(producto => {
         const divContainer= document.createElement("div")
         divContainer.className="container-producto"
@@ -163,6 +162,7 @@ todosProductos.onclick=()=>{
     pantalones.classList.remove("elegido")
     carrito.classList.remove("elegido")
     contacto.classList.remove("elegido")
+    console.log("todos")
 }
 
 buzos.onclick= ()=>{
@@ -172,8 +172,9 @@ buzos.onclick= ()=>{
     pantalones.classList.remove("elegido")
     carrito.classList.remove("elegido")
     contacto.classList.remove("elegido")
-
-    
+    console.log("aca")
+    productosHtml(productosBuzos)
+      
 }
 
 remeras.onclick= ()=>{
@@ -222,7 +223,9 @@ interruptor.onclick= ()=>{
     main.classList.toggle("modo-oscuro-main")
     body.classList.toggle("modo-oscuro")
     registrarLocalStorage("modo","oscuro")
-
+    if(modoCheckbox.checked==true){
+        localStorage.removeItem("modo")
+    }
 }
 
 
@@ -234,15 +237,43 @@ function validarModoOscuro(clave){
         aside.classList.add("modo-oscuro")
         main.classList.add("modo-oscuro-main")
         body.classList.add("modo-oscuro")
+        modoCheckbox.checked=true
 
     }else {
         productosTitulo.classList.remove("modo-oscuro")
         aside.classList.remove("modo-oscuro")
         main.classList.remove("modo-oscuro-main")
         body.classList.remove("modo-oscuro")
+        modoCheckbox.checked=false
     }
 
 
 }
 
 validarModoOscuro(comprobarLocalStorage("modo"))
+
+// agregando productos a las secciones 
+
+const productosBuzos= listaProductos.filter(producto =>{
+    return producto.categoria=="buzo"
+})
+
+console.log(productosBuzos)
+
+
+const productosRemeras= listaProductos.filter(producto =>{
+    return producto.categoria=="remera"
+})
+
+console.log(productosRemeras)
+
+const productosPantalones= listaProductos.filter(producto =>{
+    return producto.categoria=="pantalones"
+})
+
+console.log(productosPantalones)
+
+
+// buzos.onclick= ()=>{
+    
+// }
