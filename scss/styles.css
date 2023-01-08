@@ -9,6 +9,9 @@
   color: white !important;
   background-color: rgb(37, 35, 35);
 }
+.modo-oscuro .elegido {
+  color: rgb(37, 35, 35) !important;
+}
 .modo-oscuro h2 {
   color: rgb(37, 35, 35) !important;
   background-color: lightgrey;
@@ -73,9 +76,10 @@ header .aside {
   justify-content: space-around;
 }
 header .aside h1 {
-  color: white;
+  color: rgb(255, 255, 255);
   font-size: 36px;
   margin-left: 50px;
+  text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.67);
 }
 header .aside ul {
   margin-left: -30px;
@@ -94,7 +98,7 @@ header .aside ul li {
   margin-top: 20px;
   cursor: pointer;
 }
-header .aside ul img {
+header .aside ul i {
   width: 26px;
   margin-right: 10px;
 }
@@ -302,7 +306,8 @@ main .login-registrado .button input {
   margin-top: 20px;
   margin-bottom: 40px;
   color: rgba(32, 25, 136, 0.822);
-  font-size: 38px;
+  font-size: 34px;
+  text-shadow: -1px 1px 4px rgba(0, 0, 0, 0.315);
 }
 .body-ecomercce .titulos-usuario .user {
   display: flex;
@@ -330,10 +335,11 @@ main .login-registrado .button input {
   background-color: rgba(32, 25, 136, 0.774);
   width: 280px;
   height: 370px;
-  border: 2px solid black;
+  border: 2px solid rgba(0, 0, 0, 0);
   border-radius: 10px;
   margin-left: 10px;
   margin-bottom: 40px;
+  box-shadow: 12.5px 10.1px 12px rgba(0, 0, 0, 0.19), 100px 81px 96px rgba(0, 0, 0, 0.095);
 }
 .body-ecomercce .container-producto img {
   width: 276px;
@@ -345,11 +351,13 @@ main .login-registrado .button input {
 .body-ecomercce .container-producto h3 {
   color: white;
   margin-left: 5px;
+  text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.67);
 }
 .body-ecomercce .container-producto h4 {
   color: white;
   margin-left: 5px;
   font-weight: 300;
+  text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.67);
 }
 .body-ecomercce .container-producto .cont-button {
   display: flex;

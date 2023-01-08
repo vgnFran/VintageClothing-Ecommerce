@@ -27,7 +27,6 @@ const modo=document.querySelector("#modo");
 const modoCheckbox= document.querySelector("#toggle")
 
 
-
 // datos de usuarios guardados en "base de datos en js"
 let usuario1={
     usuario:"Franco",
@@ -132,7 +131,7 @@ validacion(comprobarLocalStorage("inicio"))
 //trayendo elementos al dom desde un array de objetos en js
 
 function productosHtml(array ){
-
+    containerProductos.innerHTML=""
     array.forEach(producto => {
         const divContainer= document.createElement("div")
         divContainer.className="container-producto"
@@ -162,18 +161,19 @@ todosProductos.onclick=()=>{
     pantalones.classList.remove("elegido")
     carrito.classList.remove("elegido")
     contacto.classList.remove("elegido")
-    console.log("todos")
+    productosHtml(listaProductos)
+    productosTitulo.innerText="Todos los Productos"
 }
 
 buzos.onclick= ()=>{
     todosProductos.classList.remove("elegido")
-    buzos.classList.toggle("elegido")
+    buzos.classList.add("elegido")
     remeras.classList.remove("elegido")
     pantalones.classList.remove("elegido")
     carrito.classList.remove("elegido")
     contacto.classList.remove("elegido")
-    console.log("aca")
-    productosHtml(productosBuzos)
+    productosHtml(agregaSecciones("buzo"))
+    productosTitulo.innerText="Buzos"
       
 }
 
@@ -184,7 +184,8 @@ remeras.onclick= ()=>{
     pantalones.classList.remove("elegido")
     carrito.classList.remove("elegido")
     contacto.classList.remove("elegido")
-
+    productosHtml(agregaSecciones("remera"))
+    productosTitulo.innerText="Remeras"
 }
 
 pantalones.onclick= ()=>{
@@ -194,6 +195,8 @@ pantalones.onclick= ()=>{
     pantalones.classList.add("elegido")
     carrito.classList.remove("elegido")
     contacto.classList.remove("elegido")
+    productosHtml(agregaSecciones("pantalones"))
+    productosTitulo.innerText="Pantalones"
 }
 
 carrito.onclick= ()=>{
@@ -254,26 +257,12 @@ validarModoOscuro(comprobarLocalStorage("modo"))
 
 // agregando productos a las secciones 
 
-const productosBuzos= listaProductos.filter(producto =>{
-    return producto.categoria=="buzo"
-})
-
-console.log(productosBuzos)
-
-
-const productosRemeras= listaProductos.filter(producto =>{
-    return producto.categoria=="remera"
-})
-
-console.log(productosRemeras)
-
-const productosPantalones= listaProductos.filter(producto =>{
-    return producto.categoria=="pantalones"
-})
-
-console.log(productosPantalones)
+function agregaSecciones(categoria){
+    return listaProductos.filter(producto =>{
+        return producto.categoria==categoria
+    })
+}
 
 
-// buzos.onclick= ()=>{
-    
-// }
+
+
