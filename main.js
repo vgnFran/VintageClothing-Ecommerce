@@ -46,7 +46,7 @@ const comprobarLocalStorage = ( clave ) => {
 // funcion para registrar usuario nuevo (guardado en localStorage)
 formLogin.onsubmit= (evento)=>{
     evento.preventDefault()
-    if( (inputUsuario.value!="" && inputPass.value!="") && (inputUsuario.value.match(/[a-zA-Z]/) && inputPass.value.match(/[a-zA-Z]/)) ){
+    if( (inputUsuario.value!="" && inputPass.value!="") && (inputUsuario.value.match(/[A-Z]/) && inputPass.value.match(/[A-Z]/)) ){
         registrarLocalStorage(inputUsuario.value,inputPass.value);
         registrarLogin.style.display="none";
         bodyEcomercce.style.display="block";

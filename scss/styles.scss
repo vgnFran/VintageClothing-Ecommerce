@@ -9,6 +9,7 @@
     background-color:rgb(37, 35, 35);
     .elegido{
         color:rgb(37, 35, 35)!important;
+        text-shadow: none!important;
     }
     h2{
         color: rgb(37, 35, 35) !important;
@@ -100,7 +101,7 @@ header{
                 align-items: center;
                 margin-top: 20px;
                 cursor: pointer;
-
+                text-shadow: 1px 3px 5px rgba(0,0,0,0.6);
                 }
                 i{
                     width: 26px;
@@ -176,6 +177,7 @@ header{
                 background-color: white;
                 color: rgba(32, 25, 136, 0.822);
                 font-weight: 600;
+                text-shadow: none!important;
             }
             .derechos{
                 color: gray;
@@ -215,6 +217,9 @@ main{
         display: flex;
         flex-direction: column;
         justify-content: center;
+        box-shadow:
+        12.5px 10.1px 12px rgba(0, 0, 0, 0.19),
+        100px 81px 96px rgba(0, 0, 0, 0.095);
         
         img{
             width: 100px;
@@ -225,11 +230,13 @@ main{
         h2{
             margin-top: 10px;
             font-size: 35px;
+            text-shadow: 1px 3px 5px rgba(0,0,0,0.3);
         }
         h3{
             font-size: 20px;
             margin-left: 60px;
             color: rgba(0, 0, 0, 0.589);
+            text-shadow: 1px 3px 5px rgba(0,0,0,0.3);
         }
         .aclaracion{
             font-size: 14px;
@@ -254,7 +261,10 @@ main{
                     height: 30px;
                     width: 100px;
                     border: 2px solid rgba(79, 52, 153, 0.897);
-                    background-color: white
+                    background-color: white;
+                    box-shadow:
+                    12.5px 10.1px 12px rgba(0, 0, 0, 0.19),
+                    100px 81px 96px rgba(0, 0, 0, 0.095);
                 }
             }
             
@@ -273,6 +283,9 @@ main{
         text-align: center;
         display: none;
         flex-direction: column;
+        box-shadow:
+        12.5px 10.1px 12px rgba(0, 0, 0, 0.19),
+        100px 81px 96px rgba(0, 0, 0, 0.095);
         img{
             width: 100px;
             height: 100px;
@@ -282,11 +295,13 @@ main{
         h2{
             margin-top: 10px;
             font-size: 35px;
+            text-shadow: 1px 3px 5px rgba(0,0,0,0.3);
         }
         h3{
             font-size: 20px;
             margin-left: 60px;
             color: rgba(0, 0, 0, 0.589);
+            text-shadow: 1px 3px 5px rgba(0,0,0,0.3);
         }
         .login-form{
             margin-top: 20px;
@@ -314,7 +329,10 @@ main{
                     height: 30px;
                     width: 100px;
                     border: 2px solid rgba(79, 52, 153, 0.897);
-                    background-color: white
+                    background-color: white;
+                    box-shadow:
+                    12.5px 10.1px 12px rgba(0, 0, 0, 0.19),
+                    100px 81px 96px rgba(0, 0, 0, 0.095);
                 }
             }
             

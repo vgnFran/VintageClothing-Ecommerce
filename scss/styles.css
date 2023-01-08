@@ -11,6 +11,7 @@
 }
 .modo-oscuro .elegido {
   color: rgb(37, 35, 35) !important;
+  text-shadow: none !important;
 }
 .modo-oscuro h2 {
   color: rgb(37, 35, 35) !important;
@@ -97,6 +98,7 @@ header .aside ul li {
   align-items: center;
   margin-top: 20px;
   cursor: pointer;
+  text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.6);
 }
 header .aside ul i {
   width: 26px;
@@ -165,6 +167,7 @@ header .aside .elegido {
   background-color: white;
   color: rgba(32, 25, 136, 0.822);
   font-weight: 600;
+  text-shadow: none !important;
 }
 header .aside .derechos {
   color: gray;
@@ -199,6 +202,7 @@ main .login-registro {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-shadow: 12.5px 10.1px 12px rgba(0, 0, 0, 0.19), 100px 81px 96px rgba(0, 0, 0, 0.095);
 }
 main .login-registro img {
   width: 100px;
@@ -209,11 +213,13 @@ main .login-registro img {
 main .login-registro h2 {
   margin-top: 10px;
   font-size: 35px;
+  text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.3);
 }
 main .login-registro h3 {
   font-size: 20px;
   margin-left: 60px;
   color: rgba(0, 0, 0, 0.589);
+  text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.3);
 }
 main .login-registro .aclaracion {
   font-size: 14px;
@@ -239,6 +245,7 @@ main .login-registro .login-form .button input {
   width: 100px;
   border: 2px solid rgba(79, 52, 153, 0.897);
   background-color: white;
+  box-shadow: 12.5px 10.1px 12px rgba(0, 0, 0, 0.19), 100px 81px 96px rgba(0, 0, 0, 0.095);
 }
 main .login-registrado {
   height: 500px;
@@ -252,6 +259,7 @@ main .login-registrado {
   text-align: center;
   display: none;
   flex-direction: column;
+  box-shadow: 12.5px 10.1px 12px rgba(0, 0, 0, 0.19), 100px 81px 96px rgba(0, 0, 0, 0.095);
 }
 main .login-registrado img {
   width: 100px;
@@ -262,11 +270,13 @@ main .login-registrado img {
 main .login-registrado h2 {
   margin-top: 10px;
   font-size: 35px;
+  text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.3);
 }
 main .login-registrado h3 {
   font-size: 20px;
   margin-left: 60px;
   color: rgba(0, 0, 0, 0.589);
+  text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.3);
 }
 main .login-registrado .login-form {
   margin-top: 20px;
@@ -293,6 +303,7 @@ main .login-registrado .button input {
   width: 100px;
   border: 2px solid rgba(79, 52, 153, 0.897);
   background-color: white;
+  box-shadow: 12.5px 10.1px 12px rgba(0, 0, 0, 0.19), 100px 81px 96px rgba(0, 0, 0, 0.095);
 }
 
 .body-ecomercce {
