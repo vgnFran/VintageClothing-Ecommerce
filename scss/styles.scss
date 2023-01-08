@@ -29,6 +29,7 @@
             color:rgb(37, 35, 35)!important;
             background-color: lightgray;
         }
+
         form{
             input{
                 border: 2px solid gray!important;
@@ -37,6 +38,7 @@
                 color: rgb(37, 35, 35)!important;
             }
         }
+
         
     }
     #iniciar-registrado{
@@ -212,6 +214,8 @@ main{
         text-align: center;
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        
         img{
             width: 100px;
             height: 100px;
@@ -227,6 +231,13 @@ main{
             margin-left: 60px;
             color: rgba(0, 0, 0, 0.589);
         }
+        .aclaracion{
+            font-size: 14px;
+            width: 400px;
+            margin-left: 25%;
+            margin-bottom: 10px;
+            color: rgba(0, 0, 0, 0.788);
+        }  
         .login-form{
             margin-top: 20px;
             input{

@@ -198,6 +198,7 @@ main .login-registro {
   text-align: center;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 main .login-registro img {
   width: 100px;
@@ -213,6 +214,13 @@ main .login-registro h3 {
   font-size: 20px;
   margin-left: 60px;
   color: rgba(0, 0, 0, 0.589);
+}
+main .login-registro .aclaracion {
+  font-size: 14px;
+  width: 400px;
+  margin-left: 25%;
+  margin-bottom: 10px;
+  color: rgba(0, 0, 0, 0.788);
 }
 main .login-registro .login-form {
   margin-top: 20px;
