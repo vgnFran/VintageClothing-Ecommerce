@@ -1,3 +1,24 @@
+// swiper carrousel 
+
+const swiper = new Swiper(".mySwiper", {
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
+// js
+
 const registrarLogin = document.querySelector("#registro-login");
 const bodyEcomercce = document.querySelector("#ecomercce-body");
 const formLogin= document.querySelector("#registrar");
