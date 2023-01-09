@@ -46,7 +46,12 @@ const aside=document.querySelector(".aside");
 const body=document.querySelector("body");
 const modo=document.querySelector("#modo");
 const modoCheckbox= document.querySelector("#toggle")
+const ingreso=document.querySelector(".butonBody")
 
+ingreso.onclick=()=>{
+    const swiper= document.querySelector(".swiper")
+    swiper.style.display="none"
+}
 
 // datos de usuarios guardados en "base de datos en js"
 let usuario1={
