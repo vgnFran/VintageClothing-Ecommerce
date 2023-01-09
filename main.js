@@ -47,6 +47,7 @@ const body=document.querySelector("body");
 const modo=document.querySelector("#modo");
 const modoCheckbox= document.querySelector("#toggle")
 const ingreso=document.querySelector(".butonBody")
+const ofertas= document.querySelector("#ofertas")
 
 ingreso.onclick=()=>{
     const swiper= document.querySelector(".swiper")
@@ -186,6 +187,7 @@ todosProductos.onclick=()=>{
     pantalones.classList.remove("elegido")
     carrito.classList.remove("elegido")
     contacto.classList.remove("elegido")
+    ofertas.classList.remove("elegido")
     productosHtml(listaProductos)
     productosTitulo.innerText="Todos los Productos"
 }
@@ -197,6 +199,7 @@ buzos.onclick= ()=>{
     pantalones.classList.remove("elegido")
     carrito.classList.remove("elegido")
     contacto.classList.remove("elegido")
+    ofertas.classList.remove("elegido")
     productosHtml(agregaSecciones("buzo"))
     productosTitulo.innerText="Buzos"
       
@@ -209,6 +212,7 @@ remeras.onclick= ()=>{
     pantalones.classList.remove("elegido")
     carrito.classList.remove("elegido")
     contacto.classList.remove("elegido")
+    ofertas.classList.remove("elegido")
     productosHtml(agregaSecciones("remera"))
     productosTitulo.innerText="Remeras"
 }
@@ -220,6 +224,7 @@ pantalones.onclick= ()=>{
     pantalones.classList.add("elegido")
     carrito.classList.remove("elegido")
     contacto.classList.remove("elegido")
+    ofertas.classList.remove("elegido")
     productosHtml(agregaSecciones("pantalones"))
     productosTitulo.innerText="Pantalones"
 }
@@ -231,6 +236,8 @@ carrito.onclick= ()=>{
     pantalones.classList.remove("elegido")
     carrito.classList.add("elegido")
     contacto.classList.remove("elegido")
+    ofertas.classList.remove("elegido")
+
 }
 
 contacto.onclick= ()=>{
@@ -240,6 +247,18 @@ contacto.onclick= ()=>{
     pantalones.classList.remove("elegido")
     carrito.classList.remove("elegido")
     contacto.classList.add("elegido")
+    ofertas.classList.remove("elegido")
+}
+
+ofertas.onclick= ()=>{
+    todosProductos.classList.remove("elegido")
+    buzos.classList.remove("elegido")
+    remeras.classList.remove("elegido")
+    pantalones.classList.remove("elegido")
+    carrito.classList.remove("elegido")
+    contacto.classList.remove("elegido")
+    ofertas.classList.add("elegido")
+
 }
 
 //modo oscuro

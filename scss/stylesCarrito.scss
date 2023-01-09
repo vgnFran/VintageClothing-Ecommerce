@@ -8,62 +8,6 @@
 
 ///////////////////////////////////////////////
 
-.swiper {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-  }
-  
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-  
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-  }
-  
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .butonBody{
-    position: absolute;
-    z-index: 2;
-    width: 200px;
-    height: 40px;
-    border-radius: 6px;
-    border: none;
-    bottom: 24%;
-    box-shadow:
-    9.8px 5.5px 4.9px rgba(0, 0, 0, 0.061),
-    33.1px 18.5px 16.5px rgba(0, 0, 0, 0.089),
-    148px 83px 74px rgba(0, 0, 0, 0.15);
-    background-color: rgb(60, 101, 214);
-    a{
-        text-decoration: none;
-        font-size: 16px;
-        color: white;
-    }
-  }
 
 //////////////////////////////////////////////////////
 
@@ -233,6 +177,7 @@ header{
 
             .cierra{
                 font-size: 16px;
+                margin-bottom: 50px;
 
             }
             .cierra:hover{
@@ -275,7 +220,7 @@ header{
             .derechos{
                 color: gray;
                 margin-left: 10px;
-                margin-top: 80px;
+                margin-top: 60px;
             }
 
         }
@@ -284,7 +229,7 @@ header{
 
     
 
-main{
+    main{
     background-color: white;
     height: auto;
     width: 100%;
@@ -294,150 +239,14 @@ main{
     margin-right: 20px;
     position: relative;
     padding-left: 50px;
-    .login-form{
-        display: flex;
-        flex-direction: column;
-    }
-    .login-registro{
-        height: 500px;
-        width: 800px;
-        background-color: white;
-        border: 4px solid rgb(59, 52, 153);
-        position: absolute;
-        margin-left: 20%;
-        margin-top: 50px;
-        border-radius: 10px;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        box-shadow:
-        12.5px 10.1px 12px rgba(0, 0, 0, 0.19),
-        100px 81px 96px rgba(0, 0, 0, 0.095);
-        
-        img{
-            width: 100px;
-            height: 100px;
-            text-align: center;
-            margin-top: 50px;
-        }
-        h2{
-            margin-top: 10px;
-            font-size: 35px;
-            text-shadow: 1px 3px 5px rgba(0,0,0,0.3);
-        }
-        h3{
-            font-size: 20px;
-            margin-left: 60px;
-            color: rgba(0, 0, 0, 0.589);
-            text-shadow: 1px 3px 5px rgba(0,0,0,0.3);
-        }
-        .aclaracion{
-            font-size: 14px;
-            width: 400px;
-            margin-left: 25%;
-            margin-bottom: 10px;
-            color: rgba(0, 0, 0, 0.788);
-        }  
-        .login-form{
-            margin-top: 20px;
-            input{
-                width: 200px;
-                height: 24px;
-                border-radius: 5px;
-                border: 2px solid rgb(107, 105, 105);
-                padding: 12px;
-                margin-bottom: 10px;
-            }
-            .button{
-                input{
-                    padding: 0;
-                    height: 30px;
-                    width: 100px;
-                    border: 2px solid rgba(79, 52, 153, 0.897);
-                    background-color: white;
-                    box-shadow:
-                    12.5px 10.1px 12px rgba(0, 0, 0, 0.19),
-                    100px 81px 96px rgba(0, 0, 0, 0.095);
-                }
-            }
-            
-        }
-    }
-
-    .login-registrado{
-        height: 500px;
-        width: 800px;
-        background-color: white;
-        border: 4px solid rgb(59, 52, 153);
-        position: absolute;
-        margin-left: 20%;
-        margin-top: 50px;
-        border-radius: 10px;
-        text-align: center;
-        display: none;
-        flex-direction: column;
-        box-shadow:
-        12.5px 10.1px 12px rgba(0, 0, 0, 0.19),
-        100px 81px 96px rgba(0, 0, 0, 0.095);
-        img{
-            width: 100px;
-            height: 100px;
-            text-align: center;
-            margin-top: 50px;
-        }
-        h2{
-            margin-top: 10px;
-            font-size: 35px;
-            text-shadow: 1px 3px 5px rgba(0,0,0,0.3);
-        }
-        h3{
-            font-size: 20px;
-            margin-left: 60px;
-            color: rgba(0, 0, 0, 0.589);
-            text-shadow: 1px 3px 5px rgba(0,0,0,0.3);
-        }
-        .login-form{
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            input{
-                width: 200px;
-                height: 24px;
-                border-radius: 5px;
-                border: 2px solid rgb(107, 105, 105);
-                padding: 12px;
-                margin-bottom: 10px;
-            }
-            .incorrecto{
-                color: red;
-                margin-bottom: 8px;
-                display: none;
-                
-                }
-            }
-            .button{
-                input{
-                    padding: 0;
-                    height: 30px;
-                    width: 100px;
-                    border: 2px solid rgba(79, 52, 153, 0.897);
-                    background-color: white;
-                    box-shadow:
-                    12.5px 10.1px 12px rgba(0, 0, 0, 0.19),
-                    100px 81px 96px rgba(0, 0, 0, 0.095);
-                }
-            }
-            
-        }
+    
     }
 
 
 
 
     .body-ecomercce{
-        display: none;
+        display: block;
         .productos{
             display: flex;
             flex-wrap: wrap;
