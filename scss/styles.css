@@ -54,6 +54,9 @@
   color: white !important;
   background-color: rgb(37, 35, 35);
 }
+.modo-oscuro .body {
+  background-color: rgb(37, 35, 35) !important;
+}
 .modo-oscuro .elegido {
   color: rgb(37, 35, 35) !important;
   text-shadow: none !important;
@@ -213,6 +216,29 @@ header .aside .elegido {
   color: rgba(32, 25, 136, 0.822);
   font-weight: 600;
   text-shadow: none !important;
+  position: relative;
+}
+header .aside .elegido::before {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  height: 2rem;
+  bottom: 100%;
+  right: 0;
+  background-color: transparent;
+  border-bottom-right-radius: 0.5rem;
+  box-shadow: 0 1rem 0 rgb(255, 255, 255);
+}
+header .aside .elegido::after {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  height: 2rem;
+  top: 100%;
+  right: 0;
+  background-color: transparent;
+  border-top-right-radius: 10px;
+  box-shadow: 0 -1rem 0 rgb(255, 255, 255);
 }
 header .aside .derechos {
   color: gray;
