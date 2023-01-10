@@ -132,6 +132,10 @@ header{
                 .li-oscuro{
                     font-size: 18px;
                 }
+                a{
+                    text-decoration: none;
+                    color: white;
+                }
 
             .carrito{
                 margin-top: 50px;
@@ -192,6 +196,11 @@ header{
                 font-weight: 600;
                 text-shadow: none!important;
                 position: relative;
+                span{
+                    color: white;
+                    background-color: rgba(42, 36, 126, 0.822);
+                    font-weight: 400;
+                }
             }
             .elegido::before{
                 content: "";
@@ -239,7 +248,89 @@ header{
     margin-right: 20px;
     position: relative;
     padding-left: 50px;
-    
+    .productos-carrito{
+        width: 97%;
+        height: 120px;
+        background-color: white;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: space-around;
+        border-radius: 10px;
+        border: 2px solid rgba(32, 25, 136, 0.822);
+        margin-bottom: 40px;
+        background-color:  rgba(32, 25, 136, 0.308);
+        box-shadow:
+            4.5px 4.5px 3.6px rgba(0, 0, 0, 0.056),
+            12.5px 12.5px 10px rgba(0, 0, 0, 0.08),
+            30.1px 30.1px 24.1px rgba(0, 0, 0, 0.104),
+            100px 100px 80px rgba(0, 0, 0, 0.16)
+            ;
+
+        .close{
+            font-size: 22px;
+            margin-left: -90px;
+            color: rgb(175, 3, 3);
+            cursor: pointer;
+        }
+        img{
+            object-fit: cover;
+            width: 100px;
+            height: 100px;
+            border-radius: 6px;
+            margin-left:-210px;
+        }
+        h2{
+            margin-left: -200px;
+        }
+        .precio{
+            display: flex;
+            align-items: center;
+            margin-left: -60px;
+        }
+        .cantidad{
+            display: flex;
+            align-items: center;
+            input{
+                width: 36px;
+                height: 36px;
+                margin-left: 16px;
+            }
+        }
+
+    }
+    .buttons{
+        display: flex;
+        align-items: center;
+        justify-content:end;
+        width: 97%;
+        p{
+            font-size: 20px;
+        }
+        button{
+            padding: 12px;
+            font-size: 16px;
+            margin-left: 20px;
+            border-radius: 6px;
+            box-shadow:
+            4.5px 4.5px 3.6px rgba(0, 0, 0, 0.042),
+            12.5px 12.5px 10px rgba(0, 0, 0, 0.06),
+            30.1px 30.1px 24.1px rgba(0, 0, 0, 0.078),
+            100px 100px 80px rgba(0, 0, 0, 0.12)
+            ;
+        }
+        .vaciar{
+            background-color: rgb(189, 14, 14);
+            color: white;
+            border: 1px solid rgb(189, 14, 14);
+        }
+        .comprar{
+            color: white;
+            background-color: rgb(4, 136, 4);
+            border: 1px solid rgb(4, 136, 4);
+        }
+    }
+
     }
 
 

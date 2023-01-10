@@ -35,6 +35,7 @@ const userIncorrecto= document.querySelector("#incorrecto");
 const containerProductos= document.querySelector(".productos");
 const todosProductos= document.querySelector("#todos");
 const buzos= document.querySelector("#buzos");
+const camperas= document.querySelector("#camperas")
 const remeras= document.querySelector("#remeras");
 const pantalones= document.querySelector("#pantalones");
 const carrito= document.querySelector("#carrito");
@@ -48,10 +49,10 @@ const modo=document.querySelector("#modo");
 const modoCheckbox= document.querySelector("#toggle")
 const ingreso=document.querySelector(".butonBody")
 const ofertas= document.querySelector("#ofertas")
+const swiperFondo= document.querySelector(".swiper")
 
 ingreso.onclick=()=>{
-    const swiper= document.querySelector(".swiper")
-    swiper.style.display="none"
+    swiperFondo.style.display="none"
 }
 
 // datos de usuarios guardados en "base de datos en js"
@@ -81,6 +82,7 @@ formLogin.onsubmit= (evento)=>{
         registrarLocalStorage("inicio",true);
         registrarLocalStorage("nombre",inputUsuario.value)
         todosProductos.classList.add("elegido")
+
     }else if(inputUsuario.value==""){
         inputUsuario.style.border= "2px solid red"
     }
@@ -145,6 +147,7 @@ function validacion(clave){
         bodyEcomercce.style.display="block";
         nombreUser.innerText= comprobarLocalStorage("nombre")
         todosProductos.classList.add("elegido")
+        swiperFondo.style.display="none"
     } else{
         registrarLogin.style.display="block"
         localStorage.removeItem("modo")
@@ -182,6 +185,7 @@ productosHtml(listaProductos)
 
 todosProductos.onclick=()=>{
     todosProductos.classList.add("elegido");
+    camperas.classList.remove("elegido")
     buzos.classList.remove("elegido")
     remeras.classList.remove("elegido")
     pantalones.classList.remove("elegido")
@@ -192,8 +196,23 @@ todosProductos.onclick=()=>{
     productosTitulo.innerText="Todos los Productos"
 }
 
+camperas.onclick= ()=>{
+    todosProductos.classList.remove("elegido")
+    camperas.classList.add("elegido")
+    buzos.classList.remove("elegido")
+    remeras.classList.remove("elegido")
+    pantalones.classList.remove("elegido")
+    carrito.classList.remove("elegido")
+    contacto.classList.remove("elegido")
+    ofertas.classList.remove("elegido")
+    productosHtml(agregaSecciones("campera"))
+    productosTitulo.innerText="Camperas"
+      
+}
+
 buzos.onclick= ()=>{
     todosProductos.classList.remove("elegido")
+    camperas.classList.remove("elegido")
     buzos.classList.add("elegido")
     remeras.classList.remove("elegido")
     pantalones.classList.remove("elegido")
@@ -207,6 +226,7 @@ buzos.onclick= ()=>{
 
 remeras.onclick= ()=>{
     todosProductos.classList.remove("elegido")
+    camperas.classList.remove("elegido")
     buzos.classList.remove("elegido")
     remeras.classList.add("elegido")
     pantalones.classList.remove("elegido")
@@ -219,6 +239,7 @@ remeras.onclick= ()=>{
 
 pantalones.onclick= ()=>{
     todosProductos.classList.remove("elegido")
+    camperas.classList.remove("elegido")
     buzos.classList.remove("elegido")
     remeras.classList.remove("elegido")
     pantalones.classList.add("elegido")
@@ -231,6 +252,7 @@ pantalones.onclick= ()=>{
 
 carrito.onclick= ()=>{
     todosProductos.classList.remove("elegido")
+    camperas.classList.remove("elegido")
     buzos.classList.remove("elegido")
     remeras.classList.remove("elegido")
     pantalones.classList.remove("elegido")
@@ -242,6 +264,7 @@ carrito.onclick= ()=>{
 
 contacto.onclick= ()=>{
     todosProductos.classList.remove("elegido")
+    camperas.classList.remove("elegido")
     buzos.classList.remove("elegido")
     remeras.classList.remove("elegido")
     pantalones.classList.remove("elegido")
@@ -252,6 +275,7 @@ contacto.onclick= ()=>{
 
 ofertas.onclick= ()=>{
     todosProductos.classList.remove("elegido")
+    camperas.classList.remove("elegido")
     buzos.classList.remove("elegido")
     remeras.classList.remove("elegido")
     pantalones.classList.remove("elegido")
@@ -308,5 +332,5 @@ function agregaSecciones(categoria){
 }
 
 
-
+console.log(localStorage.getItem("nombre"))
 

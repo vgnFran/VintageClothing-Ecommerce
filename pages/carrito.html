@@ -22,12 +22,8 @@
                 <h1>Vintage Clothing</h1>
                 <div>
                     <ul>
-                        <li class="li" id="todos"> <i class="bi bi-shop"></i> Todos los Productos</li>
-                        <li class="li" id="buzos"> <i class="bi bi-caret-right"></i> Buzos</li>
-                        <li class="li" id="remeras"><i class="bi bi-caret-right"></i> Remeras</li>
-                        <li class="li" id="pantalones"> <i class="bi bi-caret-right"></i> Pantalones</li>
-                        <li class="li" id="ofertas"><i class="bi bi-caret-right"></i> OFERTAS</li>
-                        <li class="li carrito" id="carrito"><i class="bi bi-cart-fill"></i>Carrito <span>0</span></li>
+                        <li class="li" id="todos"> <i class="bi bi-shop"></i><a href="/index.html"> Seguir comprando</a></li>
+                        <li class="li carrito elegido" id="carrito"><i class="bi bi-cart-fill"></i>Carrito <span>0</span></li>
                         <li class="li contacto" id="contacto"> <i class="bi bi-telephone"></i> Contacto</li>
                         <li class="li-oscuro">
                             Modo Oscuro
@@ -50,14 +46,47 @@
                     <h2 id="todos-productos">Todos los Productos</h2>
                     <div class="user">
                         <p id="bienvenido">Bienvenido,<span id="nombre-user">Usuario</span></p>
-                        <img src="images/login-icon.png" alt="">
+                        <img src="/images/login-icon.png" alt="">
                     </div>
                 </div>
     
                 <div class="productos" id="container-js">
     
                     <!-- aca se insertan los productos desde js -->
+                    <div class="productos-carrito">
+                        <div class="close">
+                            <i class="bi bi-x-circle"></i>
+                        </div>
+
+                        <img src="/images/buzo22.jpg" alt="">
+                        <h2>Producto Agregado</h2>
+                        <div class="precio">
+                            <p>Precio</p>
+                            <p>$12000</p>
+                        </div>
+                        <div class="cantidad">
+                            <p>Cantidad</p>
+                            <input type="number">
+                        </div>
+                        <div class="total">
+                            <p>Total:</p>
+                            <p>$12000</p>
+                        </div>
+
+                    </div>
     
+                </div>
+
+                <div class="buttons">
+                    <div>
+                        <p>Total: $12000</p>
+                    </div>
+                    <div>
+                        <button class="vaciar">Vaciar Carrito</button>
+                    </div>
+                    <div>
+                        <button class="comprar">Comprar</button>
+                    </div>
                 </div>
     
             </div>

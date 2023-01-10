@@ -191,6 +191,11 @@ header{
 
             .carrito{
                 margin-top: 50px;
+                a{
+                    text-decoration: none;
+                    color: white;
+
+                }
             }
             .contacto{
                 margin-top: 50px;
@@ -233,7 +238,6 @@ header{
 
             .cierra{
                 font-size: 16px;
-
             }
             .cierra:hover{
                 text-decoration: underline;
@@ -275,7 +279,7 @@ header{
             .derechos{
                 color: gray;
                 margin-left: 10px;
-                margin-top: 80px;
+                margin-top: 160px;
             }
 
         }
