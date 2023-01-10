@@ -332,5 +332,5 @@ function agregaSecciones(categoria){
 }
 
 
-console.log(localStorage.getItem("nombre"))
+// console.log(localStorage.getItem("nombre"))
 

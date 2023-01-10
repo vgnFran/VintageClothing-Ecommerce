@@ -15,7 +15,7 @@
 <body>
     
 
-    <section class="body">
+    <section class="body" id="body">
 
         <header>
             <section class="aside">
@@ -61,25 +61,26 @@
                         <img src="/images/buzo22.jpg" alt="">
                         <h2>Producto Agregado</h2>
                         <div class="precio">
-                            <p>Precio</p>
-                            <p>$12000</p>
+                            <p>Precio: $</p>
+                            <p id="precio-individual">12000</p>
                         </div>
                         <div class="cantidad">
                             <p>Cantidad</p>
-                            <input type="number">
+                            <input type="number" id="cantidad">
                         </div>
                         <div class="total">
-                            <p>Total:</p>
-                            <p>$12000</p>
+                            <p>Total:$</p>
+                            <p class="total-producto" id="total">12000</p>
                         </div>
 
                     </div>
+
     
                 </div>
 
                 <div class="buttons">
                     <div>
-                        <p>Total: $12000</p>
+                        <p id="total-final">Total: $12000</p>
                     </div>
                     <div>
                         <button class="vaciar">Vaciar Carrito</button>
