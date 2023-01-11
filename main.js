@@ -159,14 +159,12 @@ validacion(comprobarLocalStorage("inicio"))
 
 //trayendo elementos al dom desde un archivo.json
 
-function productosHtml(json){
+function productosHtml(func){
     containerProductos.innerHTML=""
-    fetch(json)
+    fetch(func)
         .then(resp => resp.json())
         .then(data =>{
-            console.log(data)
             data.forEach(prod=>{
-                console.log(prod)
                 const divContainer= document.createElement("div")
                 divContainer.className="container-producto"
                 divContainer.innerHTML=`
@@ -182,6 +180,7 @@ function productosHtml(json){
                 containerProductos.appendChild(divContainer)
             })
         })
+    .catch((err) => console.log("err"))
 }
 
 productosHtml("/productos.json")
@@ -198,7 +197,7 @@ todosProductos.onclick=()=>{
     carrito.classList.remove("elegido")
     contacto.classList.remove("elegido")
     ofertas.classList.remove("elegido")
-    productosHtml(listaProductos)
+    productosHtml("/productos.json")
     productosTitulo.innerText="Todos los Productos"
 }
 
@@ -211,7 +210,7 @@ camperas.onclick= ()=>{
     carrito.classList.remove("elegido")
     contacto.classList.remove("elegido")
     ofertas.classList.remove("elegido")
-    productosHtml(agregaSecciones("campera"))
+    agregaSecciones("campera")
     productosTitulo.innerText="Camperas"
       
 }
@@ -225,7 +224,7 @@ buzos.onclick= ()=>{
     carrito.classList.remove("elegido")
     contacto.classList.remove("elegido")
     ofertas.classList.remove("elegido")
-    productosHtml(agregaSecciones("buzo"))
+    agregaSecciones("buzo")
     productosTitulo.innerText="Buzos"
       
 }
@@ -239,7 +238,7 @@ remeras.onclick= ()=>{
     carrito.classList.remove("elegido")
     contacto.classList.remove("elegido")
     ofertas.classList.remove("elegido")
-    productosHtml(agregaSecciones("remera"))
+    agregaSecciones("remera")
     productosTitulo.innerText="Remeras"
 }
 
@@ -252,7 +251,7 @@ pantalones.onclick= ()=>{
     carrito.classList.remove("elegido")
     contacto.classList.remove("elegido")
     ofertas.classList.remove("elegido")
-    productosHtml(agregaSecciones("pantalones"))
+    agregaSecciones("pantalon")
     productosTitulo.innerText="Pantalones"
 }
 
@@ -288,6 +287,8 @@ ofertas.onclick= ()=>{
     carrito.classList.remove("elegido")
     contacto.classList.remove("elegido")
     ofertas.classList.add("elegido")
+    agregaSecciones(ofertas,true)
+    productosTitulo.innerText="Productos con 50% de DESCUENTO"
 
 }
 
@@ -331,12 +332,45 @@ validarModoOscuro(comprobarLocalStorage("modo"))
 
 // agregando productos a las secciones 
 
-function agregaSecciones(categoria){
-    return listaProductos.filter(producto =>{
-        return producto.categoria==categoria
+
+
+// function agregaSecciones(categoria){
+//     return "/productos.json".filter(producto =>{
+//         return producto.categoria==categoria
+//     })
+    
+// }
+
+
+// agregamos los productos segun su seccion, si el producto tiene oferta true, entonces tendra un 50% de decuento en su precio
+
+function agregaSecciones(tipo,esOferta){
+    fetch("/productos.json")
+    .then(resp => resp.json())
+    .then(data =>{
+        const retorno = data.filter(ele =>{
+            return ele.categoria==tipo || ele.oferta==esOferta
+        })
+        containerProductos.innerHTML=""
+        retorno.forEach(prod=>{
+            prod.oferta==true? prod.precio = prod.precio/2 : prod.precio
+            const divContainer= document.createElement("div")
+                divContainer.className="container-producto"
+                divContainer.innerHTML=`
+                <img src=${prod.imagen} alt=${prod.nombre}>
+                <div id="body-producto">
+                <h3>${prod.nombre}</h3>
+                <h4>$${prod.precio}</h4>
+                </div>
+                <div class="cont-button">
+                <button>AGREGAR</button>
+                </div>
+                `
+                containerProductos.appendChild(divContainer)
+
+        })
     })
+    .catch(err => console.log("err"))
 }
 
-
-// console.log(localStorage.getItem("nombre"))
 

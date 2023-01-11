@@ -26,11 +26,3 @@ cantidadProductos.onclick=()=>{
     totalProductos.textContent=nuevoprecio*cantidadProductos.value
 }
 
-fetch("/productos.json")
-    .then(resp => resp.json())
-    .then(data =>{
-        console.log(data)
-        data.forEach(prod =>{
-            console.log(prod)
-        })
-    })
