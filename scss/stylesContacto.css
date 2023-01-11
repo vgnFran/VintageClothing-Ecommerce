@@ -27,6 +27,34 @@
 .modo-oscuro .container-producto {
   background-color: rgb(37, 35, 35) !important;
 }
+.modo-oscuro .login-registro {
+  border: 3px solid rgb(37, 35, 35);
+  background-color: lightgray;
+}
+.modo-oscuro .login-registro h3 {
+  color: rgb(37, 35, 35) !important;
+  background-color: lightgray;
+}
+.modo-oscuro .login-registro form input {
+  border: 2px solid gray !important;
+}
+.modo-oscuro .login-registro form p {
+  color: rgb(37, 35, 35) !important;
+}
+.modo-oscuro #iniciar-registrado {
+  border: 3px solid rgb(37, 35, 35) !important;
+  background-color: lightgray;
+}
+.modo-oscuro #iniciar-registrado h3 {
+  color: rgb(37, 35, 35) !important;
+  background-color: lightgray;
+}
+.modo-oscuro #iniciar-registrado form input {
+  border: 2px solid gray !important;
+}
+.modo-oscuro #iniciar-registrado form p {
+  color: rgb(37, 35, 35) !important;
+}
 
 .modo-oscuro-main {
   background-color: lightgrey;
@@ -194,77 +222,6 @@ main {
   position: relative;
   padding-left: 50px;
 }
-main .productos-carrito {
-  width: 97%;
-  height: 120px;
-  background-color: white;
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: space-around;
-  border-radius: 10px;
-  border: 2px solid rgba(32, 25, 136, 0.822);
-  margin-bottom: 40px;
-  background-color: rgba(32, 25, 136, 0.308);
-  box-shadow: 4.5px 4.5px 3.6px rgba(0, 0, 0, 0.056), 12.5px 12.5px 10px rgba(0, 0, 0, 0.08), 30.1px 30.1px 24.1px rgba(0, 0, 0, 0.104), 100px 100px 80px rgba(0, 0, 0, 0.16);
-}
-main .productos-carrito .close {
-  font-size: 22px;
-  margin-left: -90px;
-  color: rgb(175, 3, 3);
-  cursor: pointer;
-}
-main .productos-carrito img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100px;
-  height: 100px;
-  border-radius: 6px;
-  margin-left: -210px;
-}
-main .productos-carrito h2 {
-  margin-left: -200px;
-}
-main .productos-carrito .precio {
-  display: flex;
-  align-items: center;
-  margin-left: -60px;
-}
-main .productos-carrito .cantidad {
-  display: flex;
-  align-items: center;
-}
-main .productos-carrito .cantidad input {
-  width: 36px;
-  height: 36px;
-  margin-left: 16px;
-}
-main .buttons {
-  display: flex;
-  align-items: center;
-  justify-content: end;
-  width: 97%;
-}
-main .buttons p {
-  font-size: 20px;
-}
-main .buttons button {
-  padding: 12px;
-  font-size: 16px;
-  margin-left: 20px;
-  border-radius: 6px;
-  box-shadow: 4.5px 4.5px 3.6px rgba(0, 0, 0, 0.042), 12.5px 12.5px 10px rgba(0, 0, 0, 0.06), 30.1px 30.1px 24.1px rgba(0, 0, 0, 0.078), 100px 100px 80px rgba(0, 0, 0, 0.12);
-}
-main .buttons .vaciar {
-  background-color: rgb(189, 14, 14);
-  color: white;
-  border: 1px solid rgb(189, 14, 14);
-}
-main .buttons .comprar {
-  color: white;
-  background-color: rgb(4, 136, 4);
-  border: 1px solid rgb(4, 136, 4);
-}
 
 .body-ecomercce {
   display: block;
@@ -309,4 +266,4 @@ main .buttons .comprar {
 }
 .body-ecomercce .titulos-usuario .user img {
   width: 38px;
-}/*# sourceMappingURL=stylesCarrito.css.map */
+}/*# sourceMappingURL=stylesContacto.css.map */
