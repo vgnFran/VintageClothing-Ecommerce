@@ -157,28 +157,34 @@ function validacion(clave){
 validacion(comprobarLocalStorage("inicio"))
 
 
-//trayendo elementos al dom desde un array de objetos en js
+//trayendo elementos al dom desde un archivo.json
 
-function productosHtml(array ){
+function productosHtml(json){
     containerProductos.innerHTML=""
-    array.forEach(producto => {
-        const divContainer= document.createElement("div")
-        divContainer.className="container-producto"
-        divContainer.innerHTML= `
-        <img src=${producto.imagen} alt=${producto.id}>
-        <div id="body-producto">
-        <h3>${producto.nombre}</h2>
-        <h4>${producto.precio}</h3>
-        </div>
-        <div class="cont-button">
-        <button>AGREGAR</button>
-        </div>
-        `
-        containerProductos.appendChild(divContainer)
-    });
+    fetch(json)
+        .then(resp => resp.json())
+        .then(data =>{
+            console.log(data)
+            data.forEach(prod=>{
+                console.log(prod)
+                const divContainer= document.createElement("div")
+                divContainer.className="container-producto"
+                divContainer.innerHTML=`
+                <img src=${prod.imagen} alt=${prod.nombre}>
+                <div id="body-producto">
+                <h3>${prod.nombre}</h3>
+                <h4>$${prod.precio}</h4>
+                </div>
+                <div class="cont-button">
+                <button>AGREGAR</button>
+                </div>
+                `
+                containerProductos.appendChild(divContainer)
+            })
+        })
 }
 
-productosHtml(listaProductos)
+productosHtml("/productos.json")
 
 
 //agregando y sacando estilos segun que categoria este seleccionada
