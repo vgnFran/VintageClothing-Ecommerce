@@ -72,3 +72,15 @@ function validarModoOscuro(clave){
 }
 
 validarModoOscuro(comprobarLocalStorage("modo"))
+
+//trayendo los productos del carrito subidos al ls
+
+const productosCarrito= JSON.parse(localStorage.getItem("carro"))
+
+function ingresarProductos(){
+    productosCarrito.forEach(producto => {
+        console.log(producto)
+    });
+}
+
+ingresarProductos()
