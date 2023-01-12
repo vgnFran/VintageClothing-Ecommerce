@@ -51,6 +51,8 @@ const ingreso=document.querySelector(".butonBody")
 const ofertas= document.querySelector("#ofertas")
 const swiperFondo= document.querySelector(".swiper")
 
+
+
 ingreso.onclick=()=>{
     swiperFondo.style.display="none"
 }
@@ -167,6 +169,7 @@ function productosHtml(func){
             data.forEach(prod=>{
                 const divContainer= document.createElement("div")
                 divContainer.className="container-producto"
+                divContainer.id=`producto-${prod.id}`
                 divContainer.innerHTML=`
                 <img src=${prod.imagen} alt=${prod.nombre}>
                 <div id="body-producto">
@@ -174,10 +177,13 @@ function productosHtml(func){
                 <h4>$${prod.precio}</h4>
                 </div>
                 <div class="cont-button">
-                <button>AGREGAR</button>
+                <button class="btn-agregar" id="button-${prod.id}">AGREGAR</button>
                 </div>
                 `
                 containerProductos.appendChild(divContainer)
+                
+                alCarrito(data,carritoDeCompras)
+
             })
         })
     .catch((err) => console.log("err"))
@@ -212,7 +218,6 @@ camperas.onclick= ()=>{
     ofertas.classList.remove("elegido")
     agregaSecciones("campera")
     productosTitulo.innerText="Camperas"
-      
 }
 
 buzos.onclick= ()=>{
@@ -290,6 +295,7 @@ ofertas.onclick= ()=>{
     agregaSecciones(ofertas,true)
     productosTitulo.innerText="Productos con 50% de DESCUENTO"
 
+
 }
 
 //modo oscuro
@@ -345,6 +351,7 @@ function agregaSecciones(tipo,esOferta){
             prod.oferta==true? prod.precio = prod.precio/2 : prod.precio
             const divContainer= document.createElement("div")
                 divContainer.className="container-producto"
+                divContainer.id=`producto-${prod.id}`
                 divContainer.innerHTML=`
                 <img src=${prod.imagen} alt=${prod.nombre}>
                 <div id="body-producto">
@@ -352,14 +359,35 @@ function agregaSecciones(tipo,esOferta){
                 <h4>$${prod.precio}</h4>
                 </div>
                 <div class="cont-button">
-                <button>AGREGAR</button>
+                <button class="btn-agregar" id="button-${prod.id}">AGREGAR</button>
                 </div>
                 `
                 containerProductos.appendChild(divContainer)
-
+                
+                alCarrito(data,carritoDeCompras)
         })
     })
-    .catch(err => console.log("err"))
+    .catch(err => console.log("errSecciones"))
 }
 
+
+// carrito 
+
+let carritoDeCompras=[]
+
+
+function alCarrito(data,carrito){
+    const btnAlCarro= document.querySelectorAll(".btn-agregar")
+    btnAlCarro.forEach(e =>{
+        e.onclick=()=>{
+            const recorte= e.id.slice(7)
+            const filtro=(data).find(element =>{
+                return element.id == recorte
+            })
+            carrito.push(filtro)
+            console.log(carrito)
+            localStorage.setItem("carro",JSON.stringify(carrito))
+        }
+    })
+}
 
