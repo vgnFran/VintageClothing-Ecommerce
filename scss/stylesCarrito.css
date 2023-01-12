@@ -195,6 +195,7 @@ main {
   padding-left: 50px;
 }
 main .productos-carrito {
+  position: relative;
   width: 97%;
   height: 120px;
   background-color: white;
@@ -213,6 +214,9 @@ main .productos-carrito .close {
   margin-left: -90px;
   color: rgb(175, 3, 3);
   cursor: pointer;
+}
+main .productos-carrito button {
+  position: absolute;
 }
 main .productos-carrito img {
   -o-object-fit: cover;

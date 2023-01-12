@@ -81,13 +81,14 @@ validarModoOscuro(comprobarLocalStorage("modo"))
 productosCarro= JSON.parse(localStorage.getItem("carro"))
 
 function agregar(arr){
+    
     arr.forEach(element => {
         const contenedor= document.createElement("div")
         contenedor.className="productos-carrito"
         contenedor.innerHTML=`
         <div class="close">
             <button id="boton-${element.id}" class="boton-eliminar">
-            Eliminar ya
+            Eliminar
             </button>
         </div>
 
@@ -115,6 +116,7 @@ function borrarDelCarrito (array) {
     const botonBorrar = document.querySelectorAll(".boton-eliminar")    
     botonBorrar.forEach( boton => {
         boton.onclick = () => {
+            contenedorJs.innerHTML=""
             const id = boton.id.slice(6)            
             const filtrarProducto = array.filter((elemento, i) => {
                 return elemento.id != Number(id)

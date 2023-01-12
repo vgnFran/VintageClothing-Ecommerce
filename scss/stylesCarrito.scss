@@ -213,6 +213,7 @@ header{
     position: relative;
     padding-left: 50px;
     .productos-carrito{
+        position: relative;
         width: 97%;
         height: 120px;
         background-color: white;
@@ -236,6 +237,9 @@ header{
             margin-left: -90px;
             color: rgb(175, 3, 3);
             cursor: pointer;
+        }
+        button{
+            position:absolute
         }
         img{
             object-fit: cover;

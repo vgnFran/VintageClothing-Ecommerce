@@ -381,11 +381,11 @@ function alCarrito(data,carrito){
     btnAlCarro.forEach(e =>{
         e.onclick=()=>{
             const recorte= e.id.slice(7)
-            const filtro=(data).find(element =>{
+            let filtro=(data).find(element =>{
                 return element.id == recorte
             })
+            console.log(filtro)
             carrito.push(filtro)
-            console.log(carrito)
             localStorage.setItem("carro",JSON.stringify(carrito))
             
         }
