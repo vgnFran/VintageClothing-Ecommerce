@@ -78,25 +78,24 @@ validarModoOscuro(comprobarLocalStorage("modo"))
 
 //trayendo los productos del carrito subidos al ls
 
+productosCarro= JSON.parse(localStorage.getItem("carro"))
 
-
-
-function delLsAlDom(){
-    contenedorJs.innerHTML=""
-    let productosCarrito= JSON.parse(localStorage.getItem("carro"))
-    productosCarrito.forEach(prod=>{
-        const contenedorCarrito= document.createElement("div")
-        contenedorCarrito.classList.add("productos-carrito")
-        contenedorCarrito.innerHTML=`
+function agregar(arr){
+    arr.forEach(element => {
+        const contenedor= document.createElement("div")
+        contenedor.className="productos-carrito"
+        contenedor.innerHTML=`
         <div class="close">
-            <i class="bi bi-x-circle eliminar" id="${prod.id}"></i>
+            <button id="boton-${element.id}" class="boton-eliminar">
+            Eliminar ya
+            </button>
         </div>
 
-        <img src=/${prod.imagen} alt="${prod.nombre}">
-        <h2>${prod.nombre}</h2>
+        <img src=/${element.imagen} alt="">
+        <h2>${element.nombre}</h2>
         <div class="precio">
             <p>Precio: $</p>
-            <p id="precio-individual">${prod.precio}</p>
+            <p id="precio-individual">${element.precio}</p>
         </div>
         <div class="cantidad">
             <p>Cantidad</p>
@@ -107,38 +106,26 @@ function delLsAlDom(){
             <p class="total-producto" id="total">12000</p>
         </div>
         `
-        contenedorJs.appendChild(contenedorCarrito)
+        contenedorJs.appendChild(contenedor)
+    });
+}
+agregar(productosCarro || [])
+
+function borrarDelCarrito (array) {
+    const botonBorrar = document.querySelectorAll(".boton-eliminar")    
+    botonBorrar.forEach( boton => {
+        boton.onclick = () => {
+            const id = boton.id.slice(6)            
+            const filtrarProducto = array.filter((elemento, i) => {
+                return elemento.id != Number(id)
+            })
+            productosCarro = filtrarProducto            
+            localStorage.setItem("carro", JSON.stringify(productosCarro))   
+            agregar(productosCarro)
+            borrarDelCarrito(productosCarro)       
+        }
         
     })
 }
 
-delLsAlDom()
-
-function eliminarDelCarrito(){
-    const botonEliminar= document.querySelectorAll(".eliminar")
-    let productosCarrito= JSON.parse(localStorage.getItem("carro"))
-    botonEliminar.forEach(boton =>{
-        boton.onclick=()=>{
-            const numeroBoton= boton.id
-            console.log(numeroBoton)
-            const eliminar= productosCarrito.find(prod =>{
-                return prod.id == numeroBoton
-            })
-            const casieliminado =productosCarrito.indexOf(eliminar)
-            productosCarrito.splice(casieliminado,1)
-            console.log(productosCarrito)
-            localStorage.setItem("carro",JSON.stringify(productosCarrito))
-            eliminarDelCarrito(productosCarrito)
-            
-                
-
-        }
-    })
-    
-}
-
-eliminarDelCarrito()
-
-const hola =()=>{
-    console.log("hola")
-}
+borrarDelCarrito(productosCarro)
