@@ -9,6 +9,7 @@ const aside=document.querySelector(".aside");
 const main=document.querySelector(".main")
 const body=document.querySelector("body");
 const modoCheckbox= document.querySelector("#toggle")
+const contenedorJs= document.querySelector("#container-js")
 
 
 const registrarLocalStorage = (clave,valor) =>{
@@ -32,11 +33,11 @@ const cargarCarrito=()=>{
 cargarCarrito()
 
 
-cantidadProductos.onclick=()=>{
+// cantidadProductos.onclick=()=>{
 
-    let nuevoprecio= parseInt(precioIndividual.textContent)
-    totalProductos.textContent=nuevoprecio*cantidadProductos.value
-}
+//     let nuevoprecio= parseInt(precioIndividual.textContent)
+//     totalProductos.textContent=nuevoprecio*cantidadProductos.value
+// }
 
 // modo oscuro
 interruptor.onclick= ()=>{
@@ -77,10 +78,34 @@ validarModoOscuro(comprobarLocalStorage("modo"))
 
 const productosCarrito= JSON.parse(localStorage.getItem("carro"))
 
-function ingresarProductos(){
-    productosCarrito.forEach(producto => {
-        console.log(producto)
-    });
+
+function delLsAlDom(){
+    productosCarrito.forEach(prod=>{
+        const contenedorCarrito= document.createElement("div")
+        contenedorCarrito.classList.add("productos-carrito")
+        contenedorCarrito.innerHTML=`
+        <div class="close">
+            <i class="bi bi-x-circle"></i>
+        </div>
+
+        <img src=/${prod.imagen} alt="${prod.nombre}">
+        <h2>${prod.nombre}</h2>
+        <div class="precio">
+            <p>Precio: $</p>
+            <p id="precio-individual">${prod.precio}</p>
+        </div>
+        <div class="cantidad">
+            <p>Cantidad</p>
+            <input type="number" id="cantidad">
+        </div>
+        <div class="total">
+            <p>Total:$</p>
+            <p class="total-producto" id="total">12000</p>
+        </div>
+        `
+        contenedorJs.appendChild(contenedorCarrito)
+    })
 }
 
-ingresarProductos()
+delLsAlDom()
+

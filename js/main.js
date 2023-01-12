@@ -387,10 +387,11 @@ function alCarrito(data,carrito){
             carrito.push(filtro)
             console.log(carrito)
             localStorage.setItem("carro",JSON.stringify(carrito))
+            
         }
     })
     
 }
 
 const carritoCargado=JSON.parse(localStorage.getItem("carro"))
-carritoDeCompras=carritoCargado
+carritoDeCompras=carritoCargado || []
