@@ -26,7 +26,7 @@
     {"id":"25","nombre":"Remera Denver Naranja","precio":4000,"categoria":"remera","imagen":"./images/remera05.jpg","oferta":false},
     {"id":"26","nombre":"Remera Adidas Miami","precio":6000,"categoria":"remera","imagen":"./images/remera06.jpg","oferta":false},
     {"id":"27","nombre":"Remera Tommy","precio":4000,"categoria":"remera","imagen":"./images/remera07.jpg","oferta":false},
-    {"id":"28","nombre":"Remera Detroit","precio":5000,"categoria":"remera","imagen":"/images/remera08.jpg","oferta":true},
+    {"id":"28","nombre":"Remera Detroit","precio":5000,"categoria":"remera","imagen":"./images/remera08.jpg","oferta":true},
     {"id":"29","nombre":"Remera NYC","precio":5500,"categoria":"remera","imagen":"./images/remera09.jpg","oferta":false},
     {"id":"30","nombre":"Remera C","precio":3800,"categoria":"remera","imagen":"./images/remera10.jpg","oferta":false},
     {"id":"31","nombre":"Pantalon Short Adidas","precio":9000,"categoria":"pantalon","imagen":"./images/pantalon01.jpg","oferta":false},

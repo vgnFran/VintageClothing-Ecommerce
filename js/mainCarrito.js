@@ -10,6 +10,8 @@ const main=document.querySelector(".main")
 const body=document.querySelector("body");
 const modoCheckbox= document.querySelector("#toggle")
 const contenedorJs= document.querySelector("#container-js")
+const vaciar= document.querySelector(".vaciar")
+
 
 
 const registrarLocalStorage = (clave,valor) =>{
@@ -76,16 +78,18 @@ validarModoOscuro(comprobarLocalStorage("modo"))
 
 //trayendo los productos del carrito subidos al ls
 
-const productosCarrito= JSON.parse(localStorage.getItem("carro"))
+
 
 
 function delLsAlDom(){
+    contenedorJs.innerHTML=""
+    let productosCarrito= JSON.parse(localStorage.getItem("carro"))
     productosCarrito.forEach(prod=>{
         const contenedorCarrito= document.createElement("div")
         contenedorCarrito.classList.add("productos-carrito")
         contenedorCarrito.innerHTML=`
         <div class="close">
-            <i class="bi bi-x-circle"></i>
+            <i class="bi bi-x-circle eliminar" id="${prod.id}"></i>
         </div>
 
         <img src=/${prod.imagen} alt="${prod.nombre}">
@@ -104,8 +108,37 @@ function delLsAlDom(){
         </div>
         `
         contenedorJs.appendChild(contenedorCarrito)
+        
     })
 }
 
 delLsAlDom()
 
+function eliminarDelCarrito(){
+    const botonEliminar= document.querySelectorAll(".eliminar")
+    let productosCarrito= JSON.parse(localStorage.getItem("carro"))
+    botonEliminar.forEach(boton =>{
+        boton.onclick=()=>{
+            const numeroBoton= boton.id
+            console.log(numeroBoton)
+            const eliminar= productosCarrito.find(prod =>{
+                return prod.id == numeroBoton
+            })
+            const casieliminado =productosCarrito.indexOf(eliminar)
+            productosCarrito.splice(casieliminado,1)
+            console.log(productosCarrito)
+            localStorage.setItem("carro",JSON.stringify(productosCarrito))
+            eliminarDelCarrito(productosCarrito)
+            
+                
+
+        }
+    })
+    
+}
+
+eliminarDelCarrito()
+
+const hola =()=>{
+    console.log("hola")
+}
