@@ -124,7 +124,9 @@ function borrarDelCarrito (array) {
             productosCarro = filtrarProducto            
             localStorage.setItem("carro", JSON.stringify(productosCarro))   
             agregar(productosCarro)
-            borrarDelCarrito(productosCarro)       
+            borrarDelCarrito(productosCarro)
+            
+            registrarLocalStorage("cuantos",productosCarro.length)
         }
         
     })

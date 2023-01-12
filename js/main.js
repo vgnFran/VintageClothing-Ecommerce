@@ -50,7 +50,7 @@ const modoCheckbox= document.querySelector("#toggle")
 const ingreso=document.querySelector(".butonBody")
 const ofertas= document.querySelector("#ofertas")
 const swiperFondo= document.querySelector(".swiper")
-
+const cuantosProductos= document.querySelector("#cantidad-productos")
 
 
 ingreso.onclick=()=>{
@@ -374,6 +374,7 @@ function agregaSecciones(tipo,esOferta){
 // carrito 
 
 let carritoDeCompras=[]
+console.log(carritoDeCompras.length)
 
 
 function alCarrito(data,carrito){
@@ -385,13 +386,28 @@ function alCarrito(data,carrito){
                 return element.id == recorte
             })
             console.log(filtro)
-            carrito.push(filtro)
+            // si el producto elegido ya se encuentra en el carrito, no hacemos nada, pero si no se encuentra, entonces lo pusheamos
+            const carritopusheado= JSON.parse(localStorage.getItem("carro"))
+            const resultado = carritopusheado.find(elemento => elemento.nombre === filtro.nombre)
+            resultado == undefined?carrito.push(filtro):resultado
+
             localStorage.setItem("carro",JSON.stringify(carrito))
+            //para actualizar el span de cantidad de productos en el carrito
+            registrarLocalStorage("cuantos",carritoDeCompras.length)
+            comprobar()
+                
+
+            
             
         }
     })
     
 }
+
+const comprobar = ()=>{
+    cuantosProductos.innerText=comprobarLocalStorage("cuantos")
+}
+comprobar()
 
 const carritoCargado=JSON.parse(localStorage.getItem("carro"))
 carritoDeCompras=carritoCargado || []
