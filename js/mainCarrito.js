@@ -86,13 +86,10 @@ function agregar(arr){
         const contenedor= document.createElement("div")
         contenedor.className="productos-carrito"
         contenedor.innerHTML=`
-        <div class="close">
-            <button id="boton-${element.id}" class="boton-eliminar">
-            Eliminar
-            </button>
-        </div>
-
+        <div class="izq">
+        <i class="bi bi-x-circle boton-eliminar" id="boton-${element.id}"></i>
         <img src=/${element.imagen} alt="">
+        </div>
         <h2>${element.nombre}</h2>
         <div class="precio">
             <p>Precio: $</p>

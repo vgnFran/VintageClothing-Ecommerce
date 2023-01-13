@@ -241,7 +241,6 @@ header{
     position: relative;
     padding-left: 50px;
     .productos-carrito{
-        position: relative;
         width: 97%;
         height: 120px;
         background-color: white;
@@ -260,24 +259,33 @@ header{
             100px 100px 80px rgba(0, 0, 0, 0.16)
             ;
 
-        .close{
+        .boton-eliminar{
             font-size: 22px;
-            margin-left: -90px;
+            // margin-left: -90px;
             color: rgb(175, 3, 3);
             cursor: pointer;
         }
-        button{
-            position:absolute
+        .izq{
+            display: flex;
+            align-items: center;
+            margin-left: -100px;
         }
         img{
             object-fit: cover;
             width: 100px;
             height: 100px;
             border-radius: 6px;
-            margin-left:-210px;
+            margin-left: 10px;
+            border: 1px solid rgba(32, 25, 136, 0.822);
         }
         h2{
             margin-left: -200px;
+        }
+        input{
+            border-radius: 6px;
+            border: none;
+            font-size: 16px;
+            padding-left: 9px;
         }
         .precio{
             display: flex;
