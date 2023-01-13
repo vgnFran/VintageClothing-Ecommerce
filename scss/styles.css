@@ -69,6 +69,13 @@
   color: lightgrey !important;
   background-color: rgb(37, 35, 35);
 }
+.modo-oscuro .btn-agregar {
+  color: rgb(37, 35, 35) !important;
+}
+.modo-oscuro .btn-agregar:hover {
+  background-color: rgb(37, 35, 35) !important;
+  color: white !important;
+}
 .modo-oscuro .container-producto {
   background-color: rgb(37, 35, 35) !important;
 }
@@ -458,7 +465,7 @@ main .login-registrado .button input {
   display: flex;
   justify-content: center;
 }
-.body-ecomercce .container-producto .cont-button button {
+.body-ecomercce .container-producto .cont-button .btn-agregar {
   padding-top: 4px;
   padding-bottom: 4px;
   width: 200px;
@@ -468,4 +475,11 @@ main .login-registrado .button input {
   border-radius: 10px;
   margin-top: 4px;
   font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.body-ecomercce .container-producto .cont-button .btn-agregar:hover {
+  color: white;
+  background-color: rgba(58, 25, 136, 0.774);
+  border: 1px solid rgb(192, 190, 190);
 }/*# sourceMappingURL=styles.css.map */

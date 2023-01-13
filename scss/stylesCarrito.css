@@ -15,6 +15,17 @@
 .modo-oscuro .elegido {
   color: rgb(37, 35, 35) !important;
   text-shadow: none !important;
+  background-color: lightgray !important;
+}
+.modo-oscuro .elegido::before {
+  box-shadow: 0 1rem 0 lightgrey !important;
+}
+.modo-oscuro .elegido::after {
+  box-shadow: 0 -1rem 0 lightgray !important;
+}
+.modo-oscuro #cantidad {
+  background-color: lightgray;
+  border: none;
 }
 .modo-oscuro h2 {
   color: rgb(37, 35, 35) !important;
@@ -27,9 +38,24 @@
 .modo-oscuro .container-producto {
   background-color: rgb(37, 35, 35) !important;
 }
+.modo-oscuro .span-carrito {
+  background-color: rgb(37, 35, 35) !important;
+}
+.modo-oscuro .productos-carrito {
+  border: 2px solid rgb(37, 35, 35);
+  color: rgb(37, 35, 35) !important;
+  background-color: rgba(37, 35, 35, 0.877) !important;
+}
+.modo-oscuro .productos-carrito h2 {
+  color: lightgray !important;
+  background-color: transparent;
+}
+.modo-oscuro .productos-carrito p {
+  color: lightgray;
+}
 
 .modo-oscuro-main {
-  background-color: lightgrey;
+  background-color: lightgray;
 }
 
 .body {

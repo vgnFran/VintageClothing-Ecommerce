@@ -381,6 +381,7 @@ function alCarrito(data,carrito){
     const btnAlCarro= document.querySelectorAll(".btn-agregar")
     btnAlCarro.forEach(e =>{
         e.onclick=()=>{
+            
             const recorte= e.id.slice(7)
             let filtro=(data).find(element =>{
                 return element.id == recorte
@@ -395,9 +396,23 @@ function alCarrito(data,carrito){
             //para actualizar el span de cantidad de productos en el carrito
             registrarLocalStorage("cuantos",carritoDeCompras.length)
             comprobar()
-                
-
-            
+            Toastify({
+                text: `Se añadio ${filtro.nombre}`,
+                duration: 3000,
+                destination: "/pages/carrito.html",
+                newWindow: false,
+                close: true,
+                gravity: "bottom",
+                position: "right", 
+                stopOnFocus: false,
+                style: {
+                  background: "rgb(73, 66, 145)",
+                  border: "1px solid white",
+                  borderRadius: "6px" ,
+                },
+                onClick: function(){} // Callback after click
+              }).showToast();   
+                 
             
         }
     })
@@ -409,5 +424,12 @@ const comprobar = ()=>{
 }
 comprobar()
 
+
+  
+
+
 const carritoCargado=JSON.parse(localStorage.getItem("carro"))
 carritoDeCompras=carritoCargado || []
+
+
+

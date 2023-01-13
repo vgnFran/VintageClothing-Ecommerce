@@ -20,6 +20,17 @@
     .elegido{
         color:rgb(37, 35, 35)!important;
         text-shadow: none!important;
+        background-color: lightgray!important;
+    }
+    .elegido::before{
+        box-shadow: 0 1rem 0 lightgrey!important;
+    }
+    .elegido::after{
+        box-shadow: 0 -1rem 0 lightgray!important;
+    }
+    #cantidad{
+        background-color: lightgray;
+        border: none;
     }
     h2{
         color: rgb(37, 35, 35) !important;
@@ -32,10 +43,27 @@
     .container-producto{
         background-color:rgb(37, 35, 35)!important;
     }
+    .span-carrito{
+        background-color: rgb(37, 35, 35)!important;
+    }
+    .productos-carrito{
+        border: 2px solid rgb(37, 35, 35);
+        color: rgb(37, 35, 35)!important;
+        background-color:  rgba(37, 35, 35, 0.877)!important;
+        h2{
+            color: lightgray!important;
+            background-color: transparent;
+        }
+        p{
+            color: lightgray;
+        }
 
-}
+    }
+    }
+
+
 .modo-oscuro-main{
-    background-color: lightgrey;
+    background-color: lightgray;
 }
 
 
