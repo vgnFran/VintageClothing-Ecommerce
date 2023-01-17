@@ -235,7 +235,9 @@ main {
   display: flex;
   align-items: center;
   text-align: center;
-  justify-content: space-between;
+  justify-content: flex-end;
+  margin-bottom: 60px;
+  margin-top: 10px;
 }
 .body-ecomercce .titulos-usuario h2 {
   margin-left: 12px;
@@ -266,4 +268,114 @@ main {
 }
 .body-ecomercce .titulos-usuario .user img {
   width: 38px;
+}
+
+.contacto {
+  display: block;
+}
+.contacto .titles {
+  display: flex;
+  justify-content: space-around;
+  margin-right: 160px;
+}
+.contacto h3 {
+  margin-left: 100px;
+  font-size: 46px;
+}
+.contacto h4 {
+  font-size: 30px;
+  margin-top: auto;
+}
+.contacto .info {
+  display: flex;
+}
+.contacto .lista-contacto {
+  list-style: none;
+  margin-top: 20px;
+  margin-left: 60px;
+}
+.contacto .lista-contacto li {
+  margin-top: 30px;
+}
+.contacto .lista-contacto li i {
+  font-style: normal;
+  display: flex;
+  flex-direction: row;
+}
+.contacto .lista-contacto li p {
+  margin-left: 10px;
+}
+.contacto .p-inputs {
+  font-size: 20px;
+  margin-left: 100px;
+  margin-top: 10px;
+}
+.contacto .container-inputs {
+  display: flex;
+  flex-direction: column;
+  margin-left: 160px;
+}
+.contacto .container-inputs input {
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+}
+.contacto .container-inputs .nombre {
+  display: flex;
+  margin-top: 20px;
+}
+.contacto .container-inputs .nombre label {
+  margin-right: 10px;
+}
+.contacto .container-inputs input {
+  margin-right: 10px;
+}
+.contacto .container-inputs label {
+  margin-right: 10px;
+}
+.contacto .container-inputs .info-contacto {
+  display: flex;
+  margin-top: 20px;
+}
+.contacto .container-inputs .dudas {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.contacto .container-inputs .dudas #dudas-input {
+  height: 110px;
+  margin-top: 8px;
+}
+.contacto .container-inputs button {
+  width: 260px;
+  height: 40px;
+  margin: auto;
+  margin-top: 16px;
+  color: white;
+  background-color: rgba(32, 25, 136, 0.774);
+  border: 1px solid;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.footer {
+  background-color: rgba(32, 25, 136, 0.774);
+  margin-left: -50px;
+  height: 100px;
+  margin-top: 25vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+}
+.footer .info-promos {
+  display: flex;
+  align-items: center;
+}
+.footer .info-promos i {
+  font-size: 42px;
+  margin-right: 10px;
+}
+
+.desc-promos {
+  font-size: 12px;
 }/*# sourceMappingURL=stylesContacto.css.map */
