@@ -136,7 +136,7 @@ function borrarDelCarrito (array) {
                 return nada + e.precio
             })
             let precioFinal = total.reduce((a, b) => a + b, 0);
-            precioTotal.innerText=precioFinal
+            precioTotal.innerText="Total: $"+precioFinal
         }
         
     })
@@ -167,7 +167,7 @@ const sinProductos=()=>{
         </p>
         `
         contenedorJs.appendChild(contenedor)
-        precioTotal.innerText=0
+        precioTotal.innerText="Total: $"+0
     }
 }
 sinProductos()
@@ -180,7 +180,7 @@ let precioAPagar=0
         precioFinal.forEach(e=>{
             precioAPagar+= e
         })
-        precioTotal.innerText=precioAPagar
+        precioTotal.innerText="Total: $"+precioAPagar
 
     }
     cuantoPago()
