@@ -80,33 +80,36 @@
                         </div>
 
                         <div class="container-inputs">
-                            <div class="nombre">
-                                <div>
-                                    <label for="nombre-input">Nombre</label>
-                                    <input type="text" id="nombre-input" name="name">
+                            <form id="form-contacto">
+                                <div class="nombre">
+                                    <div>
+                                        <label for="nombre-input">Nombre</label>
+                                        <input type="text" id="nombre-input" name="name">
+                                    </div>
+                                    <div>
+                                        <label for="apellido-input">Apellido</label>
+                                        <input type="text" id="apellido-input" name="apellido" class="input-apellido">
+                                    </div>
                                 </div>
-                                <div>
-                                    <label for="apellido-input">Apellido</label>
-                                    <input type="text" id="apellido-input" name="apellido" class="input-apellido">
+    
+                                <div class="info-contacto">
+                                    <div>
+                                        <label for="email-input">Email</label>
+                                        <input type="text" id="email-input" name="consulta"> 
+                                    </div>
+    
+                                    <div>
+                                        <label for="telefono-input">Telefono</label>
+                                        <input type="text" id="telefono-input" name="telefono"> 
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="info-contacto">
-                                <div>
-                                    <label for="email-input">Email</label>
-                                    <input type="text" id="email-input" name="consulta"> 
+                                <div class="dudas">
+                                    <label for="dudas-input">Dejanos tu consulta</label>
+                                    <input type="text" id="dudas-input" name="dudas"> 
                                 </div>
-
-                                <div>
-                                    <label for="telefono-input">Telefono</label>
-                                    <input type="text" id="telefono-input" name="telefono"> 
-                                </div>
-                            </div>
-                            <div class="dudas">
-                                <label for="dudas-input">Dejanos tu consulta</label>
-                                <input type="text" id="dudas-input" name="dudas"> 
-                            </div>
-                            <button type="submit">Enviar Consulta</button>
+                                <button type="submit">Enviar Consulta</button>
+                            </form>
+                       
                             
                         </div>
                     </div>
@@ -150,7 +153,7 @@
             
         </main> 
         <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-        <script src="/js/main.js"></script>
+        <script src="/js/mainContacto.js"></script>
     </section>
 </body>
 
