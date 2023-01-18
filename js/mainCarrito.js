@@ -1,7 +1,8 @@
 const nombreUser = document.querySelector("#nombre-user")
 const cantidadProductos= document.querySelector("#cantidad")
 const precioIndividual= document.querySelector("#precio-individual")
-const totalProductos= document.querySelector(".total-producto")
+
+
 const totalFinal= document.querySelectorAll("#total")
 const interruptor= document.querySelector(".interruptor")
 const productosTitulo=document.querySelector("#todos-productos")
@@ -11,6 +12,12 @@ const body=document.querySelector("body");
 const modoCheckbox= document.querySelector("#toggle")
 const contenedorJs= document.querySelector("#container-js")
 const vaciar= document.querySelector(".vaciar")
+const precioTotal = document.querySelector("#total-final")
+
+
+
+
+
 
 
 
@@ -36,11 +43,6 @@ const cargarCarrito=()=>{
 cargarCarrito()
 
 
-// cantidadProductos.onclick=()=>{
-
-//     let nuevoprecio= parseInt(precioIndividual.textContent)
-//     totalProductos.textContent=nuevoprecio*cantidadProductos.value
-// }
 
 // modo oscuro
 interruptor.onclick= ()=>{
@@ -83,11 +85,12 @@ productosCarro= JSON.parse(localStorage.getItem("carro"))
 
 
 
-
+let precioFinal=[] // variable para sumar el precio final sumando el precio de todos los productos
+let precioaver=[]
 
 function agregar(arr){
     
-    arr.forEach(element => {
+    arr.forEach(element => {      
         const contenedor= document.createElement("div")
         contenedor.className="productos-carrito"
         contenedor.innerHTML=`
@@ -100,16 +103,9 @@ function agregar(arr){
             <p>Precio: $</p>
             <p id="precio-individual">${element.precio}</p>
         </div>
-        <div class="cantidad">
-            <p>Cantidad</p>
-            <input type="number" id="cantidad">
-        </div>
-        <div class="total">
-            <p>Total:$</p>
-            <p class="total-producto" id="total">12000</p>
-        </div>
         `
         contenedorJs.appendChild(contenedor)
+        precioFinal.push(element.precio)
     });
 }
 agregar(productosCarro || [])
@@ -128,14 +124,29 @@ function borrarDelCarrito (array) {
             agregar(productosCarro)
             borrarDelCarrito(productosCarro)
             
+
+
+
+
             registrarLocalStorage("cuantos",productosCarro.length)
             sinProductos()
+            //para obtener el precio final del carrito
+            total= productosCarro.map(e=>{
+                const nada= 0
+                return nada + e.precio
+            })
+            let precioFinal = total.reduce((a, b) => a + b, 0);
+            precioTotal.innerText=precioFinal
         }
         
     })
 }
 
+
+
+
 borrarDelCarrito(productosCarro)
+
 
 
 vaciar.onclick=()=>{
@@ -144,6 +155,8 @@ vaciar.onclick=()=>{
     localStorage.setItem("cuantos",0)
     sinProductos()
 }
+
+
 
 const sinProductos=()=>{
     if (comprobarLocalStorage("carro").length==0  ){
@@ -154,8 +167,21 @@ const sinProductos=()=>{
         </p>
         `
         contenedorJs.appendChild(contenedor)
+        precioTotal.innerText=0
     }
 }
 sinProductos()
 
+
+// para que el precio final del carrito este cargado siempre que entremos sin modificar productos
+let precioAPagar=0
+
+    const cuantoPago=()=>{
+        precioFinal.forEach(e=>{
+            precioAPagar+= e
+        })
+        precioTotal.innerText=precioAPagar
+
+    }
+    cuantoPago()
 
