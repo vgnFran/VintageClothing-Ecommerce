@@ -181,6 +181,10 @@ header .aside ul .carrito a {
 header .aside ul .contacto {
   margin-top: 50px;
 }
+header .aside ul .contacto a {
+  text-decoration: none;
+  color: white;
+}
 header .aside ul .interruptor {
   position: relative;
   display: inline-block;

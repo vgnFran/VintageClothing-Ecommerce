@@ -53,6 +53,9 @@
 .modo-oscuro .productos-carrito p {
   color: lightgray;
 }
+.modo-oscuro .productos-vacios {
+  color: black !important;
+}
 
 .modo-oscuro-main {
   background-color: lightgray;
@@ -346,4 +349,7 @@ main .buttons .comprar {
 }
 .body-ecomercce .titulos-usuario .user img {
   width: 38px;
+}
+.body-ecomercce .productos-vacios {
+  font-size: 20px;
 }/*# sourceMappingURL=stylesCarrito.css.map */

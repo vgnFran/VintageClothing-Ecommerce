@@ -14,6 +14,7 @@ const vaciar= document.querySelector(".vaciar")
 
 
 
+
 const registrarLocalStorage = (clave,valor) =>{
     localStorage.setItem(clave,JSON.stringify(valor))
 }
@@ -80,6 +81,10 @@ validarModoOscuro(comprobarLocalStorage("modo"))
 
 productosCarro= JSON.parse(localStorage.getItem("carro"))
 
+
+
+
+
 function agregar(arr){
     
     arr.forEach(element => {
@@ -124,9 +129,33 @@ function borrarDelCarrito (array) {
             borrarDelCarrito(productosCarro)
             
             registrarLocalStorage("cuantos",productosCarro.length)
+            sinProductos()
         }
         
     })
 }
 
 borrarDelCarrito(productosCarro)
+
+
+vaciar.onclick=()=>{
+    registrarLocalStorage("carro",[])
+    contenedorJs.innerHTML=""
+    localStorage.setItem("cuantos",0)
+    sinProductos()
+}
+
+const sinProductos=()=>{
+    if (comprobarLocalStorage("carro").length==0  ){
+        const contenedor= document.createElement("div")
+        contenedor.className="productos-vacios"
+        contenedor.innerHTML=`
+        <p>El carrito de compras se encuentra vacio. <i class="bi bi-cart"></i>
+        </p>
+        `
+        contenedorJs.appendChild(contenedor)
+    }
+}
+sinProductos()
+
+

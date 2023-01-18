@@ -376,6 +376,10 @@ function agregaSecciones(tipo,esOferta){
 let carritoDeCompras=[]
 console.log(carritoDeCompras.length)
 
+const carritoCargado=JSON.parse(localStorage.getItem("carro"))
+carritoDeCompras=carritoCargado || []
+
+
 
 function alCarrito(data,carrito){
     const btnAlCarro= document.querySelectorAll(".btn-agregar")
@@ -388,10 +392,10 @@ function alCarrito(data,carrito){
             })
             console.log(filtro)
             // si el producto elegido ya se encuentra en el carrito, no hacemos nada, pero si no se encuentra, entonces lo pusheamos
-            const carritopusheado= JSON.parse(localStorage.getItem("carro"))
-            const resultado = carritopusheado.find(elemento => elemento.nombre === filtro.nombre)
+            carritoDeCompras
+            console.log(carritoDeCompras)
+            const resultado = carritoDeCompras.find(elemento => elemento.nombre === filtro.nombre)
             resultado == undefined?carrito.push(filtro):resultado
-
             localStorage.setItem("carro",JSON.stringify(carrito))
             //para actualizar el span de cantidad de productos en el carrito
             registrarLocalStorage("cuantos",carritoDeCompras.length)
@@ -423,13 +427,4 @@ const comprobar = ()=>{
     cuantosProductos.innerText=comprobarLocalStorage("cuantos")
 }
 comprobar()
-
-
-  
-
-
-const carritoCargado=JSON.parse(localStorage.getItem("carro"))
-carritoDeCompras=carritoCargado || []
-
-
 

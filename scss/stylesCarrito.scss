@@ -59,6 +59,9 @@
         }
 
     }
+    .productos-vacios{
+        color: black!important;
+    }
     }
 
 
@@ -124,9 +127,11 @@ header{
                 .li-oscuro{
                     font-size: 18px;
                 }
+
                 a{
                     text-decoration: none;
                     color: white;
+                    
                 }
 
             .carrito{
@@ -135,6 +140,7 @@ header{
             .contacto{
                 margin-top: 50px;
             }
+
             .interruptor{
                 position: relative;
                 display: inline-block;
@@ -387,7 +393,9 @@ header{
                 }
             }
         }
-        
+        .productos-vacios{
+            font-size: 20px;
+        }
     
 }
     
