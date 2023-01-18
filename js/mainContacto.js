@@ -14,7 +14,22 @@ form.onsubmit=(e)=>{
     validacionTelefono()
     validacionDudas()
    if (validacionNames() && validacionEmail() && validacionTelefono() && validacionDudas()){
-    console.log("comprado")
+    Swal.fire({
+        title: 'Gracias por enviarnos tus datos.',
+        text: 'Nos contactaremos a la brevedad.',
+        icon: 'success',
+        confirmButtonText: 'Aceptar'
+      })
+    inputNombre.value=""
+    inputApellido.value=""
+    inputEmail.value=""
+    inputTelefono.value=""
+    inputDudas.value=""
+    inputNombre.style.border="1px solid lightgrey"
+    inputApellido.style.border="1px solid lightgrey"
+    inputEmail.style.border="1px solid lightgrey"
+    inputTelefono.style.border="1px solid lightgrey"
+    inputDudas.style.border="1px solid lightgrey"
    }
 }
 
