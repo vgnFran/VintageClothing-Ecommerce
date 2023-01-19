@@ -8,7 +8,7 @@ const inputDudas= document.querySelector("#dudas-input")
 const nombreUser = document.querySelector("#nombre-user")
 const cantidadProductos= document.querySelector("#cantidad")
 const precioIndividual= document.querySelector("#precio-individual")
-
+const cuantosProductos= document.querySelector(".span-carrito")
 
 const totalFinal= document.querySelectorAll("#total")
 const interruptor= document.querySelector(".interruptor")
@@ -145,3 +145,9 @@ function validarModoOscuro(clave){
 }
 
 validarModoOscuro(comprobarLocalStorage("modo"))
+
+
+const comprobar = ()=>{
+    cuantosProductos.innerText=comprobarLocalStorage("cuantos")
+}
+comprobar()
