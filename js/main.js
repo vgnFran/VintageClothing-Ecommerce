@@ -51,6 +51,7 @@ const ingreso=document.querySelector(".butonBody")
 const ofertas= document.querySelector("#ofertas")
 const swiperFondo= document.querySelector(".swiper")
 const cuantosProductos= document.querySelector("#cantidad-productos")
+const ordena=document.querySelector("#orden")
 
 
 ingreso.onclick=()=>{
@@ -166,6 +167,7 @@ function productosHtml(func){
     fetch(func)
         .then(resp => resp.json())
         .then(data =>{
+            console.log(data)
             data.forEach(prod=>{
                 const divContainer= document.createElement("div")
                 divContainer.className="container-producto"
@@ -190,6 +192,7 @@ function productosHtml(func){
 }
 
 productosHtml("/js/productos.json")
+
 
 
 //agregando y sacando estilos segun que categoria este seleccionada
@@ -427,4 +430,50 @@ const comprobar = ()=>{
     cuantosProductos.innerText=comprobarLocalStorage("cuantos")
 }
 comprobar()
+
+
+
+
+//ordenar alfabeticamente (A-Z)
+ordena.onclick=()=>{
+    fetch("/js/productos.json")
+    .then(resp => resp.json())
+    .then(data =>{
+        const ordenado= data.sort((a,b)=>{
+            if(a.nombre < b.nombre){
+                return -1
+            }
+            if(a.nombre > b.nombre){
+                return 1
+            }
+
+            return 0
+        })
+        console.log(ordenado)
+        containerProductos.innerHTML=""
+
+        ordenado.forEach(prod=>{
+            const divContainer= document.createElement("div")
+            divContainer.className="container-producto"
+            divContainer.id=`producto-${prod.id}`
+            divContainer.innerHTML=`
+            <img src=${prod.imagen} alt=${prod.nombre}>
+            <div id="body-producto">
+            <h3>${prod.nombre}</h3>
+            <h4>$${prod.precio}</h4>
+            </div>
+            <div class="cont-button">
+            <button class="btn-agregar" id="button-${prod.id}">AGREGAR</button>
+            </div>
+            `
+            containerProductos.appendChild(divContainer)
+            
+            alCarrito(data,carritoDeCompras)
+
+        })
+    })
+    .catch((err) => console.log("err"))
+}
+
+
 
