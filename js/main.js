@@ -450,7 +450,6 @@ ordena.onclick=()=>{
 
             return 0
         })
-        console.log(ordenado)
         containerProductos.innerHTML=""
 
         ordenado.forEach(prod=>{
@@ -492,7 +491,6 @@ ordenaz.onclick=()=>{
 
             return 0
         })
-        console.log(ordenado)
         containerProductos.innerHTML=""
 
         ordenado.forEach(prod=>{

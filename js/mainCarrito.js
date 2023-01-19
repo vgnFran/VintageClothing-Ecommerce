@@ -189,6 +189,7 @@ comprar.onclick=()=>{
         icon: 'success',
         confirmButtonText: 'Aceptar'
         })
+        cuantosProductos.innerText="0"
         
     }
   

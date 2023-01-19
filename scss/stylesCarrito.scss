@@ -254,16 +254,16 @@ header{
     position: relative;
     padding-left: 50px;
     .productos-carrito{
-        width: 97%;
+        width: 80%;
         height: 120px;
         background-color: white;
         display: flex;
         text-align: center;
         align-items: center;
-        justify-content: space-around;
         border-radius: 10px;
         border: 2px solid rgba(32, 25, 136, 0.822);
         margin-bottom: 40px;
+        margin-left: 10%;
         background-color:  rgba(32, 25, 136, 0.308);
         box-shadow:
             4.5px 4.5px 3.6px rgba(0, 0, 0, 0.056),
@@ -271,7 +271,8 @@ header{
             30.1px 30.1px 24.1px rgba(0, 0, 0, 0.104),
             100px 100px 80px rgba(0, 0, 0, 0.16)
             ;
-
+        font-size: 16px;
+        margin-top: 20px;
         .boton-eliminar{
             font-size: 22px;
             color: rgb(175, 3, 3);
@@ -280,18 +281,18 @@ header{
         .izq{
             display: flex;
             align-items: center;
-            margin-left: -100px;
+            margin-left: 20px;
         }
         img{
             object-fit: cover;
             width: 100px;
             height: 100px;
             border-radius: 6px;
-            margin-left: 10px;
+            margin-left: 18px;
             border: 1px solid rgba(32, 25, 136, 0.822);
         }
         h2{
-            margin-left: -200px;
+            margin-left: 60px;
         }
         input{
             border-radius: 6px;
@@ -302,16 +303,10 @@ header{
         .precio{
             display: flex;
             align-items: center;
-            margin-left: -60px;
-        }
-        .cantidad{
-            display: flex;
-            align-items: center;
-            input{
-                width: 36px;
-                height: 36px;
-                margin-left: 16px;
-            }
+            margin-left: auto;
+            margin-right: 50px;
+            font-size: 18px;
+            font-weight: 600;
         }
 
     }
@@ -319,7 +314,7 @@ header{
         display: flex;
         align-items: center;
         justify-content:end;
-        width: 97%;
+        width: 90%;
         p{
             font-size: 20px;
         }
