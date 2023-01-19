@@ -52,6 +52,7 @@ const ofertas= document.querySelector("#ofertas")
 const swiperFondo= document.querySelector(".swiper")
 const cuantosProductos= document.querySelector("#cantidad-productos")
 const ordena=document.querySelector("#orden")
+const ordenaz=document.querySelector("#ordenz")
 
 
 ingreso.onclick=()=>{
@@ -167,7 +168,7 @@ function productosHtml(func){
     fetch(func)
         .then(resp => resp.json())
         .then(data =>{
-            console.log(data)
+
             data.forEach(prod=>{
                 const divContainer= document.createElement("div")
                 divContainer.className="container-producto"
@@ -475,5 +476,45 @@ ordena.onclick=()=>{
     .catch((err) => console.log("err"))
 }
 
+// ordenar alfabeticamente (Z-A)
 
+ordenaz.onclick=()=>{
+    fetch("/js/productos.json")
+    .then(resp => resp.json())
+    .then(data =>{
+        const ordenado= data.sort((a,b)=>{
+            if(a.nombre < b.nombre){
+                return 1
+            }
+            if(a.nombre > b.nombre){
+                return -1
+            }
+
+            return 0
+        })
+        console.log(ordenado)
+        containerProductos.innerHTML=""
+
+        ordenado.forEach(prod=>{
+            const divContainer= document.createElement("div")
+            divContainer.className="container-producto"
+            divContainer.id=`producto-${prod.id}`
+            divContainer.innerHTML=`
+            <img src=${prod.imagen} alt=${prod.nombre}>
+            <div id="body-producto">
+            <h3>${prod.nombre}</h3>
+            <h4>$${prod.precio}</h4>
+            </div>
+            <div class="cont-button">
+            <button class="btn-agregar" id="button-${prod.id}">AGREGAR</button>
+            </div>
+            `
+            containerProductos.appendChild(divContainer)
+            
+            alCarrito(data,carritoDeCompras)
+
+        })
+    })
+    .catch((err) => console.log("err"))
+}
 

@@ -411,12 +411,12 @@ main .login-registrado .button input {
 .body-ecomercce .titulos-usuario {
   display: flex;
   align-items: center;
-  text-align: center;
   justify-content: space-between;
+  margin-top: -10px;
 }
 .body-ecomercce .titulos-usuario h2 {
   margin-left: 12px;
-  margin-top: 20px;
+  margin-top: 40px;
   margin-bottom: 40px;
   color: rgba(32, 25, 136, 0.822);
   font-size: 34px;
@@ -443,6 +443,23 @@ main .login-registrado .button input {
 }
 .body-ecomercce .titulos-usuario .user img {
   width: 38px;
+}
+.body-ecomercce .orden {
+  display: flex;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+.body-ecomercce .orden p {
+  color: rgba(32, 25, 136, 0.822);
+  font-weight: 600;
+}
+.body-ecomercce .orden button {
+  margin-left: 10px;
+  padding: 2px 4px;
+  color: rgba(32, 25, 136, 0.822);
+  border: 1px solid rgba(32, 25, 136, 0.822);
+  border-radius: 3px;
 }
 .body-ecomercce .container-producto {
   background-color: rgba(32, 25, 136, 0.774);
