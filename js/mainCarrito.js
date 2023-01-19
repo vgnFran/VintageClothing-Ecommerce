@@ -1,7 +1,8 @@
 const nombreUser = document.querySelector("#nombre-user")
 const cantidadProductos= document.querySelector("#cantidad")
 const precioIndividual= document.querySelector("#precio-individual")
-
+const comprar= document.querySelector(".comprar")
+const cuantosProductos= document.querySelector(".span-carrito")
 
 const totalFinal= document.querySelectorAll("#total")
 const interruptor= document.querySelector(".interruptor")
@@ -13,13 +14,6 @@ const modoCheckbox= document.querySelector("#toggle")
 const contenedorJs= document.querySelector("#container-js")
 const vaciar= document.querySelector(".vaciar")
 const precioTotal = document.querySelector("#total-final")
-
-
-
-
-
-
-
 
 
 const registrarLocalStorage = (clave,valor) =>{
@@ -86,7 +80,6 @@ productosCarro= JSON.parse(localStorage.getItem("carro"))
 
 
 let precioFinal=[] // variable para sumar el precio final sumando el precio de todos los productos
-let precioaver=[]
 
 function agregar(arr){
     
@@ -122,12 +115,7 @@ function borrarDelCarrito (array) {
             productosCarro = filtrarProducto            
             localStorage.setItem("carro", JSON.stringify(productosCarro))   
             agregar(productosCarro)
-            borrarDelCarrito(productosCarro)
-            
-
-
-
-
+            borrarDelCarrito(productosCarro)          
             registrarLocalStorage("cuantos",productosCarro.length)
             sinProductos()
             //para obtener el precio final del carrito
@@ -137,6 +125,7 @@ function borrarDelCarrito (array) {
             })
             let precioFinal = total.reduce((a, b) => a + b, 0);
             precioTotal.innerText="Total: $"+precioFinal
+            comprobar()
         }
         
     })
@@ -148,7 +137,7 @@ function borrarDelCarrito (array) {
 borrarDelCarrito(productosCarro)
 
 
-
+//eliminando todos los productos del carrito y del ls
 vaciar.onclick=()=>{
     registrarLocalStorage("carro",[])
     contenedorJs.innerHTML=""
@@ -184,4 +173,30 @@ let precioAPagar=0
 
     }
     cuantoPago()
+
+
+//cuando compramos los productos:    
+comprar.onclick=()=>{
+    
+    if(productosCarro.length >= 1){
+        registrarLocalStorage("carro",[])
+        contenedorJs.innerHTML=""
+        localStorage.setItem("cuantos",0)
+        sinProductos()
+        Swal.fire({
+        title: '¡Compra realizada!',
+        text: 'Nos contactaremos a la brevedad para concretar el pago, Gracias.',
+        icon: 'success',
+        confirmButtonText: 'Aceptar'
+        })
+        
+    }
+  
+}
+
+const comprobar = ()=>{
+    cuantosProductos.innerText=comprobarLocalStorage("cuantos")
+}
+comprobar()
+
 

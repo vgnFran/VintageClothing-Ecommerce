@@ -55,6 +55,30 @@
 .modo-oscuro #iniciar-registrado form p {
   color: rgb(37, 35, 35) !important;
 }
+.modo-oscuro .titles {
+  color: rgb(37, 35, 35) !important;
+}
+.modo-oscuro h3 {
+  background-color: transparent !important;
+  color: rgb(37, 35, 35) !important;
+}
+.modo-oscuro .lista-contacto {
+  color: rgb(37, 35, 35) !important;
+}
+.modo-oscuro .container-inputs {
+  color: rgb(37, 35, 35) !important;
+}
+.modo-oscuro .p-inputs {
+  color: rgb(37, 35, 35) !important;
+}
+.modo-oscuro button {
+  background-color: gray !important;
+  border: none !important;
+  color: rgb(37, 35, 35) !important;
+}
+.modo-oscuro .footer {
+  background-color: rgb(37, 35, 35) !important;
+}
 
 .modo-oscuro-main {
   background-color: lightgrey;
@@ -277,6 +301,7 @@ main {
   display: flex;
   justify-content: space-around;
   margin-right: 160px;
+  color: rgba(32, 25, 136, 0.822);
 }
 .contacto h3 {
   margin-left: 100px;
@@ -355,6 +380,7 @@ main {
   border: 1px solid;
   border-radius: 4px;
   cursor: pointer;
+  margin-left: 120px;
 }
 
 .footer {
