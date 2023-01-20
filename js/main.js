@@ -396,7 +396,6 @@ function alCarrito(data,carrito){
             })
             console.log(filtro)
             // si el producto elegido ya se encuentra en el carrito, no hacemos nada, pero si no se encuentra, entonces lo pusheamos
-            carritoDeCompras
             console.log(carritoDeCompras)
             const resultado = carritoDeCompras.find(elemento => elemento.nombre === filtro.nombre)
             resultado == undefined?carrito.push(filtro):resultado
