@@ -207,7 +207,7 @@ todosProductos.onclick=()=>{
     carrito.classList.remove("elegido")
     contacto.classList.remove("elegido")
     ofertas.classList.remove("elegido")
-    productosHtml("/js/productos.json")
+    productosHtml("js/productos.json")
     productosTitulo.innerText="Todos los Productos"
 }
 
