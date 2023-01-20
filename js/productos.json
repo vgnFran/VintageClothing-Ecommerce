@@ -7,7 +7,7 @@
     {"id":"06","nombre":"Buzo EH","precio":3500,"categoria":"buzo","imagen":"./images/buzo06.jpg","oferta":true},
     {"id":"07","nombre":"Buzo SMS","precio":3900,"categoria":"buzo","imagen":"./images/buzo07.jpg","oferta":false},
     {"id":"08","nombre":"Buzo Azul Rompeviento","precio":3500,"categoria":"buzo","imagen":"./images/buzo08.jpg","oferta":false},
-    {"id":"09","nombre":"Buzo Preferrcol","precio":3900,"categoria":"buzo","imagen":"./images/buzo09.jpg","oferta":false},
+    {"id":"09","nombre":"Buzo Preferrcol","precio":3900,"categoria":"buzo","imagen":"../images/buzo09.jpg","oferta":false},
     {"id":"10","nombre":"Buzo Tennessee","precio":4200,"categoria":"buzo","imagen":"./images/buzo10.jpg","oferta":true},
     {"id":"11","nombre":"Campera Alabama","precio":9000,"categoria":"campera","imagen":"./images/campera01.jpg","oferta":false},
     {"id":"12","nombre":"Campera Gore-Tex","precio":8900,"categoria":"campera","imagen":"./images/campera02.jpg","oferta":false},
