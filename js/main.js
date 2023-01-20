@@ -428,6 +428,7 @@ function alCarrito(data,carrito){
 }
 
 const comprobar = ()=>{
+    registrarLocalStorage("cuantos",0)
     cuantosProductos.innerText=comprobarLocalStorage("cuantos")
 }
 comprobar()
