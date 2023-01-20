@@ -201,3 +201,10 @@ const comprobar = ()=>{
 comprobar()
 
 
+const nombreTarjeta= document.querySelector("#nombre-tarjeta")
+const pTarjeta= document.querySelector("#p-tarjeta")
+let validacionNombre= false 
+
+nombreTarjeta.oninput=()=>{
+    pTarjeta.innerText = nombreTarjeta.value
+} 
