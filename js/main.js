@@ -192,7 +192,7 @@ function productosHtml(func){
     .catch((err) => console.log("err"))
 }
 
-productosHtml("/js/productos.json")
+productosHtml("js/productos.json")
 
 
 
@@ -344,7 +344,7 @@ validarModoOscuro(comprobarLocalStorage("modo"))
 // agregamos los productos segun su seccion, si el producto tiene oferta true, entonces tendra un 50% de decuento en su precio
 
 function agregaSecciones(tipo,esOferta){
-    fetch("/js/productos.json")
+    fetch("js/productos.json")
     .then(resp => resp.json())
     .then(data =>{
         const retorno = data.filter(ele =>{
@@ -437,7 +437,7 @@ comprobar()
 
 //ordenar alfabeticamente (A-Z)
 ordena.onclick=()=>{
-    fetch("/js/productos.json")
+    fetch("js/productos.json")
     .then(resp => resp.json())
     .then(data =>{
         const ordenado= data.sort((a,b)=>{
@@ -478,7 +478,7 @@ ordena.onclick=()=>{
 // ordenar alfabeticamente (Z-A)
 
 ordenaz.onclick=()=>{
-    fetch("/js/productos.json")
+    fetch("js/productos.json")
     .then(resp => resp.json())
     .then(data =>{
         const ordenado= data.sort((a,b)=>{
