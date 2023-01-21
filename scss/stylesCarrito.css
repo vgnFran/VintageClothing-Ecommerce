@@ -310,7 +310,7 @@ main .buttons .comprar {
 }
 
 .body-ecomercce {
-  display: block;
+  display: none;
 }
 .body-ecomercce .productos {
   display: flex;
@@ -355,4 +355,157 @@ main .buttons .comprar {
 }
 .body-ecomercce .productos-vacios {
   font-size: 20px;
+}
+
+.container-card {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 40px;
+}
+.container-card #compra-tarjeta {
+  display: block;
+  width: 1000px;
+  height: 680px;
+  border: 3px solid rgba(32, 25, 136, 0.822);
+  border-radius: 8px;
+  position: relative;
+  color: lightgray;
+}
+.container-card #compra-tarjeta .container-card {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.container-card #compra-tarjeta .container-card img {
+  width: 500px;
+  height: 300px;
+  border-radius: 7px;
+  margin-top: 40px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.container-card #compra-tarjeta .p-datos {
+  position: absolute;
+  width: 100%;
+  font-size: 32px;
+  top: 16%;
+  margin-left: 460px;
+}
+.container-card #compra-tarjeta #p-numero {
+  position: absolute;
+  width: 100%;
+  z-index: 20;
+  top: 35%;
+  margin-left: 30%;
+  font-size: 22px;
+}
+.container-card #compra-tarjeta .nombre-apellido {
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 50%;
+  top: 40%;
+  font-size: 20px;
+  left: 30%;
+}
+.container-card #compra-tarjeta .nombre-apellido #p-apellido {
+  margin-left: 20px;
+}
+.container-card #compra-tarjeta .vencimiento-cvv {
+  position: absolute;
+  color: white;
+  display: flex;
+  max-width: 40%;
+  font-size: 18px;
+  top: 48%;
+  left: 32%;
+}
+.container-card #compra-tarjeta .vencimiento-cvv #cvv {
+  margin-left: 100px;
+}
+.container-card .ingreso {
+  position: absolute;
+  font-size: 26px;
+  top: 52%;
+}
+.container-card .input-nombres {
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  top: 60%;
+  left: 37%;
+}
+.container-card .input-nombres #name {
+  border: 2px solid rgba(32, 25, 136, 0.822);
+  border-radius: 3px;
+  font-size: 16px;
+  padding: 2px;
+  padding-left: 70px;
+  width: 200px;
+}
+.container-card .input-nombres #surname {
+  margin-left: 40px;
+  border: 2px solid rgba(32, 25, 136, 0.822);
+  border-radius: 3px;
+  font-size: 16px;
+  width: 200px;
+  padding: 2px;
+  padding-left: 60px;
+}
+.container-card .input-numbers {
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  top: 65%;
+  left: 37%;
+}
+.container-card .input-numbers #tarjeta {
+  width: 200px;
+  border: 2px solid rgba(32, 25, 136, 0.822);
+  border-radius: 3px;
+  font-size: 16px;
+  padding: 2px;
+  padding-left: 25px;
+}
+.container-card .input-numbers #vencimiento {
+  width: 120px;
+  margin-left: 20px;
+  border: 2px solid rgba(32, 25, 136, 0.822);
+  border-radius: 3px;
+  font-size: 16px;
+  padding: 2px;
+  padding-left: 10px;
+}
+.container-card .input-numbers #cvv {
+  width: 80px;
+  margin-left: 20px;
+  border: 2px solid rgba(32, 25, 136, 0.822);
+  border-radius: 3px;
+  font-size: 16px;
+  padding: 2px;
+  padding-left: 20px;
+}
+.container-card .buttons-compra {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  top: 74%;
+  left: 28%;
+  font-size: 20px;
+  color: rgb(8, 8, 189);
+  cursor: pointer;
+}
+.container-card .buttons-compra button {
+  margin-left: 500px;
+  padding: 6px 24px;
+  border: none;
+  background-color: rgb(44, 148, 44);
+  color: white;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.container-card .buttons-compra button button:hover {
+  color: red;
 }/*# sourceMappingURL=stylesCarrito.css.map */
