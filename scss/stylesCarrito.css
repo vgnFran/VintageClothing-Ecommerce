@@ -310,7 +310,7 @@ main .buttons .comprar {
 }
 
 .body-ecomercce {
-  display: none;
+  display: block;
 }
 .body-ecomercce .productos {
   display: flex;
@@ -358,23 +358,21 @@ main .buttons .comprar {
 }
 
 .container-card {
-  display: flex;
-  width: 100%;
+  display: none;
   justify-content: center;
-  margin-top: 40px;
+  width: 100%;
+  margin-top: 20px;
 }
 .container-card #compra-tarjeta {
   display: block;
   width: 1000px;
   height: 680px;
-  border: 3px solid rgba(32, 25, 136, 0.822);
   border-radius: 8px;
   position: relative;
   color: lightgray;
 }
 .container-card #compra-tarjeta .container-card {
   display: flex;
-  width: 100%;
   justify-content: center;
 }
 .container-card #compra-tarjeta .container-card img {
@@ -385,18 +383,27 @@ main .buttons .comprar {
   -o-object-fit: cover;
      object-fit: cover;
 }
+.container-card #compra-tarjeta i {
+  color: red;
+  font-size: 26px;
+  font-weight: 800;
+  position: absolute;
+  top: 2%;
+  right: 0%;
+  cursor: pointer;
+}
 .container-card #compra-tarjeta .p-datos {
   position: absolute;
   width: 100%;
   font-size: 32px;
-  top: 16%;
+  top: 12%;
   margin-left: 460px;
 }
 .container-card #compra-tarjeta #p-numero {
   position: absolute;
-  width: 100%;
   z-index: 20;
   top: 35%;
+  max-width: 100%;
   margin-left: 30%;
   font-size: 22px;
 }

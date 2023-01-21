@@ -348,7 +348,7 @@ header{
 
 
             .body-ecomercce{
-                display: none;
+                display: block;
                 .productos{
                     display: flex;
                     flex-wrap: wrap;
@@ -401,21 +401,19 @@ header{
             }
 
             .container-card{
-                display: flex;
-                width: 100%;
+                display: none;
                 justify-content: center;
-                margin-top: 40px;
+                width: 100%;
+                margin-top: 20px;
                 #compra-tarjeta{
                     display: block;
                     width: 1000px;
                     height: 680px;
-                    border: 3px solid rgba(32, 25, 136, 0.822);
                     border-radius: 8px;
                     position: relative;
                     color: lightgray;
                     .container-card{
                         display: flex;
-                        width: 100%;
                         justify-content: center;
                         img{
                             width: 500px;
@@ -425,18 +423,27 @@ header{
                             object-fit: cover;
                         }
                     }
+                    i{
+                        color: red;
+                        font-size: 26px;
+                        font-weight: 800;
+                        position: absolute;
+                        top: 2%;
+                        right: 0%;
+                        cursor: pointer;
+                    }
                     .p-datos{
                         position: absolute;
                         width: 100%;
                         font-size: 32px;
-                        top: 16%;
+                        top: 12%;
                         margin-left: 460px;
                     }
                     #p-numero{
                         position: absolute;
-                        width: 100%;
                         z-index: 20;
                         top: 35%;
+                        max-width: 100%;
                         margin-left: 30%;
                         font-size: 22px;
                     }

@@ -15,6 +15,9 @@ const contenedorJs= document.querySelector("#container-js")
 const vaciar= document.querySelector(".vaciar")
 const precioTotal = document.querySelector("#total-final")
 
+const bodyCarrito= document.querySelector(".body-ecomercce")
+const bodyCard= document.querySelector(".container-card")
+const cerrar= document.querySelector("#close")
 
 const registrarLocalStorage = (clave,valor) =>{
     localStorage.setItem(clave,JSON.stringify(valor))
@@ -183,16 +186,23 @@ comprar.onclick=()=>{
         contenedorJs.innerHTML=""
         localStorage.setItem("cuantos",0)
         sinProductos()
-        Swal.fire({
-        title: '¡Compra realizada!',
-        text: 'Nos contactaremos a la brevedad para concretar el pago, Gracias.',
-        icon: 'success',
-        confirmButtonText: 'Aceptar'
-        })
-        cuantosProductos.innerText="0"
+        bodyCarrito.style.display="none"
+        bodyCard.style.display="flex"
+        // Swal.fire({
+        // title: '¡Compra realizada!',
+        // text: 'Nos contactaremos a la brevedad para concretar el pago, Gracias.',
+        // icon: 'success',
+        // confirmButtonText: 'Aceptar'
+        // })
+        // cuantosProductos.innerText="0"
         
     }
   
+}
+
+cerrar.onclick=()=>{
+    bodyCarrito.style.display="block"
+    bodyCard.style.display="none"
 }
 
 const comprobar = ()=>{
@@ -205,6 +215,6 @@ const nombreTarjeta= document.querySelector("#nombre-tarjeta")
 const pTarjeta= document.querySelector("#p-tarjeta")
 let validacionNombre= false 
 
-nombreTarjeta.oninput=()=>{
-    pTarjeta.innerText = nombreTarjeta.value
-} 
+// nombreTarjeta.oninput=()=>{
+//     pTarjeta.innerText = nombreTarjeta.value
+// } 
