@@ -89,7 +89,7 @@ function agregar(arr){
         contenedor.innerHTML=`
         <div class="izq">
         <i class="bi bi-x-circle boton-eliminar" id="boton-${element.id}"></i>
-        <img src=./${element.imagen} alt="">
+        <img src=../${element.imagen} alt="">
         </div>
         <h2>${element.nombre}</h2>
         <div class="precio">
