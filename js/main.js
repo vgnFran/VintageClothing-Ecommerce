@@ -34,6 +34,7 @@ const aIniciar= document.querySelector("#aIniciar");
 const cierraSesion= document.querySelector("#cierra-sesion");
 const userIncorrecto= document.querySelector("#incorrecto");
 const containerProductos= document.querySelector(".productos");
+const home= document.querySelector("#home")
 const todosProductos= document.querySelector("#todos");
 const buzos= document.querySelector("#buzos");
 const camperas= document.querySelector("#camperas")
@@ -59,8 +60,7 @@ const displayBody= document.querySelector(".body");
 
 
 ingreso.onclick=()=>{
-    swiperFondo.style.display="none";
-    displayBody.style.display="flex";
+    // displayBody.style.display="flex";
 };
 
 // datos de usuarios guardados en "base de datos en js"
@@ -158,7 +158,6 @@ function validacion(clave){
         bodyEcomercce.style.display="block";
         nombreUser.innerText= comprobarLocalStorage("nombre");
         todosProductos.classList.add("elegido");
-        swiperFondo.style.display="none";
     } else{
         registrarLogin.style.display="block";
         localStorage.removeItem("modo");
@@ -213,7 +212,22 @@ productosHtml("js/productos.json");
 
 //agregando y sacando estilos segun que categoria este seleccionada
 
+home.onclick=()=>{
+    home.classList.add("elegido")
+    todosProductos.classList.remove("elegido");
+    camperas.classList.remove("elegido");
+    buzos.classList.remove("elegido");
+    remeras.classList.remove("elegido");
+    pantalones.classList.remove("elegido");
+    carrito.classList.remove("elegido");
+    contacto.classList.remove("elegido");
+    ofertas.classList.remove("elegido");
+    productosHtml("js/productos.json");
+    productosTitulo.innerText="Todos los Productos";
+}
+
 todosProductos.onclick=()=>{
+    home.classList.remove("elegido");
     todosProductos.classList.add("elegido");
     camperas.classList.remove("elegido");
     buzos.classList.remove("elegido");
@@ -227,6 +241,7 @@ todosProductos.onclick=()=>{
 }
 
 camperas.onclick= ()=>{
+    home.classList.remove("elegido");
     todosProductos.classList.remove("elegido");
     camperas.classList.add("elegido");
     buzos.classList.remove("elegido");
@@ -240,6 +255,7 @@ camperas.onclick= ()=>{
 }
 
 buzos.onclick= ()=>{
+    home.classList.remove("elegido");
     todosProductos.classList.remove("elegido");
     camperas.classList.remove("elegido");
     buzos.classList.add("elegido");
@@ -254,6 +270,7 @@ buzos.onclick= ()=>{
 }
 
 remeras.onclick= ()=>{
+    home.classList.remove("elegido");
     todosProductos.classList.remove("elegido");
     camperas.classList.remove("elegido");
     buzos.classList.remove("elegido");
@@ -267,6 +284,7 @@ remeras.onclick= ()=>{
 }
 
 pantalones.onclick= ()=>{
+    home.classList.remove("elegido");
     todosProductos.classList.remove("elegido");
     camperas.classList.remove("elegido");
     buzos.classList.remove("elegido");
@@ -280,6 +298,7 @@ pantalones.onclick= ()=>{
 }
 
 carrito.onclick= ()=>{
+    home.classList.remove("elegido");
     todosProductos.classList.remove("elegido");
     camperas.classList.remove("elegido");
     buzos.classList.remove("elegido");
@@ -292,6 +311,7 @@ carrito.onclick= ()=>{
 }
 
 contacto.onclick= ()=>{
+    home.classList.remove("elegido");
     todosProductos.classList.remove("elegido");
     camperas.classList.remove("elegido");
     buzos.classList.remove("elegido");
@@ -303,6 +323,7 @@ contacto.onclick= ()=>{
 }
 
 ofertas.onclick= ()=>{
+    home.classList.remove("elegido");
     todosProductos.classList.remove("elegido");
     camperas.classList.remove("elegido");
     buzos.classList.remove("elegido");

@@ -18,7 +18,7 @@
 <body>
     
 
-    <div class="swiper mySwiper">
+    <div class="swiper mySwiper" id="home">
         <div class="swiper-wrapper">
           <div class="swiper-slide"><img src="images/slide1.png" alt=""></div>
           <div class="swiper-slide"><img src="images/slide2.png" alt=""></div>
@@ -28,20 +28,21 @@
         <div class="swiper-button-prev"></div>
         <!-- <div class="swiper-pagination"></div> -->
         <button class="butonBody">
-            <a href="#ecomercce-body">Ingresar a la Tienda</a>
+            <a href="#body">Ingresar a la Tienda</a>
         </button>
 
     </div>
 
 
 
-    <section class="body">
+    <section class="body" id="body">
 
         <header>
             <section class="aside">
                 <h1>Vintage Clothing</h1>
                 <div>
                     <ul>
+                        <li class="li" id="home"><i class="bi bi-house-door-fill"></i><a href="#home">Home</a></li>
                         <li class="li" id="todos"> <i class="bi bi-shop"></i> Todos los Productos</li>
                         <li class="li" id="camperas"> <i class="bi bi-caret-right"></i> Camperas</li>
                         <li class="li" id="buzos"> <i class="bi bi-caret-right"></i> Buzos</li>
@@ -100,7 +101,7 @@
                         <input type="password" id="pass-input-confirm" placeholder="Confirmar Contraseña">
                     </label>
                     <p class="aclaracion">El nombre de Usuario y Contraseña deben contener al menos una mayuscula y una minuscula</p>
-                    <label class="button">
+                    <label class="button" id="registrar">
                         <input type="submit" value="Registrarse">
                     </label>
                     <p>¿Ya te registraste? <a href="" id="aIniciar">Iniciar Sesion.</a></p>
