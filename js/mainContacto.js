@@ -19,6 +19,9 @@ const modoCheckbox= document.querySelector("#toggle");
 const contenedorJs= document.querySelector("#container-js");
 const vaciar= document.querySelector(".vaciar");
 const precioTotal = document.querySelector("#total-final");
+const cierraSesion= document.querySelector("#cierra-sesion");
+const registrarLogin = document.querySelector("#registro-login");
+const bodyEcomercce = document.querySelector("#ecomercce-body");
 
 
 
@@ -148,3 +151,21 @@ const comprobar = ()=>{
     cuantosProductos.innerText=comprobarLocalStorage("cuantos");
 }
 comprobar();
+
+// funcion para cerrar sesion 
+cierraSesion.onclick= ()=>{
+    localStorage.removeItem("inicio");
+    localStorage.removeItem("nombre");
+    localStorage.removeItem("modo");
+    validarModoOscuro(comprobarLocalStorage("modo"));
+    vaciarCarrito()
+    comprobar()
+    
+}
+
+
+// funcion para borrar el carrito, una vez que cerramos sesion, asi cuando ingresamos con otro usuario, no tenemos el carrito lleno con productos de otro usuario
+const vaciarCarrito=()=>{
+    registrarLocalStorage("carro",[]);
+    localStorage.setItem("cuantos",0);
+}

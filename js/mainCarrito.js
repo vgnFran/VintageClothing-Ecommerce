@@ -18,6 +18,7 @@ const precioTotal = document.querySelector("#total-final");
 const bodyCarrito= document.querySelector(".body-ecomercce");
 const bodyCard= document.querySelector(".container-card");
 const cerrar= document.querySelector("#close");
+const cierraSesion= document.querySelector("#cierra-sesion");
 
 const registrarLocalStorage = (clave,valor) =>{
     localStorage.setItem(clave,JSON.stringify(valor))
@@ -148,6 +149,8 @@ vaciar.onclick=()=>{
     contenedorJs.innerHTML="";
     localStorage.setItem("cuantos",0);
     sinProductos();
+    comprobar()
+    productosCarro= JSON.parse(localStorage.getItem("carro"));
 }
 
 
@@ -182,7 +185,8 @@ let precioAPagar=0;
 
 //cuando decidimos comprar los productos, se nos habilita la compra con tarjeta   
 comprar.onclick=()=>{
-    
+    comprobar()
+    console.log(productosCarro)
     if(productosCarro.length >= 1){
         bodyCarrito.style.display="none";
         bodyCard.style.display="flex";
@@ -201,7 +205,7 @@ let validacionNombre= false ;
 nombreTarjeta.oninput=()=>{
     if(nombreTarjeta.value =="" || nombreTarjeta.value.length <2 || nombreTarjeta.value.match( /[0123456789!"#$%&/()?¡@/*-+.]/ )){
         nombreTarjeta.style.border="1px solid red";
-        pTarjeta.innerText="Nombre Incorrecto";
+        pTarjeta.innerText="Nombre";
     }else{
         pTarjeta.innerText = nombreTarjeta.value;
         nombreTarjeta.style.border="1px solid green";
@@ -217,7 +221,7 @@ let validacionApellido= false;
 apellidoTarjeta.oninput=()=>{
     if(apellidoTarjeta.value =="" || apellidoTarjeta.value.length <2 || apellidoTarjeta.value.match( /[0123456789!"#$%&/()?¡@/*-+.]/ )){
         apellidoTarjeta.style.border="1px solid red";
-        pApellido.innerText="Nombre Incorrecto";
+        pApellido.innerText="Apellido";
     }else{
         pApellido.innerText = apellidoTarjeta.value;
         apellidoTarjeta.style.border="1px solid green";
@@ -231,9 +235,9 @@ const numeroTarjeta= document.querySelector("#numero-tarjeta");
 const pNumero= document.querySelector("#p-numero");
 let validacionNumero= false;
 numeroTarjeta.oninput=()=>{
-    if(numeroTarjeta.value=="" || numeroTarjeta.value.length >16){
+    if(numeroTarjeta.value=="" || numeroTarjeta.value.length >16 || numeroTarjeta.value.length <16){
         numeroTarjeta.style.border="1px solid red";
-        pNumero.innerText="Numero Incorrecto";
+        pNumero.innerText="Numero de Tarjeta";
     }else{
         pNumero.innerText=espaciar();
         numeroTarjeta.style.border="1px solid green";
@@ -349,6 +353,7 @@ enviarCupon.onclick=()=>{
     contenedorJs.innerHTML="";
     localStorage.setItem("cuantos",0);
     sinProductos()
+    comprobar()
     }else{
         inputEmail.style.border="1px solid red";
     }
@@ -368,5 +373,20 @@ const comprobar = ()=>{
 comprobar();
 
 
+// funcion para cerrar sesion 
+cierraSesion.onclick= ()=>{
+    localStorage.removeItem("inicio");
+    localStorage.removeItem("nombre");
+    localStorage.removeItem("modo");
+    validarModoOscuro(comprobarLocalStorage("modo"));
+    vaciarCarrito()
+    comprobar()
+    
+}
 
 
+// funcion para borrar el carrito, una vez que cerramos sesion, asi cuando ingresamos con otro usuario, no tenemos el carrito lleno con productos de otro usuario
+const vaciarCarrito=()=>{
+    registrarLocalStorage("carro",[]);
+    localStorage.setItem("cuantos",0);
+}
