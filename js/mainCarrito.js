@@ -329,6 +329,29 @@ cerrarEft.onclick=()=>{
     bodyCarrito.style.display="block"
 }
 
+const inputEmail=document.querySelector("#input-email")
+const enviarCupon= document.querySelector("#enviar-cupon")
+enviarCupon.onclick=()=>{
+
+    if( inputEmail.value.length >5 && inputEmail.value.match(/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i) ){
+    Swal.fire({
+    title: '¡Compra Reservada!',
+    text: 'Enviamos el cupon de pago a tu direccion de Email',
+    icon: 'success',
+    confirmButtonText: 'Aceptar'
+    })
+    containerEft.style.display="none"
+    bodyCard.style.display="none"
+    bodyCarrito.style.display="block"
+    registrarLocalStorage("carro",[])
+    contenedorJs.innerHTML=""
+    localStorage.setItem("cuantos",0)
+    sinProductos()
+    }else{
+        inputEmail.style.border="1px solid red"
+    }
+
+}
 
 
 
