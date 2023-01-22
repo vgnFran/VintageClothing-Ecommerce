@@ -24,11 +24,11 @@ const bodyEcomercce = document.querySelector("#ecomercce-body");
 const formLogin= document.querySelector("#registrar");
 const inputUsuario= document.querySelector("#nombre-input");
 const inputPass= document.querySelector("#pass-input");
-const nombreUser= document.querySelector("#nombre-user")
-const iniciaSesion= document.querySelector("#iniciar-sesion")
+const nombreUser= document.querySelector("#nombre-user");
+const iniciaSesion= document.querySelector("#iniciar-sesion");
 const userRegistrado= document.querySelector("#nombre-registrado");
 const passRegistrado= document.querySelector("#pass-registrado");
-const iniciarRegistrado= document.querySelector("#iniciar-registrado")
+const iniciarRegistrado= document.querySelector("#iniciar-registrado");
 const aIniciar= document.querySelector("#aIniciar");
 const cierraSesion= document.querySelector("#cierra-sesion");
 const userIncorrecto= document.querySelector("#incorrecto");
@@ -41,25 +41,25 @@ const pantalones= document.querySelector("#pantalones");
 const carrito= document.querySelector("#carrito");
 const contacto= document.querySelector("#contacto");
 const interruptor= document.querySelector(".interruptor")
-const main=document.querySelector(".main")
-const productosTitulo=document.querySelector("#todos-productos")
+const main=document.querySelector(".main");
+const productosTitulo=document.querySelector("#todos-productos");
 const aside=document.querySelector(".aside");
 const body=document.querySelector("body");
 const modo=document.querySelector("#modo");
-const modoCheckbox= document.querySelector("#toggle")
-const ingreso=document.querySelector(".butonBody")
-const ofertas= document.querySelector("#ofertas")
-const swiperFondo= document.querySelector(".swiper")
-const cuantosProductos= document.querySelector("#cantidad-productos")
-const ordena=document.querySelector("#orden")
-const ordenaz=document.querySelector("#ordenz")
-const displayBody= document.querySelector(".body")
+const modoCheckbox= document.querySelector("#toggle");
+const ingreso=document.querySelector(".butonBody");
+const ofertas= document.querySelector("#ofertas");
+const swiperFondo= document.querySelector(".swiper");
+const cuantosProductos= document.querySelector("#cantidad-productos");
+const ordena=document.querySelector("#orden");
+const ordenaz=document.querySelector("#ordenz");
+const displayBody= document.querySelector(".body");
 
 
 ingreso.onclick=()=>{
-    swiperFondo.style.display="none"
-    displayBody.style.display="flex"
-}
+    swiperFondo.style.display="none";
+    displayBody.style.display="flex";
+};
 
 // datos de usuarios guardados en "base de datos en js"
 let usuario1={
@@ -68,12 +68,12 @@ let usuario1={
 }
 
 const registrarLocalStorage = (clave,valor) =>{
-    localStorage.setItem(clave,JSON.stringify(valor))
+    localStorage.setItem(clave,JSON.stringify(valor));
 }
 
 
 const comprobarLocalStorage = ( clave ) => {
-    return JSON.parse(localStorage.getItem(clave))
+    return JSON.parse(localStorage.getItem(clave));
 }
 
 
@@ -86,21 +86,21 @@ formLogin.onsubmit= (evento)=>{
         bodyEcomercce.style.display="block";
         nombreUser.innerText=inputUsuario.value;
         registrarLocalStorage("inicio",true);
-        registrarLocalStorage("nombre",inputUsuario.value)
-        todosProductos.classList.add("elegido")
+        registrarLocalStorage("nombre",inputUsuario.value);
+        todosProductos.classList.add("elegido");
 
     }else if(inputUsuario.value==""){
-        inputUsuario.style.border= "2px solid red"
+        inputUsuario.style.border= "2px solid red";
     }
     else if(inputPass.value==""){
-        inputPass.style.border= "2px solid red"
+        inputPass.style.border= "2px solid red";
     }
 }
 
 
 // funcion que nos muestra un login para usuarios ya registrados (en nuestra base de datos o en localStorage)
 aIniciar.onclick=(evento)=>{
-    evento.preventDefault()
+    evento.preventDefault();
     registrarLogin.style.display="none";
     iniciarRegistrado.style.display="flex";
 
@@ -117,9 +117,9 @@ iniciaSesion.onsubmit=(evento)=>{
         nombreUser.innerText=userRegistrado.value;
         registrarLocalStorage("inicio",true);
         registrarLocalStorage("nombre",userRegistrado.value)
-        todosProductos.classList.add("elegido")
+        todosProductos.classList.add("elegido");
     }else if(comprobarLocalStorage(userRegistrado.value)!= passRegistrado.value ){
-        userIncorrecto.style.display= "flex"
+        userIncorrecto.style.display= "flex";
         userRegistrado.style.border= "2px solid red";
         passRegistrado.style.border= "2px solid red";
 
@@ -139,8 +139,8 @@ iniciaSesion.onsubmit=(evento)=>{
     localStorage.removeItem("inicio");
     localStorage.removeItem("nombre");
     todosProductos.classList.remove("elegido");
-    localStorage.removeItem("modo")
-    validarModoOscuro(comprobarLocalStorage("modo"))
+    localStorage.removeItem("modo");
+    validarModoOscuro(comprobarLocalStorage("modo"));
     
 }
 
@@ -151,22 +151,22 @@ function validacion(clave){
         registrarLogin.style.display="none";
         iniciarRegistrado.style.display="none";
         bodyEcomercce.style.display="block";
-        nombreUser.innerText= comprobarLocalStorage("nombre")
-        todosProductos.classList.add("elegido")
-        swiperFondo.style.display="none"
+        nombreUser.innerText= comprobarLocalStorage("nombre");
+        todosProductos.classList.add("elegido");
+        swiperFondo.style.display="none";
     } else{
-        registrarLogin.style.display="block"
-        localStorage.removeItem("modo")
+        registrarLogin.style.display="block";
+        localStorage.removeItem("modo");
     }
 }
 
-validacion(comprobarLocalStorage("inicio"))
+validacion(comprobarLocalStorage("inicio"));
 
 
 //trayendo elementos al dom desde un archivo.json
 
 function productosHtml(func){
-    containerProductos.innerHTML=""
+    containerProductos.innerHTML="";
     fetch(func)
         .then(resp => resp.json())
         .then(data =>{
@@ -185,16 +185,16 @@ function productosHtml(func){
                 <button class="btn-agregar" id="button-${prod.id}">AGREGAR</button>
                 </div>
                 `
-                containerProductos.appendChild(divContainer)
+                containerProductos.appendChild(divContainer);
                 
-                alCarrito(data,carritoDeCompras)
+                alCarrito(data,carritoDeCompras);
 
             })
         })
-    .catch((err) => console.log("err"))
+    .catch((err) => console.log("err"));
 }
 
-productosHtml("js/productos.json")
+productosHtml("js/productos.json");
 
 
 
@@ -202,104 +202,104 @@ productosHtml("js/productos.json")
 
 todosProductos.onclick=()=>{
     todosProductos.classList.add("elegido");
-    camperas.classList.remove("elegido")
-    buzos.classList.remove("elegido")
-    remeras.classList.remove("elegido")
-    pantalones.classList.remove("elegido")
-    carrito.classList.remove("elegido")
-    contacto.classList.remove("elegido")
-    ofertas.classList.remove("elegido")
-    productosHtml("js/productos.json")
-    productosTitulo.innerText="Todos los Productos"
+    camperas.classList.remove("elegido");
+    buzos.classList.remove("elegido");
+    remeras.classList.remove("elegido");
+    pantalones.classList.remove("elegido");
+    carrito.classList.remove("elegido");
+    contacto.classList.remove("elegido");
+    ofertas.classList.remove("elegido");
+    productosHtml("js/productos.json");
+    productosTitulo.innerText="Todos los Productos";
 }
 
 camperas.onclick= ()=>{
-    todosProductos.classList.remove("elegido")
-    camperas.classList.add("elegido")
-    buzos.classList.remove("elegido")
-    remeras.classList.remove("elegido")
-    pantalones.classList.remove("elegido")
-    carrito.classList.remove("elegido")
-    contacto.classList.remove("elegido")
-    ofertas.classList.remove("elegido")
-    agregaSecciones("campera")
-    productosTitulo.innerText="Camperas"
+    todosProductos.classList.remove("elegido");
+    camperas.classList.add("elegido");
+    buzos.classList.remove("elegido");
+    remeras.classList.remove("elegido");
+    pantalones.classList.remove("elegido");
+    carrito.classList.remove("elegido");
+    contacto.classList.remove("elegido");
+    ofertas.classList.remove("elegido");
+    agregaSecciones("campera");
+    productosTitulo.innerText="Camperas";
 }
 
 buzos.onclick= ()=>{
-    todosProductos.classList.remove("elegido")
-    camperas.classList.remove("elegido")
-    buzos.classList.add("elegido")
-    remeras.classList.remove("elegido")
-    pantalones.classList.remove("elegido")
-    carrito.classList.remove("elegido")
-    contacto.classList.remove("elegido")
-    ofertas.classList.remove("elegido")
-    agregaSecciones("buzo")
-    productosTitulo.innerText="Buzos"
+    todosProductos.classList.remove("elegido");
+    camperas.classList.remove("elegido");
+    buzos.classList.add("elegido");
+    remeras.classList.remove("elegido");
+    pantalones.classList.remove("elegido");
+    carrito.classList.remove("elegido");
+    contacto.classList.remove("elegido");
+    ofertas.classList.remove("elegido");
+    agregaSecciones("buzo");
+    productosTitulo.innerText="Buzos";
       
 }
 
 remeras.onclick= ()=>{
-    todosProductos.classList.remove("elegido")
-    camperas.classList.remove("elegido")
-    buzos.classList.remove("elegido")
-    remeras.classList.add("elegido")
-    pantalones.classList.remove("elegido")
-    carrito.classList.remove("elegido")
-    contacto.classList.remove("elegido")
-    ofertas.classList.remove("elegido")
-    agregaSecciones("remera")
-    productosTitulo.innerText="Remeras"
+    todosProductos.classList.remove("elegido");
+    camperas.classList.remove("elegido");
+    buzos.classList.remove("elegido");
+    remeras.classList.add("elegido");
+    pantalones.classList.remove("elegido");
+    carrito.classList.remove("elegido");
+    contacto.classList.remove("elegido");
+    ofertas.classList.remove("elegido");
+    agregaSecciones("remera");
+    productosTitulo.innerText="Remeras";
 }
 
 pantalones.onclick= ()=>{
-    todosProductos.classList.remove("elegido")
-    camperas.classList.remove("elegido")
-    buzos.classList.remove("elegido")
-    remeras.classList.remove("elegido")
-    pantalones.classList.add("elegido")
-    carrito.classList.remove("elegido")
-    contacto.classList.remove("elegido")
-    ofertas.classList.remove("elegido")
-    agregaSecciones("pantalon")
-    productosTitulo.innerText="Pantalones"
+    todosProductos.classList.remove("elegido");
+    camperas.classList.remove("elegido");
+    buzos.classList.remove("elegido");
+    remeras.classList.remove("elegido");
+    pantalones.classList.add("elegido");
+    carrito.classList.remove("elegido");
+    contacto.classList.remove("elegido");
+    ofertas.classList.remove("elegido");
+    agregaSecciones("pantalon");
+    productosTitulo.innerText="Pantalones";
 }
 
 carrito.onclick= ()=>{
-    todosProductos.classList.remove("elegido")
-    camperas.classList.remove("elegido")
-    buzos.classList.remove("elegido")
-    remeras.classList.remove("elegido")
-    pantalones.classList.remove("elegido")
-    carrito.classList.add("elegido")
-    contacto.classList.remove("elegido")
-    ofertas.classList.remove("elegido")
+    todosProductos.classList.remove("elegido");
+    camperas.classList.remove("elegido");
+    buzos.classList.remove("elegido");
+    remeras.classList.remove("elegido");
+    pantalones.classList.remove("elegido");
+    carrito.classList.add("elegido");
+    contacto.classList.remove("elegido");
+    ofertas.classList.remove("elegido");
 
 }
 
 contacto.onclick= ()=>{
-    todosProductos.classList.remove("elegido")
-    camperas.classList.remove("elegido")
-    buzos.classList.remove("elegido")
-    remeras.classList.remove("elegido")
-    pantalones.classList.remove("elegido")
-    carrito.classList.remove("elegido")
-    contacto.classList.add("elegido")
-    ofertas.classList.remove("elegido")
+    todosProductos.classList.remove("elegido");
+    camperas.classList.remove("elegido");
+    buzos.classList.remove("elegido");
+    remeras.classList.remove("elegido");
+    pantalones.classList.remove("elegido");
+    carrito.classList.remove("elegido");
+    contacto.classList.add("elegido");
+    ofertas.classList.remove("elegido");
 }
 
 ofertas.onclick= ()=>{
-    todosProductos.classList.remove("elegido")
-    camperas.classList.remove("elegido")
-    buzos.classList.remove("elegido")
-    remeras.classList.remove("elegido")
-    pantalones.classList.remove("elegido")
-    carrito.classList.remove("elegido")
-    contacto.classList.remove("elegido")
-    ofertas.classList.add("elegido")
-    agregaSecciones(ofertas,true)
-    productosTitulo.innerText="Productos con 50% de DESCUENTO"
+    todosProductos.classList.remove("elegido");
+    camperas.classList.remove("elegido");
+    buzos.classList.remove("elegido");
+    remeras.classList.remove("elegido");
+    pantalones.classList.remove("elegido");
+    carrito.classList.remove("elegido");
+    contacto.classList.remove("elegido");
+    ofertas.classList.add("elegido");
+    agregaSecciones(ofertas,true);
+    productosTitulo.innerText="Productos con 50% de DESCUENTO";
 
 
 }
@@ -308,13 +308,13 @@ ofertas.onclick= ()=>{
 
 
 interruptor.onclick= ()=>{
-    productosTitulo.classList.toggle("modo-oscuro")
-    aside.classList.toggle("modo-oscuro")
-    main.classList.toggle("modo-oscuro-main")
-    body.classList.toggle("modo-oscuro")
-    registrarLocalStorage("modo","oscuro")
+    productosTitulo.classList.toggle("modo-oscuro");
+    aside.classList.toggle("modo-oscuro");
+    main.classList.toggle("modo-oscuro-main");
+    body.classList.toggle("modo-oscuro");
+    registrarLocalStorage("modo","oscuro");
     if(modoCheckbox.checked==true){
-        localStorage.removeItem("modo")
+        localStorage.removeItem("modo");
     }
 }
 
@@ -323,24 +323,24 @@ interruptor.onclick= ()=>{
 
 function validarModoOscuro(clave){
     if  (clave=="oscuro"){
-        productosTitulo.classList.add("modo-oscuro")
-        aside.classList.add("modo-oscuro")
-        main.classList.add("modo-oscuro-main")
-        body.classList.add("modo-oscuro")
-        modoCheckbox.checked=true
+        productosTitulo.classList.add("modo-oscuro");
+        aside.classList.add("modo-oscuro");
+        main.classList.add("modo-oscuro-main");
+        body.classList.add("modo-oscuro");
+        modoCheckbox.checked=true;
 
     }else {
-        productosTitulo.classList.remove("modo-oscuro")
-        aside.classList.remove("modo-oscuro")
-        main.classList.remove("modo-oscuro-main")
-        body.classList.remove("modo-oscuro")
-        modoCheckbox.checked=false
+        productosTitulo.classList.remove("modo-oscuro");
+        aside.classList.remove("modo-oscuro");
+        main.classList.remove("modo-oscuro-main");
+        body.classList.remove("modo-oscuro");
+        modoCheckbox.checked=false;
     }
 
 
 }
 
-validarModoOscuro(comprobarLocalStorage("modo"))
+validarModoOscuro(comprobarLocalStorage("modo"));
 
 
 // agregamos los productos segun su seccion, si el producto tiene oferta true, entonces tendra un 50% de decuento en su precio
@@ -368,43 +368,43 @@ function agregaSecciones(tipo,esOferta){
                 <button class="btn-agregar" id="button-${prod.id}">AGREGAR</button>
                 </div>
                 `
-                containerProductos.appendChild(divContainer)
+                containerProductos.appendChild(divContainer);
                 
-                alCarrito(data,carritoDeCompras)
+                alCarrito(data,carritoDeCompras);
         })
     })
-    .catch(err => console.log("errSecciones"))
+    .catch(err => console.log("errSecciones"));
 }
 
 
 // carrito 
 
-let carritoDeCompras=[]
-console.log(carritoDeCompras.length)
+let carritoDeCompras=[];
+console.log(carritoDeCompras.length);
 
-const carritoCargado=JSON.parse(localStorage.getItem("carro"))
-carritoDeCompras=carritoCargado || []
+const carritoCargado=JSON.parse(localStorage.getItem("carro"));
+carritoDeCompras=carritoCargado || [];
 
 
 
 function alCarrito(data,carrito){
-    const btnAlCarro= document.querySelectorAll(".btn-agregar")
+    const btnAlCarro= document.querySelectorAll(".btn-agregar");
     btnAlCarro.forEach(e =>{
         e.onclick=()=>{
             
-            const recorte= e.id.slice(7)
+            const recorte= e.id.slice(7);
             let filtro=(data).find(element =>{
                 return element.id == recorte
-            })
-            console.log(filtro)
+            });
+            console.log(filtro);
             // si el producto elegido ya se encuentra en el carrito, no hacemos nada, pero si no se encuentra, entonces lo pusheamos
-            console.log(carritoDeCompras)
-            const resultado = carritoDeCompras.find(elemento => elemento.nombre === filtro.nombre)
+            console.log(carritoDeCompras);
+            const resultado = carritoDeCompras.find(elemento => elemento.nombre === filtro.nombre);
             resultado == undefined?carrito.push(filtro):resultado
-            localStorage.setItem("carro",JSON.stringify(carrito))
+            localStorage.setItem("carro",JSON.stringify(carrito));
             //para actualizar el span de cantidad de productos en el carrito
-            registrarLocalStorage("cuantos",carritoDeCompras.length)
-            comprobar()
+            registrarLocalStorage("cuantos",carritoDeCompras.length);
+            comprobar();
             Toastify({
                 text: `Se añadio ${filtro.nombre}`,
                 duration: 3000,
@@ -429,9 +429,9 @@ function alCarrito(data,carrito){
 }
 
 const comprobar = ()=>{
-    cuantosProductos.innerText=comprobarLocalStorage("cuantos")
+    cuantosProductos.innerText=comprobarLocalStorage("cuantos");
 }
-comprobar()
+comprobar();
 
 
 
@@ -450,8 +450,8 @@ ordena.onclick=()=>{
             }
 
             return 0
-        })
-        containerProductos.innerHTML=""
+        });
+        containerProductos.innerHTML="";
 
         ordenado.forEach(prod=>{
             const divContainer= document.createElement("div")
@@ -467,13 +467,13 @@ ordena.onclick=()=>{
             <button class="btn-agregar" id="button-${prod.id}">AGREGAR</button>
             </div>
             `
-            containerProductos.appendChild(divContainer)
+            containerProductos.appendChild(divContainer);
             
-            alCarrito(data,carritoDeCompras)
+            alCarrito(data,carritoDeCompras);
 
         })
     })
-    .catch((err) => console.log("err"))
+    .catch((err) => console.log("err"));
 }
 
 // ordenar alfabeticamente (Z-A)
@@ -491,8 +491,8 @@ ordenaz.onclick=()=>{
             }
 
             return 0
-        })
-        containerProductos.innerHTML=""
+        });
+        containerProductos.innerHTML="";
 
         ordenado.forEach(prod=>{
             const divContainer= document.createElement("div")
@@ -508,12 +508,12 @@ ordenaz.onclick=()=>{
             <button class="btn-agregar" id="button-${prod.id}">AGREGAR</button>
             </div>
             `
-            containerProductos.appendChild(divContainer)
+            containerProductos.appendChild(divContainer);
             
-            alCarrito(data,carritoDeCompras)
+            alCarrito(data,carritoDeCompras);
 
         })
     })
-    .catch((err) => console.log("err"))
+    .catch((err) => console.log("err"));
 }
 
