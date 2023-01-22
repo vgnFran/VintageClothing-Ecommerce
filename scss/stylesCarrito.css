@@ -515,4 +515,96 @@ main .buttons .comprar {
 }
 .container-card .buttons-compra button button:hover {
   color: red;
+}
+
+.container-eft {
+  position: relative;
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+}
+.container-eft .body-eft {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.container-eft .compra-efectivo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 180px;
+}
+.container-eft .compra-efectivo h2 {
+  font-size: 36px;
+  color: rgba(32, 25, 136, 0.822);
+}
+.container-eft .compra-efectivo h3 {
+  font-size: 20px;
+  margin-top: 16px;
+}
+.container-eft .compra-efectivo .container-envio {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+.container-eft .compra-efectivo #input-email {
+  font-size: 16px;
+  padding: 2px 10px;
+}
+.container-eft .compra-efectivo #enviar-cupon {
+  color: white;
+  background-color: rgb(21, 139, 21);
+  font-size: 14px;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  margin-left: -10px;
+  cursor: pointer;
+}
+.container-eft .compra-efectivo i {
+  color: rgb(199, 12, 12);
+  position: absolute;
+  font-size: 26px;
+  right: 20%;
+  top: 12%;
+  cursor: pointer;
+}
+.container-eft .lugares-pago {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+  margin-left: 60px;
+}
+.container-eft .lugares-pago p {
+  font-size: 20px;
+}
+.container-eft .lugares-pago #rapipago {
+  width: 120px;
+  margin-left: 20px;
+}
+.container-eft .lugares-pago #pagofacil {
+  width: 60px;
+  margin-left: 20px;
+}
+
+.footer {
+  background-color: rgba(32, 25, 136, 0.774);
+  margin-left: -50px;
+  height: 100px;
+  margin-top: 26vh;
+  width: 180vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+}
+.footer .info-promos {
+  display: flex;
+  align-items: center;
+}
+.footer .info-promos i {
+  font-size: 42px;
+  margin-right: 10px;
 }/*# sourceMappingURL=stylesCarrito.css.map */

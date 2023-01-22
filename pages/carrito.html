@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,12 +9,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../scss/stylesCarrito.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400&display=swap" rel="stylesheet">
 </head>
 
 
 <body>
-    
+
 
     <section class="body" id="body">
 
@@ -22,9 +24,12 @@
                 <h1>Vintage Clothing</h1>
                 <div>
                     <ul>
-                        <li class="li" id="todos"> <i class="bi bi-shop"></i><a href="../index.html"> Seguir comprando</a></li>
-                        <li class="li carrito elegido" id="carrito"><i class="bi bi-cart-fill"></i>Carrito <span class="span-carrito">0</span></li>
-                        <li class="li contacto" id="contacto"> <i class="bi bi-telephone"></i> <a href="contacto.html">Contacto</a></li>
+                        <li class="li" id="todos"> <i class="bi bi-shop"></i><a href="../index.html"> Seguir
+                                comprando</a></li>
+                        <li class="li carrito elegido" id="carrito"><i class="bi bi-cart-fill"></i>Carrito <span
+                                class="span-carrito">0</span></li>
+                        <li class="li contacto" id="contacto"> <i class="bi bi-telephone"></i> <a
+                                href="contacto.html">Contacto</a></li>
                         <li class="li-oscuro">
                             Modo Oscuro
                             <div>
@@ -37,7 +42,8 @@
                 </div>
                 <!-- footer con informacion-->
                 <p class="derechos">
-                    <a href="https://api.whatsapp.com/send?phone=541131741035&text=%C2%A1Hola!%20Somos%20Vintage%20Clothing%2C%20%C2%BFEn%20que%20podriamos%20ayudarte%3F" target="_blank">
+                    <a href="https://api.whatsapp.com/send?phone=541131741035&text=%C2%A1Hola!%20Somos%20Vintage%20Clothing%2C%20%C2%BFEn%20que%20podriamos%20ayudarte%3F"
+                        target="_blank">
                         <i class="bi bi-whatsapp"></i>
                     </a>
                     <a href="https://www.instagram.com/frann21_/" target="_blank">
@@ -49,13 +55,13 @@
                     <a href="/pages/contacto.html">
                         <i class="bi bi-info-circle"></i>
                     </a>
-                    
+
                 </p>
             </section>
         </header>
-    
+
         <main class="main">
-      
+
             <div class="body-ecomercce" id="ecomercce-body">
                 <div class="titulos-usuario">
                     <h2 id="todos-productos">Todos los Productos</h2>
@@ -64,12 +70,12 @@
                         <img src="/images/login-icon.png" alt="">
                     </div>
                 </div>
-    
+
                 <div class="productos" id="container-js">
-    
+
                     <!-- aca se insertan los productos desde js -->
 
-                    
+
                 </div>
 
 
@@ -84,47 +90,47 @@
                         <button class="comprar">Comprar</button>
                     </div>
                 </div>
- 
+
 
             </div>
 
 
             <div class="container-card">
-                <div class=""  id="compra-tarjeta">
+                <div class="" id="compra-tarjeta">
 
                     <div class="container-card">
                         <img src="../images/textura-granulada-gradiente_23-2148976749.jpg" alt="">
                     </div>
                     <div>
                         <i class="bi bi-x-circle-fill" id="close"></i>
-                    </div>                  
+                    </div>
                     <div>
                         <p class="p-datos">Datos de compra</p>
-                    </div>   
-                    <div class="numero">
-                        <p id="p-numero">#### #### #### ####</p>  
                     </div>
-     
+                    <div class="numero">
+                        <p id="p-numero">#### #### #### ####</p>
+                    </div>
+
                     <div class="nombre-apellido">
                         <div>
                             <p id="p-tarjeta">Nombre</p>
                         </div>
                         <div>
                             <p id="p-apellido">Apellido</p>
-                        </div>           
+                        </div>
                     </div>
-    
+
                     <div class="vencimiento-cvv">
-    
+
                         <div class="vencimiento">
                             <p id="p-vencimiento">##/##</p>
                         </div>
                         <div class="cvv">
                             <p id="p-cvv">###</p>
                         </div>
-    
-                    </div>      
-    
+
+                    </div>
+
                 </div>
 
 
@@ -141,15 +147,72 @@
                     </div>
                 </div>
                 <div class="buttons-compra">
-                    <p>Pagar en efectivo</p>
+                    <p id="pago-efectivo">Pagar en efectivo</p>
                     <button id="compra-realizada">Comprar</button>
                 </div>
-            
+
             </div>
-            
 
 
-        </main> 
+            <div class="container-eft">
+
+                <div class="body-eft">
+                    <div class="compra-efectivo">
+                        <h2>¿Desea realizar su pago en Efectivo?</h2>
+                        <h3>Por favor ingrese su Email para que le enviemos su cupon de Pago.</h3>
+                        <i class="bi bi-x-circle-fill" id="close-eft"></i>
+                        <div class="container-envio">
+                            <input type="text" name="" id="input-email">
+                            <button id="enviar-cupon">Enviar Cupon</button>
+                        </div>
+
+                        <div class="lugares-pago">
+                            <p>Lugares de pago habilitados:</p>
+                            <img src="../images/rapipago.jpg" alt="rapipago" id="rapipago">
+                            <img src="../images/pagofacil.png" alt="pagofacil" id="pagofacil">
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="footer">
+                    <div class="info-promos">
+                        <i class="bi bi-truck"></i>
+                        <div>
+                            <p>Envio Gratis</p>
+                            <p class="desc-promos">En compras superiores a $18000</p>
+                        </div>
+                    </div>
+                    <div class="info-promos">
+                        <i class="bi bi-credit-card-2-front"></i>
+                        <div>
+                            <p>Cuotas sin Interes</p>
+                            <p class="desc-promos">En promociones bancarias</p>
+                        </div>
+                    </div>
+                    <div class="info-promos">
+                        <i class="bi bi-box-seam"></i>
+                        <div>
+
+                            <p>Cambio Gratis</p>
+                            <p class="desc-promos">Por cambios de talle</p>
+                        </div>
+                    </div>
+                    <div class="info-promos">
+                        <i class="bi bi-telephone"></i>
+                        <div>
+                            <p>1131741035</p>
+                            <p class="desc-promos">Lunes a sabados de 9 a 17hs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </main>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="../js/mainCarrito.js"></script>
     </section>

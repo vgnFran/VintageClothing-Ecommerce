@@ -564,7 +564,105 @@ header{
                 }
 
             }
+
+
+            .container-eft{
+                position: relative;
+                width: 100%;
+                display: none;
+                flex-direction: column;
+                justify-content: center;
+                .body-eft{
+                    display: flex;
+                    width: 100%;
+                    justify-content: center;
+                }
+                .compra-efectivo{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    margin-top: 180px;
+                    h2{
+                        font-size: 36px;
+                        color: rgba(32, 25, 136, 0.822);
+                    }
+                    h3{
+                        font-size: 20px;
+                        margin-top: 16px;
+                    }
+                    .container-envio{
+                        display: flex;
+                        width: 100%;
+                        justify-content: space-around;
+                        margin-top: 40px;
+                    }
+                    #input-email{
+                        font-size: 16px;
+                        padding:2px 10px;
+                    }
+                    #enviar-cupon{
+                        color: white;
+                        background-color: rgb(21, 139, 21);
+                        font-size: 14px;
+                        border: none;
+                        padding: 6px 12px;
+                        border-radius: 4px;
+                        margin-left: -10px;
+                        cursor: pointer;
+                    }
+                    i{
+                        color: rgb(199, 12, 12);
+                        position: absolute;
+                        font-size:26px;
+                        right: 20%;
+                        top: 12%;
+                        cursor: pointer;
+                    }
+                }
+                .lugares-pago{
+                    display: flex;
+                    align-items: center;
+                    margin-top: 50px;
+                    margin-left: 60px;
+                    p{
+                        font-size: 20px;
+                    }
+                    #rapipago{
+                        width: 120px;
+                        margin-left: 20px ;
+                    }
+                    #pagofacil{
+                        width: 60px;
+                        margin-left: 20px ;
+                    }
+                }
+            }
+
+            .footer{
+                background-color: rgba(32, 25, 136, 0.774);
+                margin-left: -50px;
+                height: 100px;
+                margin-top: 26vh;
+                width: 180vh;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                color: white;
+        
+                .info-promos{
+                    display: flex;
+                    align-items: center;
+                    i{
+                        font-size: 42px;
+                        margin-right: 10px;
+                    }
+        
+                }
+            }  
+               
             
+
+
     
 
     

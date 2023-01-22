@@ -312,12 +312,22 @@ const datosCorrectos=()=>{
     }
 }
 
+// tambien agregamos opcion y validacion por si el cliente decide pagar en efectivo
 
+const containerEft=document.querySelector(".container-eft")
+const pagoEnEfectivo= document.querySelector("#pago-efectivo")
 
+pagoEnEfectivo.onclick=()=>{
+    bodyCard.style.display="none"
+    containerEft.style.display="flex"
+}
 
-
-
-
+const cerrarEft= document.querySelector("#close-eft")
+cerrarEft.onclick=()=>{
+    containerEft.style.display="none"
+    bodyCard.style.display="none"
+    bodyCarrito.style.display="block"
+}
 
 
 
