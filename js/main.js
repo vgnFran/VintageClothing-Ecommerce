@@ -190,6 +190,7 @@ function productosHtml(func){
                 alCarrito(data,carritoDeCompras);
 
             })
+
         })
     .catch((err) => console.log("err"));
 }
@@ -516,4 +517,6 @@ ordenaz.onclick=()=>{
     })
     .catch((err) => console.log("err"));
 }
+
+
 
