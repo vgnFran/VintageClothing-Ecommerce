@@ -428,7 +428,7 @@ main .buttons .comprar {
   top: 48%;
   left: 32%;
 }
-.container-card #compra-tarjeta .vencimiento-cvv #cvv {
+.container-card #compra-tarjeta .vencimiento-cvv #p-cvv {
   margin-left: 100px;
 }
 .container-card .ingreso {

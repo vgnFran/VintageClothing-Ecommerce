@@ -117,10 +117,10 @@
                     <div class="vencimiento-cvv">
     
                         <div class="vencimiento">
-                            <p id="vencimiento">##/##</p>
+                            <p id="p-vencimiento">##/##</p>
                         </div>
                         <div class="cvv">
-                            <p id="cvv">###</p>
+                            <p id="p-cvv">###</p>
                         </div>
     
                     </div>      
@@ -131,18 +131,18 @@
                 <p class="ingreso">Ingrese los datos de su tarjeta para realizar la compra</p>
                 <div class="container-datos">
                     <div class="input-nombres">
-                        <input type="text" name="" id="name" value="Nombre">
-                        <input type="text" name="" id="surname" value="Apellido">
+                        <input type="text" name="" id="name" placeholder="Nombre">
+                        <input type="text" name="" id="surname" placeholder="Apellido">
                     </div>
                     <div class="input-numbers">
-                        <input type="text" name="" id="tarjeta" value="Numero de Tarjeta">
-                        <input type="text" name="" id="vencimiento" value="Vencimiento">
-                        <input type="text" name="" id="cvv" value="CVV">
+                        <input type="number" name="" id="numero-tarjeta" placeholder="Numero de Tarjeta">
+                        <input type="number" name="" id="vencimiento" placeholder="Vencimiento">
+                        <input type="number" name="" id="cvv" placeholder="CVV">
                     </div>
                 </div>
                 <div class="buttons-compra">
                     <p>Pagar en efectivo</p>
-                    <button>Comprar</button>
+                    <button id="compra-realizada">Comprar</button>
                 </div>
             
             </div>

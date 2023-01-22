@@ -178,27 +178,162 @@ let precioAPagar=0
     cuantoPago()
 
 
-//cuando compramos los productos:    
+//cuando decidimos comprar los productos, se nos habilita la compra con tarjeta   
 comprar.onclick=()=>{
     
     if(productosCarro.length >= 1){
+        bodyCarrito.style.display="none"
+        bodyCard.style.display="flex"
+    }
+  
+}
+
+
+
+
+
+// completando datos de tarjeta y validando los inputs
+const nombreTarjeta= document.querySelector("#name")
+const pTarjeta= document.querySelector("#p-tarjeta")
+let validacionNombre= false 
+nombreTarjeta.oninput=()=>{
+    if(nombreTarjeta.value =="" || nombreTarjeta.value.length <2 || nombreTarjeta.value.match( /[0123456789!"#$%&/()?¡@/*-+.]/ )){
+        nombreTarjeta.style.border="1px solid red"
+        pTarjeta.innerText="Nombre Incorrecto"
+    }else{
+        pTarjeta.innerText = nombreTarjeta.value
+        nombreTarjeta.style.border="1px solid green"
+        validacionNombre=true
+    }
+    
+} 
+
+
+const apellidoTarjeta= document.querySelector("#surname")
+const pApellido=document.querySelector("#p-apellido")
+let validacionApellido= false
+apellidoTarjeta.oninput=()=>{
+    if(apellidoTarjeta.value =="" || apellidoTarjeta.value.length <2 || apellidoTarjeta.value.match( /[0123456789!"#$%&/()?¡@/*-+.]/ )){
+        apellidoTarjeta.style.border="1px solid red"
+        pApellido.innerText="Nombre Incorrecto"
+    }else{
+        pApellido.innerText = apellidoTarjeta.value
+        apellidoTarjeta.style.border="1px solid green"
+        validacionApellido=true
+    }
+  
+} 
+
+
+const numeroTarjeta= document.querySelector("#numero-tarjeta")
+const pNumero= document.querySelector("#p-numero")
+let validacionNumero= false
+numeroTarjeta.oninput=()=>{
+    if(numeroTarjeta.value=="" || numeroTarjeta.value.length >16){
+        numeroTarjeta.style.border="1px solid red"
+        pNumero.innerText="Numero Incorrecto"
+    }else{
+        pNumero.innerText=espaciar()
+        numeroTarjeta.style.border="1px solid green"
+        validacionNumero=true
+    }   
+}
+const espaciar=()=>{
+    const espaciado=[...numeroTarjeta.value]
+    espaciado.splice(4,0," ")
+    espaciado.splice(9,0," ")
+    espaciado.splice(14,0," ")
+    const resultado= espaciado.join("")
+    return resultado
+}
+
+
+const numeroVencimiento= document.querySelector("#vencimiento")
+const pVencimiento= document.querySelector("#p-vencimiento")
+let validacionVencimiento=false
+
+//validacion mes y año, para poder validar el input fecha de vencimiento
+const anioActual = String (new Date().getFullYear())
+const anio= anioActual.slice(2)
+let mesActual= String (new Date().getMonth())
+
+numeroVencimiento.oninput=()=>{
+    if(numeroVencimiento.value.slice(0,2) < mesActual || numeroVencimiento.value.slice(0,2) >12){
+        pVencimiento.innerText="Fecha incorrecta"       
+    } else if(numeroVencimiento.value.slice(2) < anio){
+        pVencimiento.textContent="Fecha incorrecta"
+    }else{
+        pVencimiento.innerText=agregarBarra()
+        validacionVencimiento=true
+    }
+}
+const agregarBarra= ()=>{
+    const separado=[...numeroVencimiento.value]
+    separado.splice(2,0,"/")
+    const resultado= separado.join("")
+    return resultado
+}
+
+
+const codigoSeguridad= document.querySelector("#cvv")
+const pCodigoSeguridad= document.querySelector("#p-cvv")
+let validacionCvv= false
+codigoSeguridad.oninput=()=>{
+    if(codigoSeguridad.value.length <3 || codigoSeguridad.value.length >3){
+        pCodigoSeguridad.textContent="CVV Incorrecto"
+    }else{
+        pCodigoSeguridad.innerText=codigoSeguridad.value
+        validacionCvv=true
+    }
+}
+
+
+// si todos los datos son correctos, realizamos la compra correctamente, borrando y modificando todos los articulos que anteriormente se encontraban en el carrito
+const compraRealizada= document.querySelector("#compra-realizada")
+compraRealizada.onclick=()=>{
+    datosCorrectos()  
+}
+
+const datosCorrectos=()=>{
+    if(validacionNombre==true && validacionApellido==true && validacionNumero==true && validacionVencimiento==true && validacionVencimiento==true){
+        Swal.fire({
+        title: '¡Compra realizada!',
+        text: 'Nos contactaremos a la brevedad para enviar su factura, Gracias.',
+        icon: 'success',
+        confirmButtonText: 'Aceptar'
+        })
+        cuantosProductos.innerText="0"
+        bodyCarrito.style.display="block"
+        bodyCard.style.display="none"
         registrarLocalStorage("carro",[])
         contenedorJs.innerHTML=""
         localStorage.setItem("cuantos",0)
         sinProductos()
-        bodyCarrito.style.display="none"
-        bodyCard.style.display="flex"
-        // Swal.fire({
-        // title: '¡Compra realizada!',
-        // text: 'Nos contactaremos a la brevedad para concretar el pago, Gracias.',
-        // icon: 'success',
-        // confirmButtonText: 'Aceptar'
-        // })
-        // cuantosProductos.innerText="0"
-        
     }
-  
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 cerrar.onclick=()=>{
     bodyCarrito.style.display="block"
@@ -211,10 +346,5 @@ const comprobar = ()=>{
 comprobar()
 
 
-const nombreTarjeta= document.querySelector("#nombre-tarjeta")
-const pTarjeta= document.querySelector("#p-tarjeta")
-let validacionNombre= false 
 
-// nombreTarjeta.oninput=()=>{
-//     pTarjeta.innerText = nombreTarjeta.value
-// } 
+
