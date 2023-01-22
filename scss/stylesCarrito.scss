@@ -63,7 +63,26 @@
         color: black!important;
     }
     }
-
+    .ingreso{
+        color: rgb(37, 35, 35)!important;
+    }
+    .container-datos{
+        input{
+            border: 1px solid rgb(37, 35, 35)!important;
+        }
+    }
+    .body-eft{
+        h3{
+            color: rgb(37, 35, 35)!important;
+            background-color: transparent!important;
+        }
+        p{
+            color: rgb(37, 35, 35)!important;
+        }
+    }
+    .footer{
+        background-color: rgb(37, 35, 35)!important;
+    }
 
 .modo-oscuro-main{
     background-color: lightgray;

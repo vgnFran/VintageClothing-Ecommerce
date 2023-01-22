@@ -107,6 +107,13 @@
 .modo-oscuro #iniciar-registrado form p {
   color: rgb(37, 35, 35) !important;
 }
+.modo-oscuro .orden p {
+  color: rgb(37, 35, 35) !important;
+}
+.modo-oscuro .orden button {
+  border: 1px solid rgb(37, 35, 35) !important;
+  color: rgb(37, 35, 35) !important;
+}
 
 .modo-oscuro-main {
   background-color: lightgrey;

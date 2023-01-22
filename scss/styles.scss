@@ -132,10 +132,20 @@
             }
         }
     } 
+    .orden{
+        p{
+            color: rgb(37, 35, 35)!important;
+        }
+        button{
+            border: 1px solid rgb(37, 35, 35)!important;
+            color: rgb(37, 35, 35)!important;
+        }
+    }
 }
 .modo-oscuro-main{
     background-color: lightgrey;
 }
+
 
 
 
