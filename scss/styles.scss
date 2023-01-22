@@ -537,6 +537,7 @@ main{
             box-shadow:
                 12.5px 10.1px 12px rgba(0, 0, 0, 0.19),
                 100px 81px 96px rgba(0, 0, 0, 0.095);
+                
                 img{
                     width: 276px;
                     height:280px;
@@ -554,6 +555,7 @@ main{
                     font-weight: 300;
                     text-shadow: 3px 2px 5px rgba(0,0,0,0.67);
                 }
+                
                 .cont-button{
                     display: flex;
                     justify-content: center;
@@ -578,9 +580,17 @@ main{
                     }
                 }
 
+
     
         }
-
+        .precio-oferta{
+            #body-producto{
+                h4{
+                    color: rgb(7, 134, 7);
+                    font-weight: 600;
+                }
+            }
+        }
 
 
        

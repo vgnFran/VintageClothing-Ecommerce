@@ -99,6 +99,7 @@ function agregar(arr){
         <div class="precio">
             <p>Precio: $</p>
             <p id="precio-individual">${element.precio}</p>
+            
         </div>
         `
         contenedorJs.appendChild(contenedor);

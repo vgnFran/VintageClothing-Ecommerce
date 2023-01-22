@@ -24,6 +24,7 @@ const bodyEcomercce = document.querySelector("#ecomercce-body");
 const formLogin= document.querySelector("#registrar");
 const inputUsuario= document.querySelector("#nombre-input");
 const inputPass= document.querySelector("#pass-input");
+const passConfirm= document.querySelector("#pass-input-confirm")
 const nombreUser= document.querySelector("#nombre-user");
 const iniciaSesion= document.querySelector("#iniciar-sesion");
 const userRegistrado= document.querySelector("#nombre-registrado");
@@ -56,6 +57,7 @@ const ordenaz=document.querySelector("#ordenz");
 const displayBody= document.querySelector(".body");
 
 
+
 ingreso.onclick=()=>{
     swiperFondo.style.display="none";
     displayBody.style.display="flex";
@@ -80,7 +82,7 @@ const comprobarLocalStorage = ( clave ) => {
 // funcion para registrar usuario nuevo (guardado en localStorage)
 formLogin.onsubmit= (evento)=>{
     evento.preventDefault()
-    if( (inputUsuario.value!="" && inputPass.value!="") && (inputUsuario.value.match(/[A-Z]/) && inputPass.value.match(/[A-Z]/)) ){
+    if( (inputUsuario.value!="" && inputPass.value!="") && (inputUsuario.value.match(/[A-Z]/) && inputPass.value.match(/[A-Z]/)) && inputPass.value == passConfirm.value){
         registrarLocalStorage(inputUsuario.value,inputPass.value);
         registrarLogin.style.display="none";
         bodyEcomercce.style.display="block";
@@ -94,6 +96,9 @@ formLogin.onsubmit= (evento)=>{
     }
     else if(inputPass.value==""){
         inputPass.style.border= "2px solid red";
+    }else if ( inputPass != passConfirm.value){
+        inputPass.style.border="2px solid red"
+        passConfirm.style.border="2px solid red"
     }
 }
 
@@ -174,12 +179,19 @@ function productosHtml(func){
             data.forEach(prod=>{
                 const divContainer= document.createElement("div")
                 divContainer.className="container-producto"
+                let precioNuevo=0
+                if( prod.oferta==true){
+                    precioNuevo= prod.precio /2
+                    divContainer.classList.add("precio-oferta")
+                }else {
+                    precioNuevo= prod.precio
+                }               
                 divContainer.id=`producto-${prod.id}`
                 divContainer.innerHTML=`
                 <img src=${prod.imagen} alt=${prod.nombre}>
                 <div id="body-producto">
                 <h3>${prod.nombre}</h3>
-                <h4>$${prod.precio}</h4>
+                <h4>$${precioNuevo}</h4>
                 </div>
                 <div class="cont-button">
                 <button class="btn-agregar" id="button-${prod.id}">AGREGAR</button>
