@@ -113,7 +113,7 @@
 }
 
 .body {
-  display: flex;
+  display: none;
   background-color: rgba(32, 25, 136, 0.822);
 }
 

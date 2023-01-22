@@ -53,10 +53,12 @@ const swiperFondo= document.querySelector(".swiper")
 const cuantosProductos= document.querySelector("#cantidad-productos")
 const ordena=document.querySelector("#orden")
 const ordenaz=document.querySelector("#ordenz")
+const displayBody= document.querySelector(".body")
 
 
 ingreso.onclick=()=>{
     swiperFondo.style.display="none"
+    displayBody.style.display="flex"
 }
 
 // datos de usuarios guardados en "base de datos en js"
