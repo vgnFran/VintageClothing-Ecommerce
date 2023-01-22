@@ -370,6 +370,13 @@ function agregaSecciones(tipo,esOferta){
             prod.oferta==true? prod.precio = prod.precio/2 : prod.precio
             const divContainer= document.createElement("div")
                 divContainer.className="container-producto"
+                // if( prod.oferta==true){
+                //     precioNuevo= prod.precio /2
+                //     divContainer.classList.add("precio-oferta")
+                // }else {
+                //     precioNuevo= prod.precio
+                // }
+                prod.oferta==true? divContainer.classList.add("precio-oferta") : prod.oferta             
                 divContainer.id=`producto-${prod.id}`
                 divContainer.innerHTML=`
                 <img src=${prod.imagen} alt=${prod.nombre}>
