@@ -62,7 +62,7 @@ const displayBody= document.querySelector(".body");
 // datos de usuarios guardados en "base de datos en js"
 let usuario1={
     usuario:"Franco",
-    contrasenia:"123456"
+    contrasenia:"F123456"
 }
 
 const registrarLocalStorage = (clave,valor) =>{
