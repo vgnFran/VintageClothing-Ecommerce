@@ -4,7 +4,7 @@ const swiper = new Swiper(".mySwiper", {
     spaceBetween: 30,
     centeredSlides: true,
     autoplay: {
-      delay: 2500,
+      delay: 4000,
       disableOnInteraction: false,
     },
     pagination: {
@@ -90,6 +90,7 @@ formLogin.onsubmit= (evento)=>{
         registrarLocalStorage("inicio",true);
         registrarLocalStorage("nombre",inputUsuario.value);
         todosProductos.classList.add("elegido");
+        cierraSesion.innerText="Cerrar sesion"
 
     }else if(inputUsuario.value==""){
         inputUsuario.style.border= "2px solid red";
@@ -123,6 +124,7 @@ iniciaSesion.onsubmit=(evento)=>{
         registrarLocalStorage("inicio",true);
         registrarLocalStorage("nombre",userRegistrado.value)
         todosProductos.classList.add("elegido");
+        cierraSesion.innerText="Cerrar sesion"
     }else if(comprobarLocalStorage(userRegistrado.value)!= passRegistrado.value ){
         userIncorrecto.style.display= "flex";
         userRegistrado.style.border= "2px solid red";
@@ -146,6 +148,7 @@ iniciaSesion.onsubmit=(evento)=>{
     todosProductos.classList.remove("elegido");
     localStorage.removeItem("modo");
     validarModoOscuro(comprobarLocalStorage("modo"));
+    cierraSesion.innerText=""
     
 }
 
