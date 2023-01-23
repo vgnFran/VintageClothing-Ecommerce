@@ -49,7 +49,7 @@ const aside=document.querySelector(".aside");
 const body=document.querySelector("body");
 const modo=document.querySelector("#modo");
 const modoCheckbox= document.querySelector("#toggle");
-const ingreso=document.querySelector(".butonBody");
+const ingreso=document.querySelector("#ingresar");
 const ofertas= document.querySelector("#ofertas");
 const swiperFondo= document.querySelector(".swiper");
 const cuantosProductos= document.querySelector("#cantidad-productos");
@@ -58,10 +58,6 @@ const ordenaz=document.querySelector("#ordenz");
 const displayBody= document.querySelector(".body");
 
 
-
-ingreso.onclick=()=>{
-    // displayBody.style.display="flex";
-};
 
 // datos de usuarios guardados en "base de datos en js"
 let usuario1={
