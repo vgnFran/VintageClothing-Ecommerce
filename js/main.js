@@ -49,7 +49,7 @@ const aside=document.querySelector(".aside");
 const body=document.querySelector("body");
 const modo=document.querySelector("#modo");
 const modoCheckbox= document.querySelector("#toggle");
-const ingreso=document.querySelector("#ingresar");
+const ingreso=document.querySelector(".ingreso");
 const ofertas= document.querySelector("#ofertas");
 const swiperFondo= document.querySelector(".swiper");
 const cuantosProductos= document.querySelector("#cantidad-productos");
@@ -144,7 +144,9 @@ iniciaSesion.onsubmit=(evento)=>{
     todosProductos.classList.remove("elegido");
     localStorage.removeItem("modo");
     validarModoOscuro(comprobarLocalStorage("modo"));
-    cierraSesion.innerText=""
+    cierraSesion.innerText="";
+    comprobar()
+
     
 }
 
